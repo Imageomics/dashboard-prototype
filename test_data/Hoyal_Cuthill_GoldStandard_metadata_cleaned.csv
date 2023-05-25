@@ -1,0 +1,773 @@
+,NHM_Specimen,Image_filename,View,Species,Subspecies,Sex,addit_taxa_info,type_stat,hybrid_stat,in_reduced,locality,lat,lon,speciesdesig
+1,10427966,10427966_D_lowres.tif,dorsal,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Chontales NIC CH,10.75,-84.25,m. rosina
+2,10427966,10427966_V_lowres.tif,ventral,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Chontales NIC CH,10.75,-84.25,m. rosina
+3,10427968,10427968_D_lowres.tif,dorsal,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Juan Vinas CRI CA,9.9,-83.73333333,m. rosina
+4,10427968,10427968_V_lowres.tif,ventral,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Juan Vinas CRI CA,9.9,-83.73333333,m. rosina
+5,10427974,10427974_D_lowres.tif,dorsal,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Santa Clara Valley CRI LI,10.25,-83.75,m. rosina
+6,10427974,10427974_V_lowres.tif,ventral,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Santa Clara Valley CRI LI,10.25,-83.75,m. rosina
+7,10427977,10427977_D_lowres.tif,dorsal,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Las Pavas CRI AL,10.96666667,-85.08333333,m. rosina
+8,10427977,10427977_V_lowres.tif,ventral,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Las Pavas CRI AL,10.96666667,-85.08333333,m. rosina
+9,10427978,10427978_D_lowres.tif,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Sixaola Rio CRI LI,9.556530556,-82.73621389,m. rosina
+10,10427978,10427978_V_lowres.tif,ventral,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Sixaola Rio CRI LI,9.556530556,-82.73621389,m. rosina
+11,10427979,10427979_D_lowres.tif,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Turrialba CRI CA,9.883333333,-83.63333333,m. rosina
+12,10427979,10427979_V_lowres.tif,ventral,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Turrialba CRI CA,9.883333333,-83.63333333,m. rosina
+13,10427980,10427980_D_lowres.tif,dorsal,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Peralta CRI CA,9.966666667,-83.61666667,m. rosina
+14,10427980,10427980_V_lowres.tif,ventral,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Peralta CRI CA,9.966666667,-83.61666667,m. rosina
+15,10427982,10427982_D_lowres.tif,dorsal,melpomene,rosina_N,female,rosina_N,,valid subspecies,1,Chontales NIC CH,10.75,-84.25,m. rosina
+16,10427982,10427982_V_lowres.tif,ventral,melpomene,rosina_N,female,rosina_N,,valid subspecies,1,Chontales NIC CH,10.75,-84.25,m. rosina
+17,10427983,10427983_D_lowres.tif,dorsal,melpomene,rosina_N,female,rosina_N,,valid subspecies,1,Santa Clara Valley CRI LI,10.25,-83.75,m. rosina
+18,10427983,10427983_V_lowres.tif,ventral,melpomene,rosina_N,female,rosina_N,,valid subspecies,1,Santa Clara Valley CRI LI,10.25,-83.75,m. rosina
+19,10427984,10427984_D_lowres.tif,dorsal,melpomene,rosina_N,female,rosina_N,,valid subspecies,1,Las Pavas CRI AL,10.96666667,-85.08333333,m. rosina
+20,10427984,10427984_V_lowres.tif,ventral,melpomene,rosina_N,female,rosina_N,,valid subspecies,1,Las Pavas CRI AL,10.96666667,-85.08333333,m. rosina
+21,10427985,10427985_D_lowres.tif,dorsal,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Turrialba CRI CA,9.883333333,-83.63333333,m. rosina
+22,10427985,10427985_V_lowres.tif,ventral,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Turrialba CRI CA,9.883333333,-83.63333333,m. rosina
+23,10427986,10427986_D_lowres.tif,dorsal,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Puerto Limon CRI LI,9.983333333,-83.06666667,m. rosina
+24,10427986,10427986_V_lowres.tif,ventral,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Puerto Limon CRI LI,9.983333333,-83.06666667,m. rosina
+25,10427987,10427987_D_lowres.tif,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Pejivalle CRI CA,9.816666667,-83.7,m. rosina
+26,10427987,10427987_V_lowres.tif,ventral,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Pejivalle CRI CA,9.816666667,-83.7,m. rosina
+27,10427988,10427988_D_lowres.tif,dorsal,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Caldera CRI PU,9.933333333,-84.71666667,m. rosina
+28,10427988,10427988_V_lowres.tif,ventral,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Caldera CRI PU,9.933333333,-84.71666667,m. rosina
+29,10427989,10427989_D_lowres.tif,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Bugaba PAN CQ,8.483333333,-82.61666667,m. rosina
+30,10427989,10427989_V_lowres.tif,ventral,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Bugaba PAN CQ,8.483333333,-82.61666667,m. rosina
+31,10427990,10427990_D_lowres.tif,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Veraguas PAN VE,8.866666667,-80.9,m. rosina
+32,10427990,10427990_V_lowres.tif,ventral,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Veraguas PAN VE,8.866666667,-80.9,m. rosina
+33,10427991,10427991_D_lowres.tif,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Lino PAN CQ,8.8,-82.43333333,m. rosina
+34,10427991,10427991_V_lowres.tif,ventral,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Lino PAN CQ,8.8,-82.43333333,m. rosina
+35,10427992,10427992_D_lowres.tif,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Bugaba PAN CQ,8.483333333,-82.61666667,m. rosina
+36,10427992,10427992_V_lowres.tif,ventral,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Bugaba PAN CQ,8.483333333,-82.61666667,m. rosina
+37,10427995,10427995_D_lowres.tif,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Sevilla Isla PAN CQ,8.249916667,-82.37594722,m. rosina
+38,10427995,10427995_V_lowres.tif,ventral,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Sevilla Isla PAN CQ,8.249916667,-82.37594722,m. rosina
+39,10427997,10427997_D_lowres.tif,dorsal,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Lino PAN CQ,8.8,-82.43333333,m. rosina
+40,10427997,10427997_V_lowres.tif,ventral,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Lino PAN CQ,8.8,-82.43333333,m. rosina
+41,10427998,10427998_D_lowres.tif,dorsal,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Tole Rio PAN CQ,8.233333333,-81.68333333,m. rosina
+42,10427998,10427998_V_lowres.tif,ventral,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Tole Rio PAN CQ,8.233333333,-81.68333333,m. rosina
+43,10427999,10427999_D_lowres.tif,dorsal,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Chiriqui PAN CQ,8.383333333,-82.33333333,m. rosina
+44,10427999,10427999_V_lowres.tif,ventral,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Chiriqui PAN CQ,8.383333333,-82.33333333,m. rosina
+45,10428000,10428000_D_lowres.tif,dorsal,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Cebaco Isla PAN VE,7.533333333,-81.15,m. rosina
+46,10428000,10428000_V_lowres.tif,ventral,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Cebaco Isla PAN VE,7.533333333,-81.15,m. rosina
+47,10428001,10428001_D_lowres.tif,dorsal,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Insolita Isla PAN CQ,8.116666667,-81.73333333,m. rosina
+48,10428001,10428001_V_lowres.tif,ventral,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Insolita Isla PAN CQ,8.116666667,-81.73333333,m. rosina
+49,10428017,10428017_D_lowres.tif,dorsal,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,Dagua Rio COL VC,3.55,-76.65,m. vulcanus
+50,10428017,10428017_V_lowres.tif,ventral,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,Dagua Rio COL VC,3.55,-76.65,m. vulcanus
+51,10428019,10428019_D_lowres.tif,dorsal,melpomene,vulcanus,male,vulcanus,,valid subspecies,0,Condoto Rio COL CH,5.1,-76.7,m. vulcanus
+52,10428019,10428019_V_lowres.tif,ventral,melpomene,vulcanus,male,vulcanus,,valid subspecies,0,Condoto Rio COL CH,5.1,-76.7,m. vulcanus
+53,10428020,10428020_D_lowres.tif,dorsal,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,El Tigre COL CH,4.95,-76.51666667,m. vulcanus
+54,10428020,10428020_V_lowres.tif,ventral,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,El Tigre COL CH,4.95,-76.51666667,m. vulcanus
+55,10428021,10428021_D_lowres.tif,dorsal,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,Juntas Rio Tamana COL CH,4.983333333,-76.4,m. vulcanus
+56,10428021,10428021_V_lowres.tif,ventral,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,Juntas Rio Tamana COL CH,4.983333333,-76.4,m. vulcanus
+57,10428022,10428022_D_lowres.tif,dorsal,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,Sarza quebrada de la COL CH,4.75,-76.75,m. vulcanus
+58,10428022,10428022_V_lowres.tif,ventral,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,Sarza quebrada de la COL CH,4.75,-76.75,m. vulcanus
+59,10428023,10428023_D_lowres.tif,dorsal,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,Pavarandocito COL AN,7.297222222,-76.52694444,m. vulcanus
+60,10428023,10428023_V_lowres.tif,ventral,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,Pavarandocito COL AN,7.297222222,-76.52694444,m. vulcanus
+61,10428024,10428024_D_lowres.tif,dorsal,melpomene,vulcanus,female,vulcanus,,valid subspecies,1,Dagua Rio COL VC,3.55,-76.65,m. vulcanus
+62,10428024,10428024_V_lowres.tif,ventral,melpomene,vulcanus,female,vulcanus,,valid subspecies,1,Dagua Rio COL VC,3.55,-76.65,m. vulcanus
+63,10428025,10428025_D_lowres.tif,dorsal,melpomene,vulcanus,female,vulcanus,,valid subspecies,0,San Juan Rio COL CH,5.216666667,-76.65,m. vulcanus
+64,10428025,10428025_V_lowres.tif,ventral,melpomene,vulcanus,female,vulcanus,,valid subspecies,0,San Juan Rio COL CH,5.216666667,-76.65,m. vulcanus
+65,10428026,10428026_D_lowres.tif,dorsal,melpomene,vulcanus,female,vulcanus,,valid subspecies,1,Esmeraldas ECD ES,0.983333333,-79.7,m. vulcanus
+66,10428026,10428026_V_lowres.tif,ventral,melpomene,vulcanus,female,vulcanus,,valid subspecies,1,Esmeraldas ECD ES,0.983333333,-79.7,m. vulcanus
+69,10428029,10428029_D_lowres.tif,dorsal,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,Juntas Cauca COL VC,3.783333333,-76.16666667,m. vulcanus
+70,10428029,10428029_V_lowres.tif,ventral,melpomene,vulcanus,male,vulcanus,,valid subspecies,1,Juntas Cauca COL VC,3.783333333,-76.16666667,m. vulcanus
+71,10428032,10428032_D_lowres.tif,dorsal,melpomene,vulcanus,female,vulcanus,,valid subspecies,1,Juntas Cauca COL VC,3.783333333,-76.16666667,m. vulcanus
+72,10428032,10428032_V_lowres.tif,ventral,melpomene,vulcanus,female,vulcanus,,valid subspecies,1,Juntas Cauca COL VC,3.783333333,-76.16666667,m. vulcanus
+79,10428063,10428063_D_lowres.tif,dorsal,melpomene,cythera,male,cythera,,valid subspecies,1,Chimbo ECD CH,-2.233333333,-79.11666667,m. cythera
+80,10428063,10428063_V_lowres.tif,ventral,melpomene,cythera,male,cythera,,valid subspecies,1,Chimbo ECD CH,-2.233333333,-79.11666667,m. cythera
+83,10428068,10428068_D_lowres.tif,dorsal,melpomene,cythera,female,cythera,,valid subspecies,1,Balzapamba ECD BO,-1.783333333,-79.16666667,m. cythera
+84,10428068,10428068_V_lowres.tif,ventral,melpomene,cythera,female,cythera,,valid subspecies,1,Balzapamba ECD BO,-1.783333333,-79.16666667,m. cythera
+85,10428069,10428069_D_lowres.tif,dorsal,melpomene,cythera,female,cythera,,valid subspecies,1,Los Llanos ECD CH,-2.05,-78.96666667,m. cythera
+86,10428069,10428069_V_lowres.tif,ventral,melpomene,cythera,female,cythera,,valid subspecies,1,Los Llanos ECD CH,-2.05,-78.96666667,m. cythera
+87,10428089,10428089_D_lowres.tif,dorsal,melpomene,xenoclea,male,batesi,ST,subspecies synonym,0,Chanchamayo PER JU,-11.06666667,-75.31666667,m. xenoclea
+88,10428089,10428089_V_lowres.tif,ventral,melpomene,xenoclea,male,batesi,ST,subspecies synonym,0,Chanchamayo PER JU,-11.06666667,-75.31666667,m. xenoclea
+89,10428093,10428093_D_lowres.tif,dorsal,melpomene,xenoclea,male,f._xenoclea,,subspecies synonym,1,Perene Rio PER JU,-11.15,-74.3,m. xenoclea
+90,10428093,10428093_V_lowres.tif,ventral,melpomene,xenoclea,male,f._xenoclea,,subspecies synonym,1,Perene Rio PER JU,-11.15,-74.3,m. xenoclea
+91,10428094,10428094_D_lowres.tif,dorsal,melpomene,xenoclea,male,f._xenoclea,,subspecies synonym,1,San Remon PER,-11.13333333,-75.35,m. xenoclea
+92,10428094,10428094_V_lowres.tif,ventral,melpomene,xenoclea,male,f._xenoclea,,subspecies synonym,1,San Remon PER,-11.13333333,-75.35,m. xenoclea
+93,10428095,10428095_D_lowres.tif,dorsal,melpomene,xenoclea,male,f._xenoclea,,subspecies synonym,1,Utcuyacu PER JU,-11.18333333,-75.46666667,m. xenoclea
+94,10428095,10428095_V_lowres.tif,ventral,melpomene,xenoclea,male,f._xenoclea,,subspecies synonym,1,Utcuyacu PER JU,-11.18333333,-75.46666667,m. xenoclea
+95,10428096,10428096_D_lowres.tif,dorsal,melpomene,xenoclea,female,f._xenoclea,,subspecies synonym,1,Chanchamayo PER JU,-11.06666667,-75.31666667,m. xenoclea
+96,10428096,10428096_V_lowres.tif,ventral,melpomene,xenoclea,female,f._xenoclea,,subspecies synonym,1,Chanchamayo PER JU,-11.06666667,-75.31666667,m. xenoclea
+97,10428097,10428097_D_lowres.tif,dorsal,melpomene,xenoclea,female,f._xenoclea,,subspecies synonym,1,Perene Rio PER JU,-11.15,-74.3,m. xenoclea
+98,10428097,10428097_V_lowres.tif,ventral,melpomene,xenoclea,female,f._xenoclea,,subspecies synonym,1,Perene Rio PER JU,-11.15,-74.3,m. xenoclea
+99,10428098,10428098_D_lowres.tif,dorsal,melpomene,xenoclea,female,f._xenoclea,,subspecies synonym,1,San Remon PER,-11.13333333,-75.35,m. xenoclea
+100,10428098,10428098_V_lowres.tif,ventral,melpomene,xenoclea,female,f._xenoclea,,subspecies synonym,1,San Remon PER,-11.13333333,-75.35,m. xenoclea
+101,10428099,10428099_D_lowres.tif,dorsal,melpomene,xenoclea,male,f._xenoclea,,subspecies synonym,1,La Merced  PER JU,-11.05,-75.31666667,m. xenoclea
+102,10428099,10428099_V_lowres.tif,ventral,melpomene,xenoclea,male,f._xenoclea,,subspecies synonym,1,La Merced  PER JU,-11.05,-75.31666667,m. xenoclea
+103,10428101,10428101_D_lowres.tif,dorsal,melpomene,xenoclea,male,f._xenoclea,,subspecies synonym,1,Chanchamayo PER JU,-11.06666667,-75.31666667,m. xenoclea
+104,10428101,10428101_V_lowres.tif,ventral,melpomene,xenoclea,male,f._xenoclea,,subspecies synonym,1,Chanchamayo PER JU,-11.06666667,-75.31666667,m. xenoclea
+107,10428109,10428109_D_lowres.tif,dorsal,melpomene,xenoclea,female,f._xenoclea,,subspecies synonym,1,La Merced  PER JU,-11.05,-75.31666667,m. xenoclea
+108,10428109,10428109_V_lowres.tif,ventral,melpomene,xenoclea,female,f._xenoclea,,subspecies synonym,1,La Merced  PER JU,-11.05,-75.31666667,m. xenoclea
+109,10428114,10428114_D_lowres.tif,dorsal,melpomene,amaryllis,male,amaryllis,,valid subspecies,0,Chazuta PER SM,-6.566666667,-76.13333333,m. amaryllis
+110,10428114,10428114_V_lowres.tif,ventral,melpomene,amaryllis,male,amaryllis,,valid subspecies,0,Chazuta PER SM,-6.566666667,-76.13333333,m. amaryllis
+111,10428116,10428116_D_lowres.tif,dorsal,melpomene,amaryllis,male,amaryllis,,valid subspecies,1,Tarapoto PER SM,-6.483333333,-76.36666667,m. amaryllis
+112,10428116,10428116_V_lowres.tif,ventral,melpomene,amaryllis,male,amaryllis,,valid subspecies,1,Tarapoto PER SM,-6.483333333,-76.36666667,m. amaryllis
+113,10428117,10428117_D_lowres.tif,dorsal,melpomene,amaryllis,male,amaryllis,,valid subspecies,1,Huayabamba Rio PER SM,-7.266667,-76.733333,m. amaryllis
+114,10428117,10428117_V_lowres.tif,ventral,melpomene,amaryllis,male,amaryllis,,valid subspecies,1,Huayabamba Rio PER SM,-7.266667,-76.733333,m. amaryllis
+115,10428118,10428118_D_lowres.tif,dorsal,melpomene,amaryllis,male,amaryllis,,valid subspecies,0,Chazuta PER SM,-6.566666667,-76.13333333,m. amaryllis
+116,10428118,10428118_V_lowres.tif,ventral,melpomene,amaryllis,male,amaryllis,,valid subspecies,0,Chazuta PER SM,-6.566666667,-76.13333333,m. amaryllis
+117,10428119,10428119_D_lowres.tif,dorsal,melpomene,amaryllis,male,amaryllis,,valid subspecies,1,Tingo Maria PER HU,-9.3,-76,m. amaryllis
+118,10428119,10428119_V_lowres.tif,ventral,melpomene,amaryllis,male,amaryllis,,valid subspecies,1,Tingo Maria PER HU,-9.3,-76,m. amaryllis
+119,10428120,10428120_D_lowres.tif,dorsal,melpomene,amaryllis,male,amaryllis,,valid subspecies,1,Moyobamba PER SM,-6.033333333,-76.96666667,m. amaryllis
+120,10428120,10428120_V_lowres.tif,ventral,melpomene,amaryllis,male,amaryllis,,valid subspecies,1,Moyobamba PER SM,-6.033333333,-76.96666667,m. amaryllis
+121,10428124,10428124_D_lowres.tif,dorsal,melpomene,amaryllis,female,amaryllis,,valid subspecies,1,Tarapoto PER SM,-6.483333333,-76.36666667,m. amaryllis
+122,10428124,10428124_V_lowres.tif,ventral,melpomene,amaryllis,female,amaryllis,,valid subspecies,1,Tarapoto PER SM,-6.483333333,-76.36666667,m. amaryllis
+123,10428125,10428125_D_lowres.tif,dorsal,melpomene,amaryllis,female,amaryllis,,valid subspecies,1,Jepelacio PER SM,-6.1,-76.91666667,m. amaryllis
+124,10428125,10428125_V_lowres.tif,ventral,melpomene,amaryllis,female,amaryllis,,valid subspecies,1,Jepelacio PER SM,-6.1,-76.91666667,m. amaryllis
+129,10428136,10428136_D_lowres.tif,dorsal,melpomene,plesseni,male,plesseni,ST,valid subspecies,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+130,10428136,10428136_V_lowres.tif,ventral,melpomene,plesseni,male,plesseni,ST,valid subspecies,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+131,10428137,10428137_D_lowres.tif,dorsal,melpomene,plesseni,male,plesseni,,valid subspecies,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+132,10428137,10428137_V_lowres.tif,ventral,melpomene,plesseni,male,plesseni,,valid subspecies,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+133,10428138,10428138_D_lowres.tif,dorsal,melpomene,plesseni,male,plesseni,,valid subspecies,1,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+134,10428138,10428138_V_lowres.tif,ventral,melpomene,plesseni,male,plesseni,,valid subspecies,1,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+135,10428139,10428139_D_lowres.tif,dorsal,melpomene,plesseni,male,plesseni,,valid subspecies,1,Pastaza Rio Upper ECD PA,-1.538391667,-78.06732222,m. plesseni
+136,10428139,10428139_V_lowres.tif,ventral,melpomene,plesseni,male,plesseni,,valid subspecies,1,Pastaza Rio Upper ECD PA,-1.538391667,-78.06732222,m. plesseni
+137,10428140,10428140_D_lowres.tif,dorsal,melpomene,plesseni,male,plesseni,,valid subspecies,1,Banos ECD TU,-1.4,-78.41666667,m. plesseni
+138,10428140,10428140_V_lowres.tif,ventral,melpomene,plesseni,male,plesseni,,valid subspecies,1,Banos ECD TU,-1.4,-78.41666667,m. plesseni
+139,10428141,10428141_D_lowres.tif,dorsal,melpomene,plesseni,male,plesseni,,valid subspecies,1,Machay Hda ECU TU,-1.4,-78.26666667,m. plesseni
+140,10428141,10428141_V_lowres.tif,ventral,melpomene,plesseni,male,plesseni,,valid subspecies,1,Machay Hda ECU TU,-1.4,-78.26666667,m. plesseni
+141,10428142,10428142_D_lowres.tif,dorsal,melpomene,plesseni,male,plesseni,,valid subspecies,1,Achiyacu Rio ECD NA,-1.583333333,-77.75,m. plesseni
+142,10428142,10428142_V_lowres.tif,ventral,melpomene,plesseni,male,plesseni,,valid subspecies,1,Achiyacu Rio ECD NA,-1.583333333,-77.75,m. plesseni
+143,10428143,10428143_D_lowres.tif,dorsal,melpomene,plesseni,male,plesseni,,valid subspecies,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+144,10428143,10428143_V_lowres.tif,ventral,melpomene,plesseni,male,plesseni,,valid subspecies,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+145,10428144,10428144_D_lowres.tif,dorsal,melpomene,plesseni,male,plesseni,,valid subspecies,1,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+146,10428144,10428144_V_lowres.tif,ventral,melpomene,plesseni,male,plesseni,,valid subspecies,1,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+147,10428145,10428145_D_lowres.tif,dorsal,melpomene,plesseni,female,plesseni,,valid subspecies,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+148,10428145,10428145_V_lowres.tif,ventral,melpomene,plesseni,female,plesseni,,valid subspecies,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+149,10428146,10428146_D_lowres.tif,dorsal,melpomene,plesseni,female,plesseni,,valid subspecies,1,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+150,10428146,10428146_V_lowres.tif,ventral,melpomene,plesseni,female,plesseni,,valid subspecies,1,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+151,10428147,10428147_D_lowres.tif,dorsal,melpomene,plesseni,female,plesseni,,valid subspecies,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+152,10428147,10428147_V_lowres.tif,ventral,melpomene,plesseni,female,plesseni,,valid subspecies,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+153,10428148,10428148_D_lowres.tif,dorsal,melpomene,plesseni,female,plesseni,,valid subspecies,1,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+154,10428148,10428148_V_lowres.tif,ventral,melpomene,plesseni,female,plesseni,,valid subspecies,1,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+157,10428151,10428151_D_lowres.tif,dorsal,melpomene,plesseni,male,f._rubicunda,ST,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+158,10428151,10428151_V_lowres.tif,ventral,melpomene,plesseni,male,f._rubicunda,ST,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+163,10428155,10428155_D_lowres.tif,dorsal,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+164,10428155,10428155_V_lowres.tif,ventral,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+165,10428156,10428156_D_lowres.tif,dorsal,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+166,10428156,10428156_V_lowres.tif,ventral,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+167,10428157,10428157_D_lowres.tif,dorsal,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+168,10428157,10428157_V_lowres.tif,ventral,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+169,10428158,10428158_D_lowres.tif,dorsal,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+170,10428158,10428158_V_lowres.tif,ventral,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+171,10428159,10428159_D_lowres.tif,dorsal,melpomene,plesseni,female,f._rubicunda,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+172,10428159,10428159_V_lowres.tif,ventral,melpomene,plesseni,female,f._rubicunda,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+173,10428160,10428160_D_lowres.tif,dorsal,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Topo Rio ECD TU,-1.416666667,-78.16666667,m. plesseni
+174,10428160,10428160_V_lowres.tif,ventral,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Topo Rio ECD TU,-1.416666667,-78.16666667,m. plesseni
+175,10428162,10428162_D_lowres.tif,dorsal,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+176,10428162,10428162_V_lowres.tif,ventral,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+177,10428163,10428163_D_lowres.tif,dorsal,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Partidero ECD PA,-1.433333333,-77.98333333,m. plesseni
+178,10428163,10428163_V_lowres.tif,ventral,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Partidero ECD PA,-1.433333333,-77.98333333,m. plesseni
+181,10428165,10428165_D_lowres.tif,dorsal,melpomene,plesseni,female,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+182,10428165,10428165_V_lowres.tif,ventral,melpomene,plesseni,female,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+183,10428166,10428166_D_lowres.tif,dorsal,melpomene,plesseni,female,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+184,10428166,10428166_V_lowres.tif,ventral,melpomene,plesseni,female,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+185,10428167,10428167_D_lowres.tif,dorsal,melpomene,plesseni,male,f._pura,ST,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+186,10428167,10428167_V_lowres.tif,ventral,melpomene,plesseni,male,f._pura,ST,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+187,10428168,10428168_D_lowres.tif,dorsal,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+188,10428168,10428168_V_lowres.tif,ventral,melpomene,plesseni,male,f._corona,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+189,10428169,10428169_D_lowres.tif,dorsal,melpomene,plesseni,male,f._pura,ST,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+190,10428169,10428169_V_lowres.tif,ventral,melpomene,plesseni,male,f._pura,ST,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+191,10428170,10428170_D_lowres.tif,dorsal,melpomene,plesseni,male,f._pura,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+192,10428170,10428170_V_lowres.tif,ventral,melpomene,plesseni,male,f._pura,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+195,10428172,10428172_D_lowres.tif,dorsal,melpomene,plesseni,female,f._pura,ST,subspecies synonym,1,Pastaza Rio Upper ECD PA,-1.538391667,-78.06732222,m. plesseni
+196,10428172,10428172_V_lowres.tif,ventral,melpomene,plesseni,female,f._pura,ST,subspecies synonym,1,Pastaza Rio Upper ECD PA,-1.538391667,-78.06732222,m. plesseni
+197,10428173,10428173_D_lowres.tif,dorsal,melpomene,plesseni,female,f._pura,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+198,10428173,10428173_V_lowres.tif,ventral,melpomene,plesseni,female,f._pura,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+199,10428174,10428174_D_lowres.tif,dorsal,melpomene,plesseni,female,f._pura,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+200,10428174,10428174_V_lowres.tif,ventral,melpomene,plesseni,female,f._pura,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+201,10428175,10428175_D_lowres.tif,dorsal,melpomene,plesseni,female,microclea_virgo,HT,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+202,10428175,10428175_V_lowres.tif,ventral,melpomene,plesseni,female,microclea_virgo,HT,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+203,10428177,10428177_D_lowres.tif,dorsal,melpomene,plesseni,male,f._pura,,subspecies synonym,0,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+204,10428177,10428177_V_lowres.tif,ventral,melpomene,plesseni,male,f._pura,,subspecies synonym,0,Alpayacu ECD PA,-1.466666667,-78.11666667,m. plesseni
+205,10428178,10428178_D_lowres.tif,dorsal,melpomene,plesseni,female,f._pura,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+206,10428178,10428178_V_lowres.tif,ventral,melpomene,plesseni,female,f._pura,,subspecies synonym,1,Canelos ECD PA,-1.583333333,-77.75,m. plesseni
+217,10428219,10428219_D_lowres.tif,dorsal,melpomene,ecuadorensis,male,f._ecuadorensis,,subspecies synonym,1,Zamora ECD ZC,-4.066666667,-78.96666667,m. ecuadorensis
+218,10428219,10428219_V_lowres.tif,ventral,melpomene,ecuadorensis,male,f._ecuadorensis,,subspecies synonym,1,Zamora ECD ZC,-4.066666667,-78.96666667,m. ecuadorensis
+219,10428222,10428222_D_lowres.tif,dorsal,melpomene,ecuadorensis,female,f._ecuadorensis,,subspecies synonym,1,Zamora ECD ZC,-4.066666667,-78.96666667,m. ecuadorensis
+220,10428222,10428222_V_lowres.tif,ventral,melpomene,ecuadorensis,female,f._ecuadorensis,,subspecies synonym,1,Zamora ECD ZC,-4.066666667,-78.96666667,m. ecuadorensis
+221,10428224,10428224_D_lowres.tif,dorsal,melpomene,ecuadorensis,male,f._ecuadorensis,,subspecies synonym,1,Macas ECD MS,-2.316666667,-78.11666667,m. ecuadorensis
+222,10428224,10428224_V_lowres.tif,ventral,melpomene,ecuadorensis,male,f._ecuadorensis,,subspecies synonym,1,Macas ECD MS,-2.316666667,-78.11666667,m. ecuadorensis
+223,10428226,10428226_D_lowres.tif,dorsal,melpomene,ecuadorensis,male,f._ecuadorensis,,subspecies synonym,1,Gualaquiza ECD MS,-3.416666667,-78.6,m. ecuadorensis
+224,10428226,10428226_V_lowres.tif,ventral,melpomene,ecuadorensis,male,f._ecuadorensis,,subspecies synonym,1,Gualaquiza ECD MS,-3.416666667,-78.6,m. ecuadorensis
+225,10428227,10428227_D_lowres.tif,dorsal,melpomene,ecuadorensis,male,f._ecuadorensis,,subspecies synonym,1,Zamora ECD ZC,-4.066666667,-78.96666667,m. ecuadorensis
+226,10428227,10428227_V_lowres.tif,ventral,melpomene,ecuadorensis,male,f._ecuadorensis,,subspecies synonym,1,Zamora ECD ZC,-4.066666667,-78.96666667,m. ecuadorensis
+227,10428236,10428236_D_lowres.tif,dorsal,melpomene,ecuadorensis,female,f._ecuadorensis,,subspecies synonym,1,Macas ECD MS,-2.316666667,-78.11666667,m. ecuadorensis
+228,10428236,10428236_V_lowres.tif,ventral,melpomene,ecuadorensis,female,f._ecuadorensis,,subspecies synonym,1,Macas ECD MS,-2.316666667,-78.11666667,m. ecuadorensis
+229,10428242,10428242_D_lowres.tif,dorsal,melpomene,aglaope,male,f._cognata,ST,subspecies synonym,1,Pozuzo  PER PA,-10.11666667,-75.53333333,m. aglaope
+230,10428242,10428242_V_lowres.tif,ventral,melpomene,aglaope,male,f._cognata,ST,subspecies synonym,1,Pozuzo  PER PA,-10.11666667,-75.53333333,m. aglaope
+231,10428244,10428244_D_lowres.tif,dorsal,melpomene,aglaope,male,f._cognata,ST,subspecies synonym,1,Pozuzo  PER PA,-10.11666667,-75.53333333,m. aglaope
+232,10428244,10428244_V_lowres.tif,ventral,melpomene,aglaope,male,f._cognata,ST,subspecies synonym,1,Pozuzo  PER PA,-10.11666667,-75.53333333,m. aglaope
+233,10428245,10428245_D_lowres.tif,dorsal,melpomene,aglaope,male,f._cognata,ST,subspecies synonym,1,Pozuzo  PER PA,-10.11666667,-75.53333333,m. aglaope
+234,10428245,10428245_V_lowres.tif,ventral,melpomene,aglaope,male,f._cognata,ST,subspecies synonym,1,Pozuzo  PER PA,-10.11666667,-75.53333333,m. aglaope
+235,10428249,10428249_D_lowres.tif,dorsal,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Yahuarmayo (Rio) PER PU,-13.3,-70.3,m. schunkei
+236,10428249,10428249_V_lowres.tif,ventral,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Yahuarmayo (Rio) PER PU,-13.3,-70.3,m. schunkei
+237,10428250,10428250_D_lowres.tif,dorsal,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Caradoc (Hda) PER CU,-13.36666667,-70.95,m. schunkei
+238,10428250,10428250_V_lowres.tif,ventral,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Caradoc (Hda) PER CU,-13.36666667,-70.95,m. schunkei
+239,10428251,10428251_D_lowres.tif,dorsal,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Chaquimayo PER PU,-13.43333333,-70.38333333,m. schunkei
+240,10428251,10428251_V_lowres.tif,ventral,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Chaquimayo PER PU,-13.43333333,-70.38333333,m. schunkei
+241,10428254,10428254_D_lowres.tif,dorsal,melpomene,aglaope,female,f._cognata,,subspecies synonym,1,Pozuzo  PER PA,-10.11666667,-75.53333333,m. aglaope
+242,10428254,10428254_V_lowres.tif,ventral,melpomene,aglaope,female,f._cognata,,subspecies synonym,1,Pozuzo  PER PA,-10.11666667,-75.53333333,m. aglaope
+243,10428257,10428257_D_lowres.tif,dorsal,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,La Pampa PER PU,-13.68333333,-69.6,m. schunkei
+244,10428257,10428257_V_lowres.tif,ventral,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,La Pampa PER PU,-13.68333333,-69.6,m. schunkei
+245,10428261,10428261_D_lowres.tif,dorsal,melpomene,schunkei,male,ab._rubra,,subspecies synonym,0,La Union PER PU,-13.53333333,-69.63333333,m. schunkei
+246,10428261,10428261_V_lowres.tif,ventral,melpomene,schunkei,male,ab._rubra,,subspecies synonym,0,La Union PER PU,-13.53333333,-69.63333333,m. schunkei
+247,10428262,10428262_D_lowres.tif,dorsal,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,La Union to Santo Domingo PER PU,-13.68168056,-69.64021389,m. schunkei
+248,10428262,10428262_V_lowres.tif,ventral,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,La Union to Santo Domingo PER PU,-13.68168056,-69.64021389,m. schunkei
+249,10428263,10428263_D_lowres.tif,dorsal,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Huacamayo Rio PER PU,-13.5,-69.68333333,m. schunkei
+250,10428263,10428263_V_lowres.tif,ventral,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Huacamayo Rio PER PU,-13.5,-69.68333333,m. schunkei
+251,10428264,10428264_D_lowres.tif,dorsal,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Madre de Dios Rio Alto PER CU,-12.26666667,-70.93333333,m. schunkei
+252,10428264,10428264_V_lowres.tif,ventral,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Madre de Dios Rio Alto PER CU,-12.26666667,-70.93333333,m. schunkei
+253,10428269,10428269_D_lowres.tif,dorsal,melpomene,schunkei,female,ab._rubra,,subspecies synonym,1,Chaquimayo PER PU,-13.43333333,-70.38333333,m. schunkei
+254,10428269,10428269_V_lowres.tif,ventral,melpomene,schunkei,female,ab._rubra,,subspecies synonym,1,Chaquimayo PER PU,-13.43333333,-70.38333333,m. schunkei
+255,10428270,10428270_D_lowres.tif,dorsal,melpomene,schunkei,female,ab._rubra,,subspecies synonym,1,Madre de Dios Rio Alto PER CU,-12.26666667,-70.93333333,m. schunkei
+256,10428270,10428270_V_lowres.tif,ventral,melpomene,schunkei,female,ab._rubra,,subspecies synonym,1,Madre de Dios Rio Alto PER CU,-12.26666667,-70.93333333,m. schunkei
+257,10428273,10428273_D_lowres.tif,dorsal,melpomene,aglaope,male,f._aglaope,,subspecies synonym,1,Palcazu PER HU,-9.883333333,-74.93333333,m. aglaope
+258,10428273,10428273_V_lowres.tif,ventral,melpomene,aglaope,male,f._aglaope,,subspecies synonym,1,Palcazu PER HU,-9.883333333,-74.93333333,m. aglaope
+259,10428274,10428274_D_lowres.tif,dorsal,melpomene,aglaope,male,f._aglaope,,subspecies synonym,1,Yurimaguas PER LO,-5.9,-76.1,m. aglaope
+260,10428274,10428274_V_lowres.tif,ventral,melpomene,aglaope,male,f._aglaope,,subspecies synonym,1,Yurimaguas PER LO,-5.9,-76.1,m. aglaope
+263,10428285,10428285_D_lowres.tif,dorsal,melpomene,schunkei,male,schunkei,PT,valid subspecies,1,Quincemil PER CU,-13.23333333,-70.76666667,m. schunkei
+264,10428285,10428285_V_lowres.tif,ventral,melpomene,schunkei,male,schunkei,PT,valid subspecies,1,Quincemil PER CU,-13.23333333,-70.76666667,m. schunkei
+265,10428286,10428286_D_lowres.tif,dorsal,melpomene,schunkei,male,schunkei,PT,valid subspecies,1,Puerto Maldonado PER MD,-12.6,-69.18333333,m. schunkei
+266,10428286,10428286_V_lowres.tif,ventral,melpomene,schunkei,male,schunkei,PT,valid subspecies,1,Puerto Maldonado PER MD,-12.6,-69.18333333,m. schunkei
+267,10428302,10428302_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,,valid subspecies,0,Melguira BRA MO,-14.53333333,-56.31666667,m. burchelli
+268,10428302,10428302_V_lowres.tif,ventral,melpomene,nanna,male,nanna,,valid subspecies,0,Melguira BRA MO,-14.53333333,-56.31666667,m. burchelli
+269,10428303,10428303_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,,valid subspecies,0,Maranham BRA MH,-2.52972,-44.30278,m. burchelli
+270,10428303,10428303_V_lowres.tif,ventral,melpomene,nanna,male,nanna,,valid subspecies,0,Maranham BRA MH,-2.52972,-44.30278,m. burchelli
+271,10428304,10428304_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,,valid subspecies,1,Maranhao BRA MH,-2.52972,-44.30278,m. burchelli
+272,10428304,10428304_V_lowres.tif,ventral,melpomene,nanna,male,nanna,,valid subspecies,1,Maranhao BRA MH,-2.52972,-44.30278,m. burchelli
+273,10428305,10428305_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,,valid subspecies,1,Burity BRA MO,-15.43333333,-55.83333333,m. burchelli
+274,10428305,10428305_V_lowres.tif,ventral,melpomene,nanna,male,nanna,,valid subspecies,1,Burity BRA MO,-15.43333333,-55.83333333,m. burchelli
+275,10428306,10428306_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,,valid subspecies,1,Tombador BRA MO,-14.63333333,-56.25,m. burchelli
+276,10428306,10428306_V_lowres.tif,ventral,melpomene,nanna,male,nanna,,valid subspecies,1,Tombador BRA MO,-14.63333333,-56.25,m. burchelli
+277,10428308,10428308_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,ST,valid subspecies,0,Chapada BRA MO,-15.45,-55.78333333,m. burchelli
+278,10428308,10428308_V_lowres.tif,ventral,melpomene,nanna,male,nanna,ST,valid subspecies,0,Chapada BRA MO,-15.45,-55.78333333,m. burchelli
+279,10428312,10428312_D_lowres.tif,dorsal,melpomene,nanna,female,nanna,,valid subspecies,1,Melguira BRA MO,-14.53333333,-56.31666667,m. burchelli
+280,10428312,10428312_V_lowres.tif,ventral,melpomene,nanna,female,nanna,,valid subspecies,1,Melguira BRA MO,-14.53333333,-56.31666667,m. burchelli
+281,10428313,10428313_D_lowres.tif,dorsal,melpomene,nanna,female,nanna,,valid subspecies,1,Burity BRA MO,-15.43333333,-55.83333333,m. burchelli
+282,10428313,10428313_V_lowres.tif,ventral,melpomene,nanna,female,nanna,,valid subspecies,1,Burity BRA MO,-15.43333333,-55.83333333,m. burchelli
+283,10428314,10428314_D_lowres.tif,dorsal,melpomene,nanna,female,nanna,,valid subspecies,1,Tombador BRA MO,-14.63333333,-56.25,m. burchelli
+284,10428314,10428314_V_lowres.tif,ventral,melpomene,nanna,female,nanna,,valid subspecies,1,Tombador BRA MO,-14.63333333,-56.25,m. burchelli
+285,10428316,10428316_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,,valid subspecies,1,Pernambuco (=Recife) BRA PE,-8.783333333,-37.7,m. nanna
+286,10428316,10428316_V_lowres.tif,ventral,melpomene,nanna,male,nanna,,valid subspecies,1,Pernambuco (=Recife) BRA PE,-8.783333333,-37.7,m. nanna
+287,10428317,10428317_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,,valid subspecies,1,Leopoldina BRA ES,-20.1,-40.53333333,m. nanna
+288,10428317,10428317_V_lowres.tif,ventral,melpomene,nanna,male,nanna,,valid subspecies,1,Leopoldina BRA ES,-20.1,-40.53333333,m. nanna
+289,10428319,10428319_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+290,10428319,10428319_V_lowres.tif,ventral,melpomene,nanna,male,nanna,,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+291,10428320,10428320_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+292,10428320,10428320_V_lowres.tif,ventral,melpomene,nanna,male,nanna,,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+293,10428321,10428321_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,ST,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+294,10428321,10428321_V_lowres.tif,ventral,melpomene,nanna,male,nanna,ST,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+295,10428322,10428322_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,ST,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+296,10428322,10428322_V_lowres.tif,ventral,melpomene,nanna,male,nanna,ST,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+297,10428323,10428323_D_lowres.tif,dorsal,melpomene,nanna,male,nanna,,valid subspecies,1,San Jacinto Valley BRA ME,-17.85,-41.5,m. nanna
+298,10428323,10428323_V_lowres.tif,ventral,melpomene,nanna,male,nanna,,valid subspecies,1,San Jacinto Valley BRA ME,-17.85,-41.5,m. nanna
+299,10428326,10428326_D_lowres.tif,dorsal,melpomene,nanna,male,nanna_burchelli,ST,unknown,0,Pernambuco (=Recife) BRA PE,-8.783333333,-37.7,m. nanna
+300,10428326,10428326_V_lowres.tif,ventral,melpomene,nanna,male,nanna_burchelli,ST,unknown,0,Pernambuco (=Recife) BRA PE,-8.783333333,-37.7,m. nanna
+301,10428327,10428327_D_lowres.tif,dorsal,melpomene,nanna,female,nanna,,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+302,10428327,10428327_V_lowres.tif,ventral,melpomene,nanna,female,nanna,,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+303,10428328,10428328_D_lowres.tif,dorsal,melpomene,nanna,female,nanna,ST,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+304,10428328,10428328_V_lowres.tif,ventral,melpomene,nanna,female,nanna,ST,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,-40.28333333,m. nanna
+391,10428406,10428406_D_lowres.tif,dorsal,melpomene,melpomene,male,f._melpomene,,subspecies synonym,1,Piquia BRA PA,-2.666666667,-54.96666667,m. melpomene
+392,10428406,10428406_V_lowres.tif,ventral,melpomene,melpomene,male,f._melpomene,,subspecies synonym,1,Piquia BRA PA,-2.666666667,-54.96666667,m. melpomene
+393,10428408,10428408_D_lowres.tif,dorsal,melpomene,melpomene,male,f._melpomene,,subspecies synonym,1,Juhuty BRA AM,-3.683333333,-56.56666667,m. melpomene
+394,10428408,10428408_V_lowres.tif,ventral,melpomene,melpomene,male,f._melpomene,,subspecies synonym,1,Juhuty BRA AM,-3.683333333,-56.56666667,m. melpomene
+437,10428484,10428484_D_lowres.tif,dorsal,melpomene,melpomene,male,melpomene,,valid subspecies,1,San Fernando VEN AP,7.896666667,-67.46722222,m. melpomene
+438,10428484,10428484_V_lowres.tif,ventral,melpomene,melpomene,male,melpomene,,valid subspecies,1,San Fernando VEN AP,7.896666667,-67.46722222,m. melpomene
+439,10428488,10428488_D_lowres.tif,dorsal,erato,phyllis,male,phyllis,,valid subspecies,1,Sara Prov BOL SC,-16.83333333,-63.91666667,e. phyllis
+440,10428488,10428488_V_lowres.tif,ventral,erato,phyllis,male,phyllis,,valid subspecies,1,Sara Prov BOL SC,-16.83333333,-63.91666667,e. phyllis
+441,10428489,10428489_D_lowres.tif,dorsal,erato,phyllis,male,phyllis,,valid subspecies,1,Madidi Rio BOL LP,-12.75,-67.25,e. phyllis
+442,10428489,10428489_V_lowres.tif,ventral,erato,phyllis,male,phyllis,,valid subspecies,1,Madidi Rio BOL LP,-12.75,-67.25,e. phyllis
+449,10428497,10428497_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllidis,,subspecies synonym,1,Bueyes BOL SC,-17.8,-63.16666667,e. phyllis
+450,10428497,10428497_V_lowres.tif,ventral,erato,phyllis,male,f._phyllidis,,subspecies synonym,1,Bueyes BOL SC,-17.8,-63.16666667,e. phyllis
+453,10428500,10428500_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllidis,,subspecies synonym,1,Buenavista BOL SC,-17.45,-64.66666667,e. phyllis
+454,10428500,10428500_V_lowres.tif,ventral,erato,phyllis,male,f._phyllidis,,subspecies synonym,1,Buenavista BOL SC,-17.45,-64.66666667,e. phyllis
+455,10428501,10428501_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllidis,,subspecies synonym,1,Grande Rio BOL,-17.25,-62.75,e. phyllis
+456,10428501,10428501_V_lowres.tif,ventral,erato,phyllis,female,f._phyllidis,,subspecies synonym,1,Grande Rio BOL,-17.25,-62.75,e. phyllis
+457,10428502,10428502_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllidis,,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+458,10428502,10428502_V_lowres.tif,ventral,erato,phyllis,female,f._phyllidis,,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+463,10428523,10428523_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Estancia Cooper PAR BO,-23.05,-57.71666667,e. phyllis
+464,10428523,10428523_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Estancia Cooper PAR BO,-23.05,-57.71666667,e. phyllis
+465,10428524,10428524_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Jejuy Rio PAR SP,-24.21666667,-57.15,e. phyllis
+466,10428524,10428524_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Jejuy Rio PAR SP,-24.21666667,-57.15,e. phyllis
+469,10428533,10428533_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Yhu PAR CZ,-25.06666667,-55.91666667,e. phyllis
+470,10428533,10428533_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Yhu PAR CZ,-25.06666667,-55.91666667,e. phyllis
+471,10428534,10428534_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Sapucay PAR PA,-25.66666667,-56.91666667,e. phyllis
+472,10428534,10428534_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Sapucay PAR PA,-25.66666667,-56.91666667,e. phyllis
+475,10428536,10428536_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Jejuy Rio PAR SP,-24.21666667,-57.15,e. phyllis
+476,10428536,10428536_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Jejuy Rio PAR SP,-24.21666667,-57.15,e. phyllis
+477,10428537,10428537_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Yhu PAR CZ,-25.06666667,-55.91666667,e. phyllis
+478,10428537,10428537_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Yhu PAR CZ,-25.06666667,-55.91666667,e. phyllis
+479,10428538,10428538_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Sapucay PAR PA,-25.66666667,-56.91666667,e. phyllis
+480,10428538,10428538_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Sapucay PAR PA,-25.66666667,-56.91666667,e. phyllis
+481,10428574,10428574_D_lowres.tif,dorsal,erato,phyllis,male,f._diffluens,,subspecies synonym,1,Bueyes BOL SC,-17.8,-63.16666667,e. phyllis
+482,10428574,10428574_V_lowres.tif,ventral,erato,phyllis,male,f._diffluens,,subspecies synonym,1,Bueyes BOL SC,-17.8,-63.16666667,e. phyllis
+483,10428575,10428575_D_lowres.tif,dorsal,erato,phyllis,male,f._diffluens,,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+484,10428575,10428575_V_lowres.tif,ventral,erato,phyllis,male,f._diffluens,,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+485,10428576,10428576_D_lowres.tif,dorsal,erato,phyllis,male,f._diffluens,ST,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+486,10428576,10428576_V_lowres.tif,ventral,erato,phyllis,male,f._diffluens,ST,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+487,10428577,10428577_D_lowres.tif,dorsal,erato,phyllis,male,f._diffluens,ST,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+488,10428577,10428577_V_lowres.tif,ventral,erato,phyllis,male,f._diffluens,ST,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+489,10428578,10428578_D_lowres.tif,dorsal,erato,phyllis,male,f._diffluens,,subspecies synonym,1,Rio Mamore prov Sara BOL SC,-17.25,-63.75,e. phyllis
+490,10428578,10428578_V_lowres.tif,ventral,erato,phyllis,male,f._diffluens,,subspecies synonym,1,Rio Mamore prov Sara BOL SC,-17.25,-63.75,e. phyllis
+491,10428579,10428579_D_lowres.tif,dorsal,erato,phyllis,male,f._diffluens,,subspecies synonym,1,"Rio Grande, prov. Cordillera BOL SC",-18.51666667,-63.56666667,e. phyllis
+492,10428579,10428579_V_lowres.tif,ventral,erato,phyllis,male,f._diffluens,,subspecies synonym,1,"Rio Grande, prov. Cordillera BOL SC",-18.51666667,-63.56666667,e. phyllis
+493,10428582,10428582_D_lowres.tif,dorsal,erato,phyllis,female,f._diffluens,,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+494,10428582,10428582_V_lowres.tif,ventral,erato,phyllis,female,f._diffluens,,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+495,10428583,10428583_D_lowres.tif,dorsal,erato,phyllis,female,f._diffluens,ST,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+496,10428583,10428583_V_lowres.tif,ventral,erato,phyllis,female,f._diffluens,ST,subspecies synonym,1,Santa Cruz de la Sierra BOL SC,-17.8,-63.16666667,e. phyllis
+499,10428585,10428585_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Patino Cue PAR CE,-25.35,-57.33333333,e. phyllis
+500,10428585,10428585_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Patino Cue PAR CE,-25.35,-57.33333333,e. phyllis
+501,10428586,10428586_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Asuncion PAR CE,-25.26666667,-57.66666667,e. phyllis
+502,10428586,10428586_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Asuncion PAR CE,-25.26666667,-57.66666667,e. phyllis
+503,10428587,10428587_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,San Jose PAR CZ,-25.55,-56.75,e. phyllis
+504,10428587,10428587_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,San Jose PAR CZ,-25.55,-56.75,e. phyllis
+505,10428589,10428589_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Patino Cue PAR CE,-25.35,-57.33333333,e. phyllis
+506,10428589,10428589_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Patino Cue PAR CE,-25.35,-57.33333333,e. phyllis
+507,10428590,10428590_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Asuncion PAR CE,-25.26666667,-57.66666667,e. phyllis
+508,10428590,10428590_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Asuncion PAR CE,-25.26666667,-57.66666667,e. phyllis
+509,10428591,10428591_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,San Jose PAR CZ,-25.55,-56.75,e. phyllis
+510,10428591,10428591_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,San Jose PAR CZ,-25.55,-56.75,e. phyllis
+511,10428592,10428592_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Encarnacion PAR IT,-27.33333333,-55.9,e. phyllis
+512,10428592,10428592_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Encarnacion PAR IT,-27.33333333,-55.9,e. phyllis
+513,10428595,10428595_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Resistencia ARG CH,-27.45,-58.98333333,e. phyllis
+514,10428595,10428595_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Resistencia ARG CH,-27.45,-58.98333333,e. phyllis
+515,10428596,10428596_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Iguazu Falls ARG MI,-25.68333333,-54.43333333,e. phyllis
+516,10428596,10428596_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Iguazu Falls ARG MI,-25.68333333,-54.43333333,e. phyllis
+517,10428599,10428599_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Capiazuti ARG,-22.18333333,-63.78333333,e. phyllis
+518,10428599,10428599_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Capiazuti ARG,-22.18333333,-63.78333333,e. phyllis
+519,10428600,10428600_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Iguazu Falls ARG MI,-25.68333333,-54.43333333,e. phyllis
+520,10428600,10428600_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Iguazu Falls ARG MI,-25.68333333,-54.43333333,e. phyllis
+521,10428601,10428601_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Corrientes ARG CO,-27.46666667,-58.83333333,e. phyllis
+522,10428601,10428601_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Corrientes ARG CO,-27.46666667,-58.83333333,e. phyllis
+523,10428602,10428602_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Posadas ARG MI,-27.38333333,-55.88333333,e. phyllis
+524,10428602,10428602_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Posadas ARG MI,-27.38333333,-55.88333333,e. phyllis
+525,10428603,10428603_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Cordoba nr Arias ARG,-33.63333333,-62.41666667,e. phyllis
+526,10428603,10428603_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Cordoba nr Arias ARG,-33.63333333,-62.41666667,e. phyllis
+527,10428604,10428604_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,El Jabali ARG BA,-35.45,-61.35,e. phyllis
+528,10428604,10428604_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,El Jabali ARG BA,-35.45,-61.35,e. phyllis
+529,10428605,10428605_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Puerto Aguirre ARG MI,-25.61666667,-54.6,e. phyllis
+530,10428605,10428605_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Puerto Aguirre ARG MI,-25.61666667,-54.6,e. phyllis
+531,10428606,10428606_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,San Ignacio ARG MI,-27.26666667,-55.51666667,e. phyllis
+532,10428606,10428606_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,San Ignacio ARG MI,-27.26666667,-55.51666667,e. phyllis
+533,10428607,10428607_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Porto Real BRA ME,-20.18333333,-45.71666667,e. phyllis
+534,10428607,10428607_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Porto Real BRA ME,-20.18333333,-45.71666667,e. phyllis
+535,10428608,10428608_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Pernambuco (=Recife) BRA PE,-8.783333333,-37.7,e. phyllis
+536,10428608,10428608_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Pernambuco (=Recife) BRA PE,-8.783333333,-37.7,e. phyllis
+537,10428609,10428609_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Entre Rios ARG ER,-30.75,-58.75,e. phyllis
+538,10428609,10428609_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Entre Rios ARG ER,-30.75,-58.75,e. phyllis
+539,10428610,10428610_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Posadas ARG MI,-27.38333333,-55.88333333,e. phyllis
+540,10428610,10428610_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Posadas ARG MI,-27.38333333,-55.88333333,e. phyllis
+541,10428611,10428611_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Puerto Aguirre ARG MI,-25.61666667,-54.6,e. phyllis
+542,10428611,10428611_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Puerto Aguirre ARG MI,-25.61666667,-54.6,e. phyllis
+543,10428615,10428615_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Pernambuco (=Recife) BRA PE,-8.783333333,-37.7,e. phyllis
+544,10428615,10428615_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Pernambuco (=Recife) BRA PE,-8.783333333,-37.7,e. phyllis
+545,10428616,10428616_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Quipapa BRA PE,-8.8,-36.01666667,e. phyllis
+546,10428616,10428616_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Quipapa BRA PE,-8.8,-36.01666667,e. phyllis
+547,10428617,10428617_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Ampipucas Pernambuco BRA,-8.033333333,-34.93333333,e. phyllis
+548,10428617,10428617_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Ampipucas Pernambuco BRA,-8.033333333,-34.93333333,e. phyllis
+549,10428619,10428619_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Chapada BRA MO,-15.45,-55.78333333,e. phyllis
+550,10428619,10428619_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Chapada BRA MO,-15.45,-55.78333333,e. phyllis
+551,10428620,10428620_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Santa Maria BRA RS,-29.68333333,-53.8,e. phyllis
+552,10428620,10428620_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Santa Maria BRA RS,-29.68333333,-53.8,e. phyllis
+553,10428621,10428621_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Villa Maria - Diamantino BRA MO,-16.08333333,-57.7,e. phyllis
+554,10428621,10428621_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Villa Maria - Diamantino BRA MO,-16.08333333,-57.7,e. phyllis
+555,10428622,10428622_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Melguira BRA MO,-14.53333333,-56.31666667,e. phyllis
+556,10428622,10428622_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Melguira BRA MO,-14.53333333,-56.31666667,e. phyllis
+557,10428623,10428623_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Burity BRA MO,-15.43333333,-55.83333333,e. phyllis
+558,10428623,10428623_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Burity BRA MO,-15.43333333,-55.83333333,e. phyllis
+559,10428624,10428624_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Urucum BRA MS,-19.15,-57.63333333,e. phyllis
+560,10428624,10428624_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Urucum BRA MS,-19.15,-57.63333333,e. phyllis
+561,10428625,10428625_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,"Rio de Casca, 60miles north east of Cuyaba BRA MO",-14.86666667,-55.86666667,e. phyllis
+562,10428625,10428625_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,"Rio de Casca, 60miles north east of Cuyaba BRA MO",-14.86666667,-55.86666667,e. phyllis
+563,10428626,10428626_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Tombador BRA MO,-14.63333333,-56.25,e. phyllis
+564,10428626,10428626_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Tombador BRA MO,-14.63333333,-56.25,e. phyllis
+565,10428628,10428628_D_lowres.tif,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Theophilo Ottoni BRA ME,-17.85,-41.5,e. phyllis
+566,10428628,10428628_V_lowres.tif,ventral,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Theophilo Ottoni BRA ME,-17.85,-41.5,e. phyllis
+567,10428630,10428630_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Santa Maria BRA RS,-29.68333333,-53.8,e. phyllis
+568,10428630,10428630_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Santa Maria BRA RS,-29.68333333,-53.8,e. phyllis
+569,10428631,10428631_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Villa Maria - Diamantino BRA MO,-16.08333333,-57.7,e. phyllis
+570,10428631,10428631_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Villa Maria - Diamantino BRA MO,-16.08333333,-57.7,e. phyllis
+571,10428632,10428632_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Melguira BRA MO,-14.53333333,-56.31666667,e. phyllis
+572,10428632,10428632_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Melguira BRA MO,-14.53333333,-56.31666667,e. phyllis
+573,10428633,10428633_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Burity BRA MO,-15.43333333,-55.83333333,e. phyllis
+574,10428633,10428633_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Burity BRA MO,-15.43333333,-55.83333333,e. phyllis
+575,10428634,10428634_D_lowres.tif,dorsal,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Tombador BRA MO,-14.63333333,-56.25,e. phyllis
+576,10428634,10428634_V_lowres.tif,ventral,erato,phyllis,female,f._phyllis,,subspecies synonym,1,Tombador BRA MO,-14.63333333,-56.25,e. phyllis
+623,10428714,10428714_D_lowres.tif,dorsal,erato,erato,male,f._erato,,subspecies synonym,1,Aroewarwa Creek SUR MW,5.233333333,-54.31666667,e. erato
+624,10428714,10428714_V_lowres.tif,ventral,erato,erato,male,f._erato,,subspecies synonym,1,Aroewarwa Creek SUR MW,5.233333333,-54.31666667,e. erato
+633,10428723,10428723_D_lowres.tif,dorsal,erato,erato,female,f._erato,,subspecies synonym,1,Saramacca River SUR BR,5.25,-55.25,e. erato
+634,10428723,10428723_V_lowres.tif,ventral,erato,erato,female,f._erato,,subspecies synonym,1,Saramacca River SUR BR,5.25,-55.25,e. erato
+635,10428724,10428724_D_lowres.tif,dorsal,erato,erato,female,f._erato,,subspecies synonym,1,Aroewarwa Creek SUR MW,5.233333333,-54.31666667,e. erato
+636,10428724,10428724_V_lowres.tif,ventral,erato,erato,female,f._erato,,subspecies synonym,1,Aroewarwa Creek SUR MW,5.233333333,-54.31666667,e. erato
+637,10428753,10428753_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Onaca COL MA,11.18333333,-74.06666667,e. hydara
+638,10428753,10428753_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Onaca COL MA,11.18333333,-74.06666667,e. hydara
+639,10428754,10428754_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Atanquez COL MA,10.7,-73.35,e. hydara
+640,10428754,10428754_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Atanquez COL MA,10.7,-73.35,e. hydara
+641,10428755,10428755_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Los Clavos Rio COL EC,10.16666667,-73.41666667,e. hydara
+642,10428755,10428755_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Los Clavos Rio COL EC,10.16666667,-73.41666667,e. hydara
+643,10428756,10428756_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Guachaca Rio COL MA,11.25,-73.81666667,e. hydara
+644,10428756,10428756_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Guachaca Rio COL MA,11.25,-73.81666667,e. hydara
+645,10428757,10428757_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Guachaca Rio COL MA,11.25,-73.81666667,e. hydara
+646,10428757,10428757_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Guachaca Rio COL MA,11.25,-73.81666667,e. hydara
+647,10428759,10428759_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Atanquez COL MA,10.7,-73.35,e. hydara
+648,10428759,10428759_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Atanquez COL MA,10.7,-73.35,e. hydara
+649,10428760,10428760_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Los Clavos Rio COL EC,10.16666667,-73.41666667,e. hydara
+650,10428760,10428760_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Los Clavos Rio COL EC,10.16666667,-73.41666667,e. hydara
+651,10428761,10428761_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Guachaca Finca Union to Finca Mercedes COL,11.19758611,-73.86816111,e. hydara
+652,10428761,10428761_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Guachaca Finca Union to Finca Mercedes COL,11.19758611,-73.86816111,e. hydara
+653,10428762,10428762_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Atanquez COL MA,10.7,-73.35,e. hydara
+654,10428762,10428762_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Atanquez COL MA,10.7,-73.35,e. hydara
+655,10428763,10428763_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Rio Frio COL MA,10.91666667,-74.16666667,e. hydara
+656,10428763,10428763_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Rio Frio COL MA,10.91666667,-74.16666667,e. hydara
+657,10428765,10428765_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,El Banco COL MA,9.016666667,-73.98333333,e. hydara
+658,10428765,10428765_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,El Banco COL MA,9.016666667,-73.98333333,e. hydara
+659,10428766,10428766_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Frontino COL AN,6.766666667,-76.13333333,e. hydara
+660,10428766,10428766_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Frontino COL AN,6.766666667,-76.13333333,e. hydara
+661,10428768,10428768_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Villavicencio COL ME,4.15,-73.63333333,e. hydara
+662,10428768,10428768_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Villavicencio COL ME,4.15,-73.63333333,e. hydara
+663,10428769,10428769_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Peperital - Buenavista COL ME,4.162222222,-73.663275,e. hydara
+664,10428769,10428769_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Peperital - Buenavista COL ME,4.162222222,-73.663275,e. hydara
+665,10428770,10428770_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Los Clavos Rio COL EC,10.16666667,-73.41666667,e. hydara
+666,10428770,10428770_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Los Clavos Rio COL EC,10.16666667,-73.41666667,e. hydara
+667,10428771,10428771_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Los Clavos Rio COL EC,10.16666667,-73.41666667,e. hydara
+668,10428771,10428771_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Los Clavos Rio COL EC,10.16666667,-73.41666667,e. hydara
+669,10428773,10428773_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Chili Rio COL TO,4.119722222,-75.25944444,e. hydara
+670,10428773,10428773_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Chili Rio COL TO,4.119722222,-75.25944444,e. hydara
+671,10428775,10428775_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Chiriguana District COL EC,9.366666667,-73.6,e. hydara
+672,10428775,10428775_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Chiriguana District COL EC,9.366666667,-73.6,e. hydara
+673,10428776,10428776_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Chiquinla Rio COL EC,10.7,-73.35,e. hydara
+674,10428776,10428776_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Chiquinla Rio COL EC,10.7,-73.35,e. hydara
+675,10428777,10428777_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Cienaga COL MA,11.00944444,-74.25416667,e. hydara
+676,10428777,10428777_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Cienaga COL MA,11.00944444,-74.25416667,e. hydara
+677,10428780,10428780_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Villavicencio - Mt Redondo COL ME,4.200533333,-73.782775,e. hydara
+678,10428780,10428780_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Villavicencio - Mt Redondo COL ME,4.200533333,-73.782775,e. hydara
+679,10428782,10428782_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Chili Rio COL TO,4.119722222,-75.25944444,e. hydara
+680,10428782,10428782_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Chili Rio COL TO,4.119722222,-75.25944444,e. hydara
+681,10428785,10428785_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Bogota  COL CN,4.339611111,-74.36422222,e. hydara
+682,10428785,10428785_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Bogota  COL CN,4.339611111,-74.36422222,e. hydara
+683,10428786,10428786_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Frontino COL AN,6.766666667,-76.13333333,e. hydara
+684,10428786,10428786_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Frontino COL AN,6.766666667,-76.13333333,e. hydara
+685,10428789,10428789_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Honda COL TO,5.2,-74.75,e. hydara
+686,10428789,10428789_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Honda COL TO,5.2,-74.75,e. hydara
+687,10428794,10428794_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,La Mesa COL CN,4.65,-74.43333333,e. hydara
+688,10428794,10428794_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,La Mesa COL CN,4.65,-74.43333333,e. hydara
+689,10428795,10428795_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Honda COL TO,5.2,-74.75,e. hydara
+690,10428795,10428795_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Honda COL TO,5.2,-74.75,e. hydara
+691,10428797,10428797_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,La Mesa COL CN,4.65,-74.43333333,e. hydara
+692,10428797,10428797_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,La Mesa COL CN,4.65,-74.43333333,e. hydara
+693,10428803,10428803_D_lowres.tif,dorsal,erato,guarica,female,guarica,,valid subspecies,1,Fusagasuga COL CN,4.35,-74.36666667,e. guarica
+694,10428803,10428803_V_lowres.tif,ventral,erato,guarica,female,guarica,,valid subspecies,1,Fusagasuga COL CN,4.35,-74.36666667,e. guarica
+695,10428804,10428804_D_lowres.tif,dorsal,erato,guarica,female,guarica,,valid subspecies,1,Bogota - Pandi COL CN,4.339611111,-74.36422222,e. guarica
+696,10428804,10428804_V_lowres.tif,ventral,erato,guarica,female,guarica,,valid subspecies,1,Bogota - Pandi COL CN,4.339611111,-74.36422222,e. guarica
+697,10428815,10428815_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Merida VEN ME,8.6,-71.133333,e. hydara
+698,10428815,10428815_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Merida VEN ME,8.6,-71.133333,e. hydara
+699,10428816,10428816_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Muchuchachi VEN ME,8.15,-71.33333333,e. hydara
+700,10428816,10428816_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Muchuchachi VEN ME,8.15,-71.33333333,e. hydara
+701,10428817,10428817_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Cumana VEN SU,10.46666667,-64.16666667,e. hydara
+702,10428817,10428817_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Cumana VEN SU,10.46666667,-64.16666667,e. hydara
+705,10428819,10428819_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Merida VEN ME,8.6,-71.133333,e. hydara
+706,10428819,10428819_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Merida VEN ME,8.6,-71.133333,e. hydara
+707,10428820,10428820_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Muchuchachi VEN ME,8.15,-71.33333333,e. hydara
+708,10428820,10428820_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Muchuchachi VEN ME,8.15,-71.33333333,e. hydara
+709,10428821,10428821_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,San Esteban VEN CA,10.43333333,-68.01666667,e. hydara
+710,10428821,10428821_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,San Esteban VEN CA,10.43333333,-68.01666667,e. hydara
+711,10428822,10428822_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Las Quiguas VEN CA,10.38333333,-68.01666667,e. hydara
+712,10428822,10428822_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Las Quiguas VEN CA,10.38333333,-68.01666667,e. hydara
+713,10428823,10428823_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,San Esteban VEN CA,10.43333333,-68.01666667,e. hydara
+714,10428823,10428823_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,San Esteban VEN CA,10.43333333,-68.01666667,e. hydara
+715,10428824,10428824_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Caracas  VEN DF,10.5,-66.91666667,e. hydara
+716,10428824,10428824_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Caracas  VEN DF,10.5,-66.91666667,e. hydara
+717,10428825,10428825_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Patao Guiria VEN SU,10.66666667,-62.05,e. hydara
+718,10428825,10428825_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Patao Guiria VEN SU,10.66666667,-62.05,e. hydara
+719,10428826,10428826_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,La Guaira VEN DF,10.6,-66.93333333,e. hydara
+720,10428826,10428826_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,La Guaira VEN DF,10.6,-66.93333333,e. hydara
+721,10428828,10428828_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,Rio Cocoyal (=Cocollar) VEN SU,10.35833333,-63.95833333,e. hydara
+722,10428828,10428828_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,Rio Cocoyal (=Cocollar) VEN SU,10.35833333,-63.95833333,e. hydara
+723,10428829,10428829_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,0,Bolivar VEN BO,8.122222222,-63.54972222,e. hydara
+724,10428829,10428829_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,0,Bolivar VEN BO,8.122222222,-63.54972222,e. hydara
+725,10428830,10428830_D_lowres.tif,dorsal,erato,hydara,male,f._hydara,,subspecies synonym,1,El Mene de la Costa VEN FA,11.03333333,-68.48333333,e. hydara
+726,10428830,10428830_V_lowres.tif,ventral,erato,hydara,male,f._hydara,,subspecies synonym,1,El Mene de la Costa VEN FA,11.03333333,-68.48333333,e. hydara
+727,10428832,10428832_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,San Esteban VEN CA,10.43333333,-68.01666667,e. hydara
+728,10428832,10428832_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,San Esteban VEN CA,10.43333333,-68.01666667,e. hydara
+729,10428833,10428833_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Paracotos VEN DF,10.27138889,-66.95277778,e. hydara
+730,10428833,10428833_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Paracotos VEN DF,10.27138889,-66.95277778,e. hydara
+731,10428834,10428834_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Caracas  VEN DF,10.5,-66.91666667,e. hydara
+732,10428834,10428834_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Caracas  VEN DF,10.5,-66.91666667,e. hydara
+733,10428835,10428835_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Patao Guiria VEN SU,10.66666667,-62.05,e. hydara
+734,10428835,10428835_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Patao Guiria VEN SU,10.66666667,-62.05,e. hydara
+735,10428836,10428836_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Suapure VEN BO,7.233333333,-65.16666667,e. hydara
+736,10428836,10428836_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Suapure VEN BO,7.233333333,-65.16666667,e. hydara
+737,10428838,10428838_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Puerto Cabello VEN CA,10.46666667,-68.01666667,e. hydara
+738,10428838,10428838_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Puerto Cabello VEN CA,10.46666667,-68.01666667,e. hydara
+739,10428840,10428840_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Bolivar VEN BO,8.122222222,-63.54972222,e. hydara
+740,10428840,10428840_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Bolivar VEN BO,8.122222222,-63.54972222,e. hydara
+741,10428841,10428841_D_lowres.tif,dorsal,erato,hydara,female,f._hydara,,subspecies synonym,1,Paracotos VEN DF,10.27138889,-66.95277778,e. hydara
+742,10428841,10428841_V_lowres.tif,ventral,erato,hydara,female,f._hydara,,subspecies synonym,1,Paracotos VEN DF,10.27138889,-66.95277778,e. hydara
+743,10428842,10428842_D_lowres.tif,dorsal,erato,venus,male,venus,,valid subspecies,1,Bella Vista COL CH,6.523611111,-76.97444444,e. venus
+744,10428842,10428842_V_lowres.tif,ventral,erato,venus,male,venus,,valid subspecies,1,Bella Vista COL CH,6.523611111,-76.97444444,e. venus
+745,10428843,10428843_D_lowres.tif,dorsal,erato,venus,male,venus,,valid subspecies,1,El Tigre COL CH,4.95,-76.51666667,e. venus
+746,10428843,10428843_V_lowres.tif,ventral,erato,venus,male,venus,,valid subspecies,1,El Tigre COL CH,4.95,-76.51666667,e. venus
+747,10428844,10428844_D_lowres.tif,dorsal,erato,venus,male,venus,,valid subspecies,1,Juntas Rio Tamana COL CH,4.983333333,-76.4,e. venus
+748,10428844,10428844_V_lowres.tif,ventral,erato,venus,male,venus,,valid subspecies,1,Juntas Rio Tamana COL CH,4.983333333,-76.4,e. venus
+749,10428845,10428845_D_lowres.tif,dorsal,erato,venus,male,venus,,valid subspecies,1,Dagua COL VC,3.666666667,-76.7,e. venus
+750,10428845,10428845_V_lowres.tif,ventral,erato,venus,male,venus,,valid subspecies,1,Dagua COL VC,3.666666667,-76.7,e. venus
+751,10428847,10428847_D_lowres.tif,dorsal,erato,venus,male,venus,,valid subspecies,1,San Pablo COL CH,5.216666667,-76.65,e. venus
+752,10428847,10428847_V_lowres.tif,ventral,erato,venus,male,venus,,valid subspecies,1,San Pablo COL CH,5.216666667,-76.65,e. venus
+753,10428849,10428849_D_lowres.tif,dorsal,erato,venus,female,venus,,valid subspecies,1,El Tigre COL CH,4.95,-76.51666667,e. venus
+754,10428849,10428849_V_lowres.tif,ventral,erato,venus,female,venus,,valid subspecies,1,El Tigre COL CH,4.95,-76.51666667,e. venus
+755,10428857,10428857_D_lowres.tif,dorsal,erato,cyrbia,male,cyrbia,,valid subspecies,1,Balzapamba ECD BO,-1.783333333,-79.16666667,e. cyrbia
+756,10428857,10428857_V_lowres.tif,ventral,erato,cyrbia,male,cyrbia,,valid subspecies,1,Balzapamba ECD BO,-1.783333333,-79.16666667,e. cyrbia
+757,10428871,10428871_D_lowres.tif,dorsal,erato,venus,male,venus,,valid subspecies,1,Paramba ECD IM,0.816666667,-78.35,e. venus
+758,10428871,10428871_V_lowres.tif,ventral,erato,venus,male,venus,,valid subspecies,1,Paramba ECD IM,0.816666667,-78.35,e. venus
+759,10428872,10428872_D_lowres.tif,dorsal,erato,venus,male,venus,,valid subspecies,1,Paramba ECD IM,0.816666667,-78.35,e. venus
+760,10428872,10428872_V_lowres.tif,ventral,erato,venus,male,venus,,valid subspecies,1,Paramba ECD IM,0.816666667,-78.35,e. venus
+761,10428873,10428873_D_lowres.tif,dorsal,erato,venus,male,venus,,valid subspecies,1,Paramba ECD IM,0.816666667,-78.35,e. venus
+762,10428873,10428873_V_lowres.tif,ventral,erato,venus,male,venus,,valid subspecies,1,Paramba ECD IM,0.816666667,-78.35,e. venus
+765,10428875,10428875_D_lowres.tif,dorsal,erato,venus,male,venus,,valid subspecies,1,Paramba ECD IM,0.816666667,-78.35,e. venus
+766,10428875,10428875_V_lowres.tif,ventral,erato,venus,male,venus,,valid subspecies,1,Paramba ECD IM,0.816666667,-78.35,e. venus
+771,10428884,10428884_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Paramba ECD IM,0.816666667,-78.35,e. cyrbia
+772,10428884,10428884_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Paramba ECD IM,0.816666667,-78.35,e. cyrbia
+773,10428889,10428889_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Cachabe ECD ES,1.05,-78.8,e. cyrbia
+774,10428889,10428889_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Cachabe ECD ES,1.05,-78.8,e. cyrbia
+775,10428891,10428891_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Babahoyo ECD LR,-1.816666667,-79.51666667,e. cyrbia
+776,10428891,10428891_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Babahoyo ECD LR,-1.816666667,-79.51666667,e. cyrbia
+777,10428894,10428894_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Babahoyo ECD LR,-1.816666667,-79.51666667,e. cyrbia
+778,10428894,10428894_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Babahoyo ECD LR,-1.816666667,-79.51666667,e. cyrbia
+779,10428895,10428895_D_lowres.tif,dorsal,erato,cyrbia,male,f._bella,ST,subspecies synonym,1,Los Llanos ECD CH,-2.05,-78.96666667,e. cyrbia
+780,10428895,10428895_V_lowres.tif,ventral,erato,cyrbia,male,f._bella,ST,subspecies synonym,1,Los Llanos ECD CH,-2.05,-78.96666667,e. cyrbia
+781,10428900,10428900_D_lowres.tif,dorsal,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Cachabe ECD ES,1.05,-78.8,e. cyrbia
+782,10428900,10428900_V_lowres.tif,ventral,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Cachabe ECD ES,1.05,-78.8,e. cyrbia
+783,10428902,10428902_D_lowres.tif,dorsal,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Babahoyo ECD LR,-1.816666667,-79.51666667,e. cyrbia
+784,10428902,10428902_V_lowres.tif,ventral,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Babahoyo ECD LR,-1.816666667,-79.51666667,e. cyrbia
+785,10428903,10428903_D_lowres.tif,dorsal,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Los Llanos ECD CH,-2.05,-78.96666667,e. cyrbia
+786,10428903,10428903_V_lowres.tif,ventral,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Los Llanos ECD CH,-2.05,-78.96666667,e. cyrbia
+787,10428904,10428904_D_lowres.tif,dorsal,erato,cyrbia,female,f._bella,ST,subspecies synonym,1,Los Llanos ECD CH,-2.05,-78.96666667,e. cyrbia
+788,10428904,10428904_V_lowres.tif,ventral,erato,cyrbia,female,f._bella,ST,subspecies synonym,1,Los Llanos ECD CH,-2.05,-78.96666667,e. cyrbia
+789,10428905,10428905_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Jorge ECD BO,-2.066666667,-79.01666667,e. cyrbia
+790,10428905,10428905_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Jorge ECD BO,-2.066666667,-79.01666667,e. cyrbia
+791,10428906,10428906_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Huigra ECD CH,-2.290179,-78.982753,e. cyrbia
+792,10428906,10428906_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Huigra ECD CH,-2.290179,-78.982753,e. cyrbia
+793,10428908,10428908_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Balzapamba ECD BO,-1.783333333,-79.16666667,e. cyrbia
+794,10428908,10428908_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Balzapamba ECD BO,-1.783333333,-79.16666667,e. cyrbia
+795,10428909,10428909_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Bodegas ECD,-1.816666667,-79.51666667,e. cyrbia
+796,10428909,10428909_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Bodegas ECD,-1.816666667,-79.51666667,e. cyrbia
+797,10428910,10428910_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Guayaquil ECD GU,-2.166666667,-79.96666667,e. cyrbia
+798,10428910,10428910_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Guayaquil ECD GU,-2.166666667,-79.96666667,e. cyrbia
+799,10428911,10428911_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Chimbo ECD CH,-2.233333333,-79.11666667,e. cyrbia
+800,10428911,10428911_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Chimbo ECD CH,-2.233333333,-79.11666667,e. cyrbia
+801,10428916,10428916_D_lowres.tif,dorsal,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Arenillas ECD EL,-3.55,-80.06666667,e. cyrbia
+802,10428916,10428916_V_lowres.tif,ventral,erato,cyrbia,male,f._cyrbia,,subspecies synonym,1,Arenillas ECD EL,-3.55,-80.06666667,e. cyrbia
+803,10428918,10428918_D_lowres.tif,dorsal,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Huigra ECD CH,-2.290179,-78.982753,e. cyrbia
+804,10428918,10428918_V_lowres.tif,ventral,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Huigra ECD CH,-2.290179,-78.982753,e. cyrbia
+805,10428919,10428919_D_lowres.tif,dorsal,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Balzapamba ECD BO,-1.783333333,-79.16666667,e. cyrbia
+806,10428919,10428919_V_lowres.tif,ventral,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Balzapamba ECD BO,-1.783333333,-79.16666667,e. cyrbia
+807,10428922,10428922_D_lowres.tif,dorsal,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Chimbo ECD CH,-2.233333333,-79.11666667,e. cyrbia
+808,10428922,10428922_V_lowres.tif,ventral,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Chimbo ECD CH,-2.233333333,-79.11666667,e. cyrbia
+809,10428923,10428923_D_lowres.tif,dorsal,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Zaruma ECD EL,-3.683333333,-79.61666667,e. cyrbia
+810,10428923,10428923_V_lowres.tif,ventral,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Zaruma ECD EL,-3.683333333,-79.61666667,e. cyrbia
+811,10428926,10428926_D_lowres.tif,dorsal,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Arenillas ECD EL,-3.55,-80.06666667,e. cyrbia
+812,10428926,10428926_V_lowres.tif,ventral,erato,cyrbia,female,f._cyrbia,,subspecies synonym,1,Arenillas ECD EL,-3.55,-80.06666667,e. cyrbia
+813,10428929,10428929_D_lowres.tif,dorsal,erato,microclea,male,f._microclea,,subspecies synonym,1,Palcazu PER HU,-9.883333333,-74.93333333,e. microclea
+814,10428929,10428929_V_lowres.tif,ventral,erato,microclea,male,f._microclea,,subspecies synonym,1,Palcazu PER HU,-9.883333333,-74.93333333,e. microclea
+815,10428931,10428931_D_lowres.tif,dorsal,erato,microclea,male,f._microclea,,subspecies synonym,1,Chanchamayo PER JU,-11.06666667,-75.31666667,e. microclea
+816,10428931,10428931_V_lowres.tif,ventral,erato,microclea,male,f._microclea,,subspecies synonym,1,Chanchamayo PER JU,-11.06666667,-75.31666667,e. microclea
+817,10428932,10428932_D_lowres.tif,dorsal,erato,microclea,male,f._microclea,,subspecies synonym,1,La Merced  PER JU,-11.05,-75.31666667,e. microclea
+818,10428932,10428932_V_lowres.tif,ventral,erato,microclea,male,f._microclea,,subspecies synonym,1,La Merced  PER JU,-11.05,-75.31666667,e. microclea
+819,10428933,10428933_D_lowres.tif,dorsal,erato,microclea,male,f._microclea,,subspecies synonym,1,Perene Rio PER JU,-11.15,-74.3,e. microclea
+820,10428933,10428933_V_lowres.tif,ventral,erato,microclea,male,f._microclea,,subspecies synonym,1,Perene Rio PER JU,-11.15,-74.3,e. microclea
+821,10428934,10428934_D_lowres.tif,dorsal,erato,microclea,male,f._microclea,,subspecies synonym,1,San Luis de Shuaro PER JU,-10.88333333,-75.28333333,e. microclea
+822,10428934,10428934_V_lowres.tif,ventral,erato,microclea,male,f._microclea,,subspecies synonym,1,San Luis de Shuaro PER JU,-10.88333333,-75.28333333,e. microclea
+823,10428935,10428935_D_lowres.tif,dorsal,erato,microclea,male,f._microclea,,subspecies synonym,1,Pichis Road PER PA,-10.25,-74.75,e. microclea
+824,10428935,10428935_V_lowres.tif,ventral,erato,microclea,male,f._microclea,,subspecies synonym,1,Pichis Road PER PA,-10.25,-74.75,e. microclea
+825,10428936,10428936_D_lowres.tif,dorsal,erato,microclea,male,f._microclea,,subspecies synonym,1,Montana PER JU,-10.88333333,-75.21666667,e. microclea
+826,10428936,10428936_V_lowres.tif,ventral,erato,microclea,male,f._microclea,,subspecies synonym,1,Montana PER JU,-10.88333333,-75.21666667,e. microclea
+827,10428937,10428937_D_lowres.tif,dorsal,erato,microclea,male,f._microclea,,subspecies synonym,1,La Merced  PER JU,-11.05,-75.31666667,e. microclea
+828,10428937,10428937_V_lowres.tif,ventral,erato,microclea,male,f._microclea,,subspecies synonym,1,La Merced  PER JU,-11.05,-75.31666667,e. microclea
+829,10428938,10428938_D_lowres.tif,dorsal,erato,microclea,male,f._microclea,,subspecies synonym,1,San Remon PER,-11.13333333,-75.35,e. microclea
+830,10428938,10428938_V_lowres.tif,ventral,erato,microclea,male,f._microclea,,subspecies synonym,1,San Remon PER,-11.13333333,-75.35,e. microclea
+831,10428941,10428941_D_lowres.tif,dorsal,erato,microclea,female,f._microclea,,subspecies synonym,1,Chanchamayo PER JU,-11.06666667,-75.31666667,e. microclea
+832,10428941,10428941_V_lowres.tif,ventral,erato,microclea,female,f._microclea,,subspecies synonym,1,Chanchamayo PER JU,-11.06666667,-75.31666667,e. microclea
+833,10428944,10428944_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Cordoba region MEX VC,18.88333333,-96.93333333,e. petiverana
+834,10428944,10428944_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Cordoba region MEX VC,18.88333333,-96.93333333,e. petiverana
+835,10428945,10428945_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Tampico MEX TM,22.23333333,-97.85,e. petiverana
+836,10428945,10428945_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Tampico MEX TM,22.23333333,-97.85,e. petiverana
+837,10428947,10428947_D_lowres.tif,dorsal,erato,petiverana,male,mexicana,ST,subspecies synonym,1,Vera Cruz MEX VC,19.2,-96.13333333,e. petiverana
+838,10428947,10428947_V_lowres.tif,ventral,erato,petiverana,male,mexicana,ST,subspecies synonym,1,Vera Cruz MEX VC,19.2,-96.13333333,e. petiverana
+839,10428951,10428951_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,"Cordoba, region of, MEX ??`",18.88333333,-96.93333333,e. petiverana
+840,10428951,10428951_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,"Cordoba, region of, MEX ??`",18.88333333,-96.93333333,e. petiverana
+841,10428952,10428952_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Tampico MEX TM,22.23333333,-97.85,e. petiverana
+842,10428952,10428952_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Tampico MEX TM,22.23333333,-97.85,e. petiverana
+843,10428953,10428953_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Misantla MEX VC,19.93333333,-96.83333333,e. petiverana
+844,10428953,10428953_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Misantla MEX VC,19.93333333,-96.83333333,e. petiverana
+845,10428954,10428954_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Vera Cruz MEX VC,19.2,-96.13333333,e. petiverana
+846,10428954,10428954_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Vera Cruz MEX VC,19.2,-96.13333333,e. petiverana
+847,10428958,10428958_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Piste MEX YU,20.71666667,-88.78333333,e. petiverana
+848,10428958,10428958_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Piste MEX YU,20.71666667,-88.78333333,e. petiverana
+849,10428959,10428959_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Ticul MEX YU,20.4,-89.53333333,e. petiverana
+850,10428959,10428959_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Ticul MEX YU,20.4,-89.53333333,e. petiverana
+851,10428960,10428960_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Isla Carmen MEX CA,18.70348611,-91.67574444,e. petiverana
+852,10428960,10428960_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Isla Carmen MEX CA,18.70348611,-91.67574444,e. petiverana
+853,10428961,10428961_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Cozumel MEX QR,20.50833333,-86.94583333,e. petiverana
+854,10428961,10428961_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Cozumel MEX QR,20.50833333,-86.94583333,e. petiverana
+855,10428967,10428967_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Oaxaca MEX OA,17.05,-96.71666667,e. petiverana
+856,10428967,10428967_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Oaxaca MEX OA,17.05,-96.71666667,e. petiverana
+857,10428968,10428968_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Valladolid MEX YU,20.68333333,-88.2,e. petiverana
+858,10428968,10428968_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Valladolid MEX YU,20.68333333,-88.2,e. petiverana
+859,10428970,10428970_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Teapa MEX TB,17.55,-92.95,e. petiverana
+860,10428970,10428970_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Teapa MEX TB,17.55,-92.95,e. petiverana
+861,10428972,10428972_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Songolica (= Zongolica) MEX VC,18.66666667,-96.98333333,e. petiverana
+862,10428972,10428972_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Songolica (= Zongolica) MEX VC,18.66666667,-96.98333333,e. petiverana
+863,10428973,10428973_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Jalapa MEX VC,19.51666667,-96.91666667,e. petiverana
+864,10428973,10428973_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Jalapa MEX VC,19.51666667,-96.91666667,e. petiverana
+865,10428976,10428976_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Teapa MEX TB,17.55,-92.95,e. petiverana
+866,10428976,10428976_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Teapa MEX TB,17.55,-92.95,e. petiverana
+867,10428983,10428983_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Panima GUA,15.25,-90.13333333,e. petiverana
+868,10428983,10428983_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Panima GUA,15.25,-90.13333333,e. petiverana
+869,10428999,10428999_D_lowres.tif,dorsal,erato,favorinus,male,favorinus,,valid subspecies,1,Tingo Maria PER HU,-9.3,-76,e. favorinus
+870,10428999,10428999_V_lowres.tif,ventral,erato,favorinus,male,favorinus,,valid subspecies,1,Tingo Maria PER HU,-9.3,-76,e. favorinus
+871,10429000,10429000_D_lowres.tif,dorsal,erato,favorinus,male,favorinus,,valid subspecies,1,Tarapoto PER SM,-6.483333333,-76.36666667,e. favorinus
+872,10429000,10429000_V_lowres.tif,ventral,erato,favorinus,male,favorinus,,valid subspecies,1,Tarapoto PER SM,-6.483333333,-76.36666667,e. favorinus
+873,10429001,10429001_D_lowres.tif,dorsal,erato,favorinus,male,favorinus,,valid subspecies,1,Moyobamba PER SM,-6.033333333,-76.96666667,e. favorinus
+874,10429001,10429001_V_lowres.tif,ventral,erato,favorinus,male,favorinus,,valid subspecies,1,Moyobamba PER SM,-6.033333333,-76.96666667,e. favorinus
+875,10429002,10429002_D_lowres.tif,dorsal,erato,favorinus,female,favorinus,,valid subspecies,1,Tarapoto PER SM,-6.483333333,-76.36666667,e. favorinus
+876,10429002,10429002_V_lowres.tif,ventral,erato,favorinus,female,favorinus,,valid subspecies,1,Tarapoto PER SM,-6.483333333,-76.36666667,e. favorinus
+877,10429012,10429012_D_lowres.tif,dorsal,erato,notabilis,male,f._notabilis,,subspecies synonym,1,Huanc. PER,-1.583333333,-77.75,e. notabilis
+878,10429012,10429012_V_lowres.tif,ventral,erato,notabilis,male,f._notabilis,,subspecies synonym,1,Huanc. PER,-1.583333333,-77.75,e. notabilis
+879,10429013,10429013_D_lowres.tif,dorsal,erato,notabilis,male,f._notabilis,,subspecies synonym,1,Alpayacu ECD PA,-1.466666667,-78.11666667,e. notabilis
+880,10429013,10429013_V_lowres.tif,ventral,erato,notabilis,male,f._notabilis,,subspecies synonym,1,Alpayacu ECD PA,-1.466666667,-78.11666667,e. notabilis
+881,10429015,10429015_D_lowres.tif,dorsal,erato,notabilis,male,f._notabilis,,subspecies synonym,1,Puyo ECD PA,-1.466666667,-77.98333333,e. notabilis
+882,10429015,10429015_V_lowres.tif,ventral,erato,notabilis,male,f._notabilis,,subspecies synonym,1,Puyo ECD PA,-1.466666667,-77.98333333,e. notabilis
+883,10429016,10429016_D_lowres.tif,dorsal,erato,notabilis,male,f._notabilis,,subspecies synonym,1,Jalay west Peru,-1.583333333,-77.75,e. notabilis
+884,10429016,10429016_V_lowres.tif,ventral,erato,notabilis,male,f._notabilis,,subspecies synonym,1,Jalay west Peru,-1.583333333,-77.75,e. notabilis
+885,10429021,10429021_D_lowres.tif,dorsal,erato,notabilis,female,f._notabilis,,subspecies synonym,1,Jurua Rio BRA ??,-1.583333333,-77.75,e. notabilis
+886,10429021,10429021_V_lowres.tif,ventral,erato,notabilis,female,f._notabilis,,subspecies synonym,1,Jurua Rio BRA ??,-1.583333333,-77.75,e. notabilis
+887,10429024,10429024_D_lowres.tif,dorsal,erato,notabilis,female,f._notabilis,,subspecies synonym,1,Puyo ECD PA,-1.466666667,-77.98333333,e. notabilis
+888,10429024,10429024_V_lowres.tif,ventral,erato,notabilis,female,f._notabilis,,subspecies synonym,1,Puyo ECD PA,-1.466666667,-77.98333333,e. notabilis
+889,10429026,10429026_D_lowres.tif,dorsal,erato,notabilis,male,f._notabilis,,subspecies synonym,1,La Victoria ECD TU,-1.408333333,-78.225,e. notabilis
+890,10429026,10429026_V_lowres.tif,ventral,erato,notabilis,male,f._notabilis,,subspecies synonym,1,La Victoria ECD TU,-1.408333333,-78.225,e. notabilis
+891,10429063,10429063_D_lowres.tif,dorsal,erato,etylus,male,f._etylus,,subspecies synonym,1,Rio Verde Grande ECD TU,-1.4,-78.3,e. etylus
+892,10429063,10429063_V_lowres.tif,ventral,erato,etylus,male,f._etylus,,subspecies synonym,1,Rio Verde Grande ECD TU,-1.4,-78.3,e. etylus
+893,10429066,10429066_D_lowres.tif,dorsal,erato,etylus,male,f._etylus,,subspecies synonym,1,Macas ECD MS,-2.316666667,-78.11666667,e. etylus
+894,10429066,10429066_V_lowres.tif,ventral,erato,etylus,male,f._etylus,,subspecies synonym,1,Macas ECD MS,-2.316666667,-78.11666667,e. etylus
+895,10429067,10429067_D_lowres.tif,dorsal,erato,etylus,male,f._etylus,,subspecies synonym,1,Gualaquiza ECD MS,-3.416666667,-78.6,e. etylus
+896,10429067,10429067_V_lowres.tif,ventral,erato,etylus,male,f._etylus,,subspecies synonym,1,Gualaquiza ECD MS,-3.416666667,-78.6,e. etylus
+897,10429069,10429069_D_lowres.tif,dorsal,erato,etylus,male,f._etylus,,subspecies synonym,1,Zamora ECD ZC,-4.066666667,-78.96666667,e. etylus
+898,10429069,10429069_V_lowres.tif,ventral,erato,etylus,male,f._etylus,,subspecies synonym,1,Zamora ECD ZC,-4.066666667,-78.96666667,e. etylus
+899,10429070,10429070_D_lowres.tif,dorsal,erato,etylus,male,f._etylus,ST,subspecies synonym,1,Gualaquiza ECD MS,-3.416666667,-78.6,e. etylus
+900,10429070,10429070_V_lowres.tif,ventral,erato,etylus,male,f._etylus,ST,subspecies synonym,1,Gualaquiza ECD MS,-3.416666667,-78.6,e. etylus
+901,10429073,10429073_D_lowres.tif,dorsal,erato,etylus,female,f._etylus,,subspecies synonym,1,Macas ECD MS,-2.316666667,-78.11666667,e. etylus
+902,10429073,10429073_V_lowres.tif,ventral,erato,etylus,female,f._etylus,,subspecies synonym,1,Macas ECD MS,-2.316666667,-78.11666667,e. etylus
+903,10429074,10429074_D_lowres.tif,dorsal,erato,etylus,female,f._etylus,,subspecies synonym,1,Gualaquiza ECD MS,-3.416666667,-78.6,e. etylus
+904,10429074,10429074_V_lowres.tif,ventral,erato,etylus,female,f._etylus,,subspecies synonym,1,Gualaquiza ECD MS,-3.416666667,-78.6,e. etylus
+905,10429085,10429085_D_lowres.tif,dorsal,erato,luscombei,male,luscombei,PT,valid subspecies,1,Puerto Maldonado PER MD,-12.6,-69.18333333,e. luscombei
+906,10429085,10429085_V_lowres.tif,ventral,erato,luscombei,male,luscombei,PT,valid subspecies,1,Puerto Maldonado PER MD,-12.6,-69.18333333,e. luscombei
+907,10429093,10429093_D_lowres.tif,dorsal,erato,luscombei,female,luscombei,PT,valid subspecies,1,Quincemil PER CU,-13.23333333,-70.76666667,e. luscombei
+908,10429093,10429093_V_lowres.tif,ventral,erato,luscombei,female,luscombei,PT,valid subspecies,1,Quincemil PER CU,-13.23333333,-70.76666667,e. luscombei
+909,10429100,10429100_D_lowres.tif,dorsal,erato,luscombei,female,luscombei,,valid subspecies,1,San Gaban PER PU,-13.43333333,-70.38333333,e. luscombei
+910,10429100,10429100_V_lowres.tif,ventral,erato,luscombei,female,luscombei,,valid subspecies,1,San Gaban PER PU,-13.43333333,-70.38333333,e. luscombei
+911,10429104,10429104_D_lowres.tif,dorsal,erato,emma,male,emma,,valid subspecies,1,Pozuzo  PER PA,-10.11666667,-75.53333333,e. emma
+912,10429104,10429104_V_lowres.tif,ventral,erato,emma,male,emma,,valid subspecies,1,Pozuzo  PER PA,-10.11666667,-75.53333333,e. emma
+913,10429108,10429108_D_lowres.tif,dorsal,erato,emma,male,emma,ST,valid subspecies,1,Yurimaguas PER LO,-5.9,-76.1,e. emma
+914,10429108,10429108_V_lowres.tif,ventral,erato,emma,male,emma,ST,valid subspecies,1,Yurimaguas PER LO,-5.9,-76.1,e. emma
+915,10429109,10429109_D_lowres.tif,dorsal,erato,eratosignis,female,eratosignis,ST,valid subspecies,1,Yurimaguas PER LO,-5.9,-76.1,e. eratosignis
+916,10429109,10429109_V_lowres.tif,ventral,erato,eratosignis,female,eratosignis,ST,valid subspecies,1,Yurimaguas PER LO,-5.9,-76.1,e. eratosignis
+919,10429116,10429116_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Guajara-Mirim BOL BE,-10.8,-65.38333333,e. lativitta
+920,10429116,10429116_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Guajara-Mirim BOL BE,-10.8,-65.38333333,e. lativitta
+921,10429117,10429117_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Guajara-Mirim BOL BE,-10.8,-65.38333333,e. lativitta
+922,10429117,10429117_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Guajara-Mirim BOL BE,-10.8,-65.38333333,e. lativitta
+923,10429119,10429119_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Guajara-Mirim BOL BE,-10.8,-65.38333333,e. lativitta
+924,10429119,10429119_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Guajara-Mirim BOL BE,-10.8,-65.38333333,e. lativitta
+925,10429120,10429120_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,0,"Santo Paulo, Amazones",-3.45,-68.8,e. lativitta
+926,10429120,10429120_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,0,"Santo Paulo, Amazones",-3.45,-68.8,e. lativitta
+927,10429121,10429121_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Jurua Rio BRA ??,-1.583333333,-77.75,e. lativitta
+928,10429121,10429121_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Jurua Rio BRA ??,-1.583333333,-77.75,e. lativitta
+929,10429122,10429122_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Fonte Boa BRA AM,-2.516666667,-66.08333333,e. lativitta
+930,10429122,10429122_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Fonte Boa BRA AM,-2.516666667,-66.08333333,e. lativitta
+931,10429123,10429123_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Ega BRA AM,-3.366666667,-64.7,e. lativitta
+932,10429123,10429123_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Ega BRA AM,-3.366666667,-64.7,e. lativitta
+933,10429126,10429126_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Sena Madureira BRA AC,-9.083333333,-68.68333333,e. lativitta
+934,10429126,10429126_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Sena Madureira BRA AC,-9.083333333,-68.68333333,e. lativitta
+935,10429127,10429127_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,1,San Antonio falls above Rio Madeira BRA RO,-8.866666667,-64.05,e. lativitta
+936,10429127,10429127_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,1,San Antonio falls above Rio Madeira BRA RO,-8.866666667,-64.05,e. lativitta
+937,10429128,10429128_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Humayta BRA AM,-7.509722222,-63.02,e. lativitta
+938,10429128,10429128_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Humayta BRA AM,-7.509722222,-63.02,e. lativitta
+939,10429129,10429129_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Manicore BRA AM,-5.816666667,-61.28333333,e. lativitta
+940,10429129,10429129_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Manicore BRA AM,-5.816666667,-61.28333333,e. lativitta
+941,10429130,10429130_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,ST,subspecies synonym,1,Boa Vista - Rio Maderia BRA AM,-5.1,-60.4,e. lativitta
+942,10429130,10429130_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,ST,subspecies synonym,1,Boa Vista - Rio Maderia BRA AM,-5.1,-60.4,e. lativitta
+943,10429131,10429131_D_lowres.tif,dorsal,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Porto Velho dist. BRA RO,-8.866666667,-64.05,e. lativitta
+944,10429131,10429131_V_lowres.tif,ventral,erato,lativitta,male,f._lativitta,,subspecies synonym,1,Porto Velho dist. BRA RO,-8.866666667,-64.05,e. lativitta
+945,10429133,10429133_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Sao Paulo de Olivenca BRA AM,-3.466666667,-68.95,e. lativitta
+946,10429133,10429133_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Sao Paulo de Olivenca BRA AM,-3.466666667,-68.95,e. lativitta
+947,10429134,10429134_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Scuma PER ??,-1.583333333,-77.75,e. lativitta
+948,10429134,10429134_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Scuma PER ??,-1.583333333,-77.75,e. lativitta
+949,10429135,10429135_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,,subspecies synonym,1,San Joas BRA AM,-3.75,-73.25,e. lativitta
+950,10429135,10429135_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,,subspecies synonym,1,San Joas BRA AM,-3.75,-73.25,e. lativitta
+951,10429136,10429136_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Teffe BRA AM,-3.366666667,-64.73333333,e. lativitta
+952,10429136,10429136_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Teffe BRA AM,-3.366666667,-64.73333333,e. lativitta
+953,10429138,10429138_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,ST,subspecies synonym,1,Teffe BRA AM,-3.366666667,-64.73333333,e. lativitta
+954,10429138,10429138_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,ST,subspecies synonym,1,Teffe BRA AM,-3.366666667,-64.73333333,e. lativitta
+955,10429139,10429139_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Sena Madureira BRA AC,-9.083333333,-68.68333333,e. lativitta
+956,10429139,10429139_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Sena Madureira BRA AC,-9.083333333,-68.68333333,e. lativitta
+957,10429140,10429140_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,,subspecies synonym,1,San Antonio falls above Rio Madeira BRA RO,-8.866666667,-64.05,e. lativitta
+958,10429140,10429140_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,,subspecies synonym,1,San Antonio falls above Rio Madeira BRA RO,-8.866666667,-64.05,e. lativitta
+959,10429142,10429142_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Manicore District BRA AM,-5.816666667,-61.28333333,e. lativitta
+960,10429142,10429142_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Manicore District BRA AM,-5.816666667,-61.28333333,e. lativitta
+961,10429143,10429143_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Sena Madureira BRA AC,-9.083333333,-68.68333333,e. lativitta
+962,10429143,10429143_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Sena Madureira BRA AC,-9.083333333,-68.68333333,e. lativitta
+963,10429144,10429144_D_lowres.tif,dorsal,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Santa Maria dos Marmelos BRA AM,-6.116666667,-61.85,e. lativitta
+964,10429144,10429144_V_lowres.tif,ventral,erato,lativitta,female,f._lativitta,,subspecies synonym,1,Santa Maria dos Marmelos BRA AM,-6.116666667,-61.85,e. lativitta
+965,10429145,10429145_D_lowres.tif,dorsal,erato,dignus,female,dignus,,valid subspecies,1,Mocoa COL PU,1.15,-76.61666667,e. dignus
+966,10429145,10429145_V_lowres.tif,ventral,erato,dignus,female,dignus,,valid subspecies,1,Mocoa COL PU,1.15,-76.61666667,e. dignus
+967,10429158,10429158_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Tegucigalpa HON FM,14.1,-87.21666667,e. petiverana
+968,10429158,10429158_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Tegucigalpa HON FM,14.1,-87.21666667,e. petiverana
+969,10429159,10429159_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,San Pedro Sula HON CR,15.45,-88.03333333,e. petiverana
+970,10429159,10429159_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,San Pedro Sula HON CR,15.45,-88.03333333,e. petiverana
+971,10429166,10429166_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Tegucigalpa HON FM,14.1,-87.21666667,e. petiverana
+972,10429166,10429166_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Tegucigalpa HON FM,14.1,-87.21666667,e. petiverana
+973,10429167,10429167_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,San Pedro Sula HON CR,15.45,-88.03333333,e. petiverana
+974,10429167,10429167_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,San Pedro Sula HON CR,15.45,-88.03333333,e. petiverana
+975,10429168,10429168_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Tela HON AT,15.78333333,-87.45,e. petiverana
+976,10429168,10429168_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Tela HON AT,15.78333333,-87.45,e. petiverana
+977,10429170,10429170_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Matagalpa NIC MT,15.25,-90.25,e. petiverana
+978,10429170,10429170_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Matagalpa NIC MT,15.25,-90.25,e. petiverana
+979,10429171,10429171_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Bluefields NIC ZS,12.01666667,-83.76666667,e. petiverana
+980,10429171,10429171_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Bluefields NIC ZS,12.01666667,-83.76666667,e. petiverana
+981,10429172,10429172_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,San Ramon NIC ZE,14.66666667,-84.68333333,e. petiverana
+982,10429172,10429172_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,San Ramon NIC ZE,14.66666667,-84.68333333,e. petiverana
+983,10429173,10429173_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Cape Gracias NIC,15,-83.15,e. petiverana
+984,10429173,10429173_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Cape Gracias NIC,15,-83.15,e. petiverana
+985,10429174,10429174_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Camoapa NIC BO,12.41666667,-85.51666667,e. petiverana
+986,10429174,10429174_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Camoapa NIC BO,12.41666667,-85.51666667,e. petiverana
+987,10429177,10429177_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Juan Vinas CRI CA,9.9,-83.73333333,e. petiverana
+988,10429177,10429177_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Juan Vinas CRI CA,9.9,-83.73333333,e. petiverana
+989,10429178,10429178_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Cachi CRI CA,9.833333333,-83.8,e. petiverana
+990,10429178,10429178_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Cachi CRI CA,9.833333333,-83.8,e. petiverana
+991,10429181,10429181_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Bluefields NIC ZS,12.01666667,-83.76666667,e. petiverana
+992,10429181,10429181_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Bluefields NIC ZS,12.01666667,-83.76666667,e. petiverana
+993,10429182,10429182_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,San Ramon NIC ZE,14.66666667,-84.68333333,e. petiverana
+994,10429182,10429182_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,San Ramon NIC ZE,14.66666667,-84.68333333,e. petiverana
+995,10429183,10429183_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Cape Gracias NIC,15,-83.15,e. petiverana
+996,10429183,10429183_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Cape Gracias NIC,15,-83.15,e. petiverana
+997,10429184,10429184_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Camoapa NIC BO,12.41666667,-85.51666667,e. petiverana
+998,10429184,10429184_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Camoapa NIC BO,12.41666667,-85.51666667,e. petiverana
+999,10429186,10429186_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Cachi CRI CA,9.833333333,-83.8,e. petiverana
+1000,10429186,10429186_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Cachi CRI CA,9.833333333,-83.8,e. petiverana
+1001,10429188,10429188_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Revantazon (Rio) CRI LI,10.16069444,-83.501975,e. petiverana
+1002,10429188,10429188_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Revantazon (Rio) CRI LI,10.16069444,-83.501975,e. petiverana
+1003,10429189,10429189_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Las Concavas CRI CA,9.839447222,-83.89027222,e. petiverana
+1004,10429189,10429189_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Las Concavas CRI CA,9.839447222,-83.89027222,e. petiverana
+1005,10429190,10429190_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Turrialba CRI CA,9.883333333,-83.63333333,e. petiverana
+1006,10429190,10429190_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Turrialba CRI CA,9.883333333,-83.63333333,e. petiverana
+1007,10429191,10429191_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Estrella Rio CRI LI,9.713847222,-83.00533056,e. petiverana
+1008,10429191,10429191_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Estrella Rio CRI LI,9.713847222,-83.00533056,e. petiverana
+1009,10429193,10429193_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Puerto Limon CRI LI,9.983333333,-83.06666667,e. petiverana
+1010,10429193,10429193_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Puerto Limon CRI LI,9.983333333,-83.06666667,e. petiverana
+1011,10429194,10429194_D_lowres.tif,dorsal,erato,petiverana,male,petiverana,,valid subspecies,1,Guapiles CRI LI,10.21666667,-83.76666667,e. petiverana
+1012,10429194,10429194_V_lowres.tif,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Guapiles CRI LI,10.21666667,-83.76666667,e. petiverana
+1013,10429198,10429198_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Estrella CRI LI,9.716666667,-83.11666667,e. petiverana
+1014,10429198,10429198_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Estrella CRI LI,9.716666667,-83.11666667,e. petiverana
+1015,10429200,10429200_D_lowres.tif,dorsal,erato,petiverana,female,petiverana,,valid subspecies,1,Guapiles CRI LI,10.21666667,-83.76666667,e. petiverana
+1016,10429200,10429200_V_lowres.tif,ventral,erato,petiverana,female,petiverana,,valid subspecies,1,Guapiles CRI LI,10.21666667,-83.76666667,e. petiverana
+1017,10429243,10429243_D_lowres.tif,dorsal,erato,colombina,male,var._antigona,,subspecies synonym,1,Bogota  COL CN,4.339611111,-74.36422222,e. colombina
+1018,10429243,10429243_V_lowres.tif,ventral,erato,colombina,male,var._antigona,,subspecies synonym,1,Bogota  COL CN,4.339611111,-74.36422222,e. colombina
+1019,10429244,10429244_D_lowres.tif,dorsal,erato,colombina,male,var._antigona,HT,subspecies synonym,1,Yahuarmayo PER,-13.3,-70.3,e. colombina
+1020,10429244,10429244_V_lowres.tif,ventral,erato,colombina,male,var._antigona,HT,subspecies synonym,1,Yahuarmayo PER,-13.3,-70.3,e. colombina
