@@ -51,11 +51,12 @@ app.layout = html.Div([
     html.Div([
         html.H4("Show me the Percentage Breakdown of ...", style = {'color': 'MidnightBlue', 'margin-bottom' : 10}),
         dcc.RadioItems([
+                        {'label': 'Species', 'value': 'Species'},
                         {'label': 'Subspecies', 'value': 'Subspecies'},
                         {'label':'View', 'value': 'View'},
                         {'label': 'Sex', 'value': 'Sex'},
                         {'label': 'Hybrid Status', 'value':'hybrid_stat'}],
-                        'Subspecies',
+                        'Species',
                         id = 'prct-brkdwn'
                         ),
         html.Br(),
@@ -74,20 +75,17 @@ app.layout = html.Div([
 
 @app.callback(
     #hist output
-    [Output(component_id='hist-plot', component_property='figure'),
-    #pie output
-    Output(component_id='pie-plot', component_property='figure')],
+    Output(component_id='hist-plot', component_property='figure'),
     #input x_var
-    [Input(component_id='x-variable', component_property='value'),
+    Input(component_id='x-variable', component_property='value'),
     #input color_by
     Input(component_id='color-by', component_property='value'),
     #input sort_by
-    Input(component_id='sort-by', component_property='value'),
-    #pie input (var)
-    Input(component_id='prct-brkdwn', component_property='value')]
+    Input(component_id='sort-by', component_property='value')
 )
 
-def make_plot(x_var, color_by, sort_by, var):
+def make_hist_plot(x_var, color_by, sort_by):
+    #generate histogram
     if sort_by == 'alpha':
         fig = px.histogram(df.sort_values(x_var),
                         x = x_var,
@@ -101,13 +99,31 @@ def make_plot(x_var, color_by, sort_by, var):
     
     fig.update_layout(title = {'text': f'Distribution of {x_var} Colored by {color_by}'})
 
-    pie_fig = px.pie(df,
+    return fig
+
+@app.callback(
+    #pie output
+    Output(component_id='pie-plot', component_property='figure'),
+    #pie input (var)
+    Input(component_id='prct-brkdwn', component_property='value')
+)
+
+def make_pie_plot(var):
+    #generate pie chart
+    if(var == 'Subspecies'):
+        pie_fig = px.pie(df,
+                 names = var,
+                 color_discrete_sequence = px.colors.qualitative.Bold,
+                 hover_data = ['Species'])
+    else:
+        pie_fig = px.pie(df,
                  names = var,
                  color_discrete_sequence = px.colors.qualitative.Bold)
     
     pie_fig.update_layout(title = {'text': f'Percentage Breakdown of {var}'})
+    pie_fig.update_traces(textposition = 'inside', textinfo = 'percent+label')
 
-    return fig, pie_fig
+    return pie_fig
 
 if __name__ == '__main__':
     app.run_server(debug=True)

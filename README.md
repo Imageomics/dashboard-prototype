@@ -4,6 +4,9 @@ Prototype data dashboard using the [Cuthill Gold Standard Dataset](https://datac
 
 ### How it works
 
-Install the required packages in a new environment, activate it, and run `python prototype_multiplot.py`. Then navigate to `http://127.0.0.1:8050/` in your browser to see the graphs.
+Install the required packages in a new environment, activate it, and run `python prototype-multiplot.py`. Then navigate to `http://127.0.0.1:8050/` in your browser to see the graphs.
 
 **Note:** `prototype_histogram.py` can be run in the same manner, but will only produce a histogram.
+
+### Preview
+![image](https://github.com/Imageomics/dashboard-prototype/assets/31709066/1a9e5f20-5565-43a4-bd80-fbb2b66bb507)
