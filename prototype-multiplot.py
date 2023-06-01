@@ -119,9 +119,9 @@ def make_pie_plot(var):
         pie_fig = px.pie(df,
                  names = var,
                  color_discrete_sequence = px.colors.qualitative.Bold)
+        pie_fig.update_traces(textposition = 'inside', textinfo = 'percent+label')
     
     pie_fig.update_layout(title = {'text': f'Percentage Breakdown of {var}'})
-    pie_fig.update_traces(textposition = 'inside', textinfo = 'percent+label')
 
     return pie_fig
 
