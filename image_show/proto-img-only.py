@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.express as px
 from dash import Dash, html, dcc, Input, Output, State
+from dash.exceptions import PreventUpdate
 import base64
 
 from query import get_species_options
@@ -61,7 +62,7 @@ app.layout = html.Div([
     html.Br(),
 
     # Image Should appear
-    html.Img(id = 'image-1')
+    html.Div(id = 'image-1')
 
 ])
 
@@ -86,31 +87,36 @@ def set_subspecies_value(available_options):
     return available_options[0]['value']
 
 @app.callback(
-    Output('image-1', 'src'),
+    Output('image-1', 'children'),
     Input('display-img', 'n_clicks'),
     #State('species-show', 'value'),
     State('subspecies-show', 'value'),
-    State('which-sex', 'value'),
     State('which-view', 'value'),
+    State('which-sex', 'value'),
     State('hybrid?', 'value'),
     prevent_initial_call = True
 )
 
 # Retrieve a single image
 def get_image(n_clicks, subspecies, view, sex, hybrid):
+    #if n_clicks is None:
+    #    raise PreventUpdate
+   # else:
     filename = get_filename(subspecies, view, sex, hybrid)
     if filename == 0:
-        print("No Such Images. Please make another selection.")
-        return
+        #print("No Such Images. Please make another selection.")
+        return html.H4("No Such Images. Please make another selection.", 
+                    style = {"color":"MidnightBlue"})
     if 'D_lowres' in filename:
         image_directory = '../test_data/Images/dorsal_images/' + filename
     else:
         image_directory = '../test_data/Images/ventral_images/' + filename
     with open(image_directory, 'rb') as f:
         image = f.read()
-    src = 'data:image/tiff;base64,' + base64.b64encode(image).decode()
-    #img_path = 'data:image/tiff;base64,' + base64.b64encode(image).decode('utf-8')
-    return src
+    #src = 'data:image/tiff;base64,' + base64.b64encode(image).decode()
+    #return src
+    img_path = 'data:image/tiff;base64,' + base64.b64encode(image).decode('utf-8')
+    return html.Img(src = img_path)
 
 def get_filename(subspecies, view, sex, hybrid):
     #filter df by subspecies, then view, sex and hybrid
@@ -123,17 +129,10 @@ def get_filename(subspecies, view, sex, hybrid):
             subspecies = subspecies.split('-')[1].lower()
             df_sub = df.loc[df.Subspecies == subspecies].copy()
     else:
-        df_sub = df.loc[df.Subspecies == subspecies.lower()].copy()
-    if len(view) == 1:
-        df_sub = df_sub.loc[df_sub.View == view[0]]
-    if len(sex) == 1:
-        df_sub = df_sub.loc[df_sub.Sex == sex[0]]
-    if len(hybrid) == 1:
-        df_filtered = df_sub.loc[df_sub.hybrid_stat == hybrid[0]]
-    elif len(hybrid) == 2:
-        df_filtered = df_sub.loc[df_sub.hybrid_stat == (hybrid[0] or hybrid[1])]
-    else:
-        df_filtered = df_sub
+         df_sub = df.loc[df.Subspecies.isin(subspecies)].copy()
+    df_sub = df_sub.loc[df_sub.View.isin(view)]
+    df_sub = df_sub.loc[df_sub.Sex.isin(sex)]
+    df_filtered = df_sub.loc[df_sub.hybrid_stat.isin(hybrid)]
     if len(df_filtered) > 0:
         df_filtered.sample(1)
         filename = df_filtered.Image_filename.astype('string').values[0]
