@@ -108,15 +108,12 @@ def get_image(n_clicks, subspecies, view, sex, hybrid):
         return html.H4("No Such Images. Please make another selection.", 
                     style = {"color":"MidnightBlue"})
     if 'D_lowres' in filename:
-        image_directory = '../test_data/Images/dorsal_images/' + filename
+        #remove 'tif' from filename and replace with 'png' in url
+        image_directory = "https://github.com/Imageomics/dashboard-prototype/blob/feature/image-options/test_data/images/dorsal_images/" + filename[:-3] + "png?raw=true"
     else:
-        image_directory = '../test_data/Images/ventral_images/' + filename
-    with open(image_directory, 'rb') as f:
-        image = f.read()
-    #src = 'data:image/tiff;base64,' + base64.b64encode(image).decode()
-    #return src
-    img_path = 'data:image/tiff;base64,' + base64.b64encode(image).decode('utf-8')
-    return html.Img(src = img_path)
+        #remove 'tif' from filename and replace with 'png' in url
+        image_directory = "https://github.com/Imageomics/dashboard-prototype/blob/feature/image-options/test_data/images/ventral_images/" + filename[:-3] + "png?raw=true"
+    return html.Img(src = image_directory)
 
 def get_filename(subspecies, view, sex, hybrid):
     #filter df by subspecies, then view, sex and hybrid
