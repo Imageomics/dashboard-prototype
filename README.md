@@ -14,13 +14,13 @@ pip install -r requirements.txt
 and run 
 
 ```
-python prototype-multiplot.py
+python dashboard.py
 ```
 
 Then navigate to [http://127.0.0.1:8050/](http://127.0.0.1:8050/) in your browser to see the graphs.
 
 
-**Note:** `prototype_histogram.py` can be run in the same manner, but will only produce a histogram.
+**Note:** For component pieces, see `test_components` folder; they are run similarly.
 
 ### Preview
-![image](https://github.com/Imageomics/dashboard-prototype/assets/31709066/1a9e5f20-5565-43a4-bd80-fbb2b66bb507)
+![image](dashboard_preview.png)
