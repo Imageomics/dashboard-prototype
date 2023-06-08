@@ -3,6 +3,8 @@ import plotly.express as px
 from dash import Dash, html, dcc, Input, Output, State
 from test_components.query import get_species_options
 
+IMAGES_BASE_URL = "https://github.com/Imageomics/dashboard-prototype/blob/main/test_data/images/"
+
 df = pd.read_csv("test_data/Hoyal_Cuthill_GoldStandard_metadata_cleaned.csv")
 all_species = get_species_options(df)
 
@@ -245,7 +247,7 @@ def get_image(n_clicks, subspecies, view, sex, hybrid):
     else:
         image_directory = "ventral_images/"
     #remove 'tif' from filename and replace with 'png' in url
-    image_path = "https://github.com/Imageomics/dashboard-prototype/blob/feature/image-options/test_data/images/" + image_directory + filename[:-3] + "png?raw=true"
+    image_path = IMAGES_BASE_URL + image_directory + filename[:-3] + "png?raw=true"
     return html.Img(src = image_path)
 
 def get_filename(subspecies, view, sex, hybrid):
