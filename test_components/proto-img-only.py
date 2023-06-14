@@ -129,8 +129,7 @@ def get_filename(subspecies, view, sex, hybrid):
     df_sub = df_sub.loc[df_sub.Sex.isin(sex)]
     df_filtered = df_sub.loc[df_sub.hybrid_stat.isin(hybrid)]
     if len(df_filtered) > 0:
-        df_filtered.sample(1)
-        filename = df_filtered.Image_filename.astype('string').values[0]
+        filename = df_filtered.sample().Image_filename.astype('string').values[0]
         return filename
     else:
         return 0
