@@ -116,6 +116,16 @@ app.layout = html.Div([
                             df.hybrid_stat.unique()[0:2],
                             id = 'hybrid?')],
             style = {'width': '24%', 'display': 'inline-block'}
+            ),
+        html.Div([
+            html.H5("How many images?", style = {"color":"MidnightBlue", 'marginBottom' : 10}),
+            dcc.Input(type = 'number',
+                        min = 1,
+                        max = 100,
+                        step = 1,
+                        placeholder = 1,
+                        id = 'num-images')],
+            style = {'width': '24%', 'display': 'inline-block'}
             )
     ], id = 'dropdown-images'),
 
@@ -221,6 +231,7 @@ def set_subspecies_value(available_options):
     # Collect selected subspecies
     return available_options[0]['value']
 
+# Image & Display Images Button Callback
 @app.callback(
     Output('image-1', 'children'),
     Input('display-img', 'n_clicks'),
@@ -229,30 +240,42 @@ def set_subspecies_value(available_options):
     State('which-view', 'value'),
     State('which-sex', 'value'),
     State('hybrid?', 'value'),
+    State('num-images', 'value'),
     prevent_initial_call = True
 )
 
-# Retrieve a single image
-def get_image(n_clicks, subspecies, view, sex, hybrid):
+def update_display(n_clicks, subspecies, view, sex, hybrid, num_images):
+    if n_clicks > 0:
+        return get_images(subspecies, view, sex, hybrid, num_images)
+    else:
+        return html.H4("Please make a selection.", 
+                    style = {"color":"MidnightBlue"})
+    
+# Retrieve selected number of images
+def get_images(subspecies, view, sex, hybrid, num_images):
     #if n_clicks is None:
     #    raise PreventUpdate
    # else:
-    filename = get_filename(subspecies, view, sex, hybrid)
-    if filename == 0:
+    filenames = get_filenames(subspecies, view, sex, hybrid, num_images)
+    if filenames == 0:
         #print("No Such Images. Please make another selection.")
         return html.H4("No Such Images. Please make another selection.", 
                     style = {"color":"MidnightBlue"})
-    if 'D_lowres' in filename:    
-        image_directory = "dorsal_images/"
-    else:
-        image_directory = "ventral_images/"
-    #remove 'tif' from filename and replace with 'png' in url
-    image_path = IMAGES_BASE_URL + image_directory + filename[:-3] + "png?raw=true"
-    return html.Img(src = image_path)
+    Imgs = []
+    for filename in filenames:
+        if 'D_lowres' in filename:    
+            image_directory = "dorsal_images/"
+        else:
+            image_directory = "ventral_images/"
+        #remove 'tif' from filename and replace with 'png' in url
+        image_path = IMAGES_BASE_URL + image_directory + filename[:-3] + "png?raw=true"
+        Imgs.append(html.Img(src = image_path))
+    return Imgs
 
-def get_filename(subspecies, view, sex, hybrid):
+def get_filenames(subspecies, view, sex, hybrid, num_images):
     #filter df by subspecies, then view, sex and hybrid
-    #return filenames for 7 randomly selected images from the filtered dataset
+    #return filenames for num_images randomly selected images from the filtered dataset
+    #default to 1 if none selected
     #check for Any-Melpomene, Any-Erato, or Any (general)
     if 'Any' in subspecies:
         if subspecies == 'Any':
@@ -265,10 +288,14 @@ def get_filename(subspecies, view, sex, hybrid):
     df_sub = df_sub.loc[df_sub.View.isin(view)]
     df_sub = df_sub.loc[df_sub.Sex.isin(sex)]
     df_filtered = df_sub.loc[df_sub.hybrid_stat.isin(hybrid)]
-    if len(df_filtered) > 0:
-        df_filtered.sample(1)
-        filename = df_filtered.Image_filename.astype('string').values[0]
-        return filename
+    max_imgs = len(df_filtered)
+    if max_imgs > 0:
+        if num_images == None:
+            num = 1
+        else:
+            num = min(num_images, max_imgs)
+        filenames = df_filtered.sample(num).Image_filename.astype('string').values
+        return list(filenames)
     else:
         return 0
 
