@@ -1,4 +1,3 @@
-import pandas as pd
 import plotly.express as px
 
 
@@ -22,9 +21,12 @@ def make_map(df):
                         size = df.samples_at_locality,
                         color = "Subspecies",
                         color_discrete_sequence = px.colors.qualitative.Bold)
+    
     fig.update_geos(fitbounds = "locations",
+                    showcountries = True, countrycolor = "Grey",
                     showrivers = True,
                     showlakes = True,
                     showland = True, landcolor = "wheat",
                     showocean = True, oceancolor = "LightBlue")
+    
     return fig
