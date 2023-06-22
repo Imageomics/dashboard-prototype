@@ -24,3 +24,10 @@ Then navigate to [http://127.0.0.1:8050/](http://127.0.0.1:8050/) in your browse
 
 ### Preview
 ![image](dashboard_preview.png)
+
+### Running Tests
+
+Within your python environment run the following command to run the tests:
+```
+python -m unittest
+```
