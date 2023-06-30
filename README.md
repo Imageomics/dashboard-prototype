@@ -20,10 +20,14 @@ python dashboard.py
 Then navigate to [http://127.0.0.1:8050/](http://127.0.0.1:8050/) in your browser to see the graphs.
 
 
-**Note:** For component pieces, see `test_components` folder; they are run similarly.
-
 ### Preview
-![image](dashboard_preview.png)
+
+#### Histogram View
+![image](dashboard_preview_hist.png)
+
+#### Map View
+![image](dashboard_preview_map.png)
+
 
 ### Running Tests
 
