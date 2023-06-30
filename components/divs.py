@@ -47,7 +47,7 @@ def get_hist_div(cat_list, sort_list, H4_style, div_style):
         ),
         html.Div([
         #html.H4("Distribution View", style = {'color': 'MidnightBlue', 'margin-top' : 10, 'margin-bottom' : 10}),
-        html.Button("Map View",
+        html.Button("Show Map View",
                     id = 'dist-view-btn',
                     n_clicks = 0)
                 ], style = div_style
