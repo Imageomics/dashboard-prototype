@@ -36,7 +36,7 @@ def get_hist_div(cat_list, sort_list, H4_style, div_style):
                             id = 'color-by')
             ], style = div_style
         ),
-        #html.Br(),
+        
         html.Div([
         html.H4("Sort distribution ", style = {'color': 'MidnightBlue', 'margin-top' : 10, 'margin-bottom' : 10}),
         dcc.RadioItems(sort_list,
@@ -46,7 +46,7 @@ def get_hist_div(cat_list, sort_list, H4_style, div_style):
                 ], style = div_style
         ),
         html.Div([
-        #html.H4("Distribution View", style = {'color': 'MidnightBlue', 'margin-top' : 10, 'margin-bottom' : 10}),
+        # Button to switch to Map View
         html.Button("Show Map View",
                     id = 'dist-view-btn',
                     n_clicks = 0)
@@ -92,7 +92,7 @@ def get_map_div(cat_list, H4_style, div_style):
                             style = {'padding-right': '20%', 'display': 'inline-flex', 'flex-wrap': 'wrap', 'flex-direction': 'row', 'justify-content': 'space-between'})
             ], style = {'width': '48%', 'display': 'inline-block', 'margin-bottom': 20}
         ),
-        #html.Br(),
+
        html.Div([
                ], 
                id = 'sort-by', #label sort-by box to avoid non-existent label and generate box so button doesn't move between views

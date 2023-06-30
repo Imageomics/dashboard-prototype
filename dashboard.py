@@ -117,7 +117,6 @@ app.layout = html.Div([
     html.Br(),
     html.Br(),
     html.Br(),
-    #html.Br(),
 
     # Image Should appear
     html.Div(id = 'image-1'),
