@@ -6,21 +6,24 @@ IMAGES_BASE_URL = "https://github.com/Imageomics/dashboard-prototype/raw/main/te
 
 # Helper functions for Dashboard
 
-def get_data():
+def get_data(df):
     '''
     Function to read in DataFrame and perform required manipulations: 
         - add 'lat-lon', `Samples_at_locality`, 'Species_at_locality', and 'Subspecies_at_locality' columns.
         - make list of categorical columns.
 
+    Parameters:
+    -----------
+    df - DataFrame of the data to visualize.
+            
     Returns:
     --------
-    df - DataFrame of CSV with added column of number of samples collected at each lat-lon pair.
+    df - DataFrame with added 'lat-lon' column and columns indicating number of samples collected at each lat-lon pair.
     cat_list - List of categorical variables for RadioItems (pie chart and map).
 
     '''
-    df = pd.read_csv("test_data/Hoyal_Cuthill_GoldStandard_metadata_cleaned.csv")
     df['lat-lon'] = df['lat'].astype(str) + '|' + df['lon'].astype(str)
-    df["Samples_at_locality"] = df['lat-lon'].map(df['lat-lon'].value_counts()/2)
+    df["Samples_at_locality"] = df['lat-lon'].map(df['lat-lon'].value_counts()) # will duplicate if dorsal and ventral
 
     # Count and record number of species and subspecies at each lat-lon
     for lat_lon in df['lat-lon']:
