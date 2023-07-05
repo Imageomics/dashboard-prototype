@@ -126,8 +126,8 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
         if subspecies == 'Any':
             df_sub = df.copy()
         else:
-            subspecies = subspecies.split('-')[1].lower()
-            df_sub = df.loc[df.Subspecies == subspecies].copy()
+            species = subspecies.split('-')[1].lower()
+            df_sub = df.loc[df.Species == species].copy()
     else:
         df_sub = df.loc[df.Subspecies.isin(subspecies)].copy()
     df_sub = df_sub.loc[df_sub.View.isin(view)]

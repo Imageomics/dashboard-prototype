@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from components.query import get_species_options, get_data
+from components.query import get_species_options, get_data, get_filenames
 
 
 class TestQuery(unittest.TestCase):
@@ -38,3 +38,56 @@ class TestQuery(unittest.TestCase):
         self.assertEqual(result_df["Species_at_locality"].tolist(), ['melpomene', 'melpomene, erato', 'melpomene, erato', 'melpomene', 'melpomene, erato'])
         self.assertEqual(result_df["Subspecies_at_locality"].tolist(), ['schunkei', 'nanna, erato, guarica', 'nanna, erato, guarica', 'rosina_N', 'nanna, erato, guarica'])
         self.assertEqual(result_list, cat_list)
+
+    def test_get_filenames(self):
+        data = {
+            'Species': ['melpomene', 'melpomene', 'erato', 'melpomene', 'erato'],
+            'Subspecies': ['schunkei', 'nanna', 'erato', 'rosina_N', 'guarica'],
+            'View': ['ventral', 'ventral', 'ventral', 'dorsal', 'dorsal',],
+            'Sex': ['male', 'female', 'female', 'male', 'female'],
+            'hybrid_stat': ['subspecies synonym', 
+                            'valid subspecies', 
+                            'subspecies synonym', 
+                            'valid subspecies', 
+                            'valid subspecies'],
+            'Image_filename': ['10428251_V_lowres.tif', 
+                               '10428328_V_lowres.tif', 
+                               '10428723_V_lowres.tif', 
+                               '10427968_D_lowres.tif', 
+                               '10428804_D_lowres.tif']
+        }
+        df = pd.DataFrame(data = data)
+        test_subspecies = ['Any', 
+                           'Any-Melpomene', 
+                           ['guarica'], 
+                           'Any-Erato', 
+                           ['schunkei', 'nanna', 'rosina_N']]
+        test_view = [['dorsal'], 
+                     ['ventral'], 
+                     ['dorsal', 'ventral'], 
+                     ['dorsal', 'ventral'], 
+                     ['dorsal', 'ventral']]
+        test_sex = [['male'], 
+                    ['male'], 
+                    ['male', 'female'], 
+                    ['male', 'female'], 
+                    ['male', 'female']]
+        test_hybrid = [['unknown'], 
+                       ['valid subspecies', 'subspecies synonym'], 
+                       ['valid subspecies', 'subspecies synonym'], 
+                       ['subspecies synonym'], 
+                       ['valid subspecies', 'subspecies synonym']]
+        test_nums = [1, 2, 1, None, 3]
+        test_images = [0, 
+                       '10428251_V_lowres.tif', 
+                       '10428804_D_lowres.tif', 
+                       '10428723_V_lowres.tif', 
+                       ['10428251_V_lowres.tif', '10428328_V_lowres.tif', '10427968_D_lowres.tif']]
+        result = get_filenames(df, test_subspecies[0], test_view[0], test_sex[0], test_hybrid[0], test_nums[0])
+        self.assertEqual(result, test_images[0])
+        for i in range(1,4):
+            result = get_filenames(df, test_subspecies[i], test_view[i], test_sex[i], test_hybrid[i], test_nums[i])
+            self.assertEqual(result, [test_images[i]])
+        result = get_filenames(df, test_subspecies[4], test_view[4], test_sex[4], test_hybrid[4], test_nums[4])
+        #check lists have same elements
+        self.assertCountEqual(result, test_images[4])
