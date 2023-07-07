@@ -11,10 +11,11 @@ class TestQuery(unittest.TestCase):
         }
         df = pd.DataFrame(data=data)
         result = get_species_options(df)
-        self.assertEqual(result.keys(), set(["Melpomene", "Erato", "Any"]))
-        self.assertEqual(result["Melpomene"].tolist(), ['Any-Melpomene', 'subspecies1'])
-        self.assertEqual(result["Erato"].tolist(),['Any-Erato', 'subspecies2'])
-        self.assertEqual(result["Any"].tolist(),
+        self.assertEqual(result.keys(), set(["Melpomene", "Erato", "Metharme", "Any"]))
+        self.assertEqual(result["Melpomene"], ['Any-Melpomene', 'subspecies1'])
+        self.assertEqual(result["Erato"],['Any-Erato', 'subspecies2'])
+        self.assertEqual(result["Metharme"], ['Any-Metharme', 'subspecies3'])
+        self.assertEqual(result["Any"],
                          ['Any', 'subspecies1', 'subspecies2', 'subspecies3'])
     
     def test_get_data(self):

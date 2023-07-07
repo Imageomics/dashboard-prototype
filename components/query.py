@@ -56,16 +56,15 @@ def get_species_options(df):
     all_species - Dictionary of all potential species options and their subspecies.
 
     '''
-    melpomene_subspecies = df.loc[df.Species == 'melpomene', 'Subspecies'].unique()
-    erato_subspecies = df.loc[df.Species == 'erato', 'Subspecies'].unique()
-    melpomene_subspecies = np.insert(melpomene_subspecies, 0, 'Any-Melpomene')
-    erato_subspecies = np.insert(erato_subspecies, 0, 'Any-Erato')
+    species_list = list(df.Species.unique())
+    all_species = {}
+    for species in species_list:
+        subspecies_list = df.loc[df.Species == species, 'Subspecies'].unique()
+        subspecies_list = np.insert(subspecies_list, 0 , 'Any-' + species.capitalize())
+        all_species[species.capitalize()] = list(subspecies_list)
     all_subspecies = np.insert(df.Subspecies.unique(), 0, 'Any')
-    all_species = {
-        'Melpomene': melpomene_subspecies,
-        'Erato' : erato_subspecies,
-        'Any' : all_subspecies
-    }
+    all_species['Any'] = list(all_subspecies)
+    
     return all_species
 
 # Retrieve selected number of images
