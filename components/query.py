@@ -6,21 +6,24 @@ IMAGES_BASE_URL = "https://github.com/Imageomics/dashboard-prototype/raw/main/te
 
 # Helper functions for Dashboard
 
-def get_data():
+def get_data(df):
     '''
     Function to read in DataFrame and perform required manipulations: 
         - add 'lat-lon', `Samples_at_locality`, 'Species_at_locality', and 'Subspecies_at_locality' columns.
         - make list of categorical columns.
 
+    Parameters:
+    -----------
+    df - DataFrame of the data to visualize.
+            
     Returns:
     --------
-    df - DataFrame of CSV with added column of number of samples collected at each lat-lon pair.
+    df - DataFrame with added 'lat-lon' column and columns indicating number of samples collected at each lat-lon pair.
     cat_list - List of categorical variables for RadioItems (pie chart and map).
 
     '''
-    df = pd.read_csv("test_data/Hoyal_Cuthill_GoldStandard_metadata_cleaned.csv")
     df['lat-lon'] = df['lat'].astype(str) + '|' + df['lon'].astype(str)
-    df["Samples_at_locality"] = df['lat-lon'].map(df['lat-lon'].value_counts()/2)
+    df["Samples_at_locality"] = df['lat-lon'].map(df['lat-lon'].value_counts()) # will duplicate if dorsal and ventral
 
     # Count and record number of species and subspecies at each lat-lon
     for lat_lon in df['lat-lon']:
@@ -53,16 +56,15 @@ def get_species_options(df):
     all_species - Dictionary of all potential species options and their subspecies.
 
     '''
-    melpomene_subspecies = df.loc[df.Species == 'melpomene', 'Subspecies'].unique()
-    erato_subspecies = df.loc[df.Species == 'erato', 'Subspecies'].unique()
-    melpomene_subspecies = np.insert(melpomene_subspecies, 0, 'Any-Melpomene')
-    erato_subspecies = np.insert(erato_subspecies, 0, 'Any-Erato')
+    species_list = list(df.Species.unique())
+    all_species = {}
+    for species in species_list:
+        subspecies_list = df.loc[df.Species == species, 'Subspecies'].unique()
+        subspecies_list = np.insert(subspecies_list, 0 , 'Any-' + species.capitalize())
+        all_species[species.capitalize()] = list(subspecies_list)
     all_subspecies = np.insert(df.Subspecies.unique(), 0, 'Any')
-    all_species = {
-        'Melpomene': melpomene_subspecies,
-        'Erato' : erato_subspecies,
-        'Any' : all_subspecies
-    }
+    all_species['Any'] = list(all_subspecies)
+    
     return all_species
 
 # Retrieve selected number of images
@@ -123,8 +125,8 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
         if subspecies == 'Any':
             df_sub = df.copy()
         else:
-            subspecies = subspecies.split('-')[1].lower()
-            df_sub = df.loc[df.Subspecies == subspecies].copy()
+            species = subspecies.split('-')[1].lower()
+            df_sub = df.loc[df.Species == species].copy()
     else:
         df_sub = df.loc[df.Subspecies.isin(subspecies)].copy()
     df_sub = df_sub.loc[df_sub.View.isin(view)]

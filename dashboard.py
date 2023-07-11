@@ -1,3 +1,4 @@
+import pandas as pd
 from dash import Dash, html, dcc, Input, Output, State
 from components.query import get_data, get_species_options, get_images
 from components.graphs import make_hist_plot, make_map, make_pie_plot
@@ -12,11 +13,14 @@ SORT_LIST = [{'label': 'Alphabetical', 'value': 'alpha'},
                 {'label': 'Ascending', 'value': 'sum ascending'},
                 {'label': 'Descending', 'value': 'sum descending'}]
 
+# read in dataset, will be replaced by upload to feed into get_data below
+df = pd.read_csv("test_data/Hoyal_Cuthill_GoldStandard_metadata_cleaned.csv")
+
 # get dataset-determined static data:
     # the dataframe and categorical features
     # all possible species, subspecies
     # distribution options (histogram and map options)
-df, cat_list = get_data()
+df, cat_list = get_data(df)
 all_species = get_species_options(df)
 hist_div = get_hist_div(cat_list, SORT_LIST, H4_STYLE, HALF_DIV_STYLE)
 map_div = get_map_div(cat_list, H4_STYLE, HALF_DIV_STYLE)
