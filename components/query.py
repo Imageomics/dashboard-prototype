@@ -29,7 +29,8 @@ def get_data(df):
         df.loc[df['lat-lon'] == lat_lon, 'Species_at_locality'] = ", ".join(species_list)
         df.loc[df['lat-lon'] == lat_lon, 'Subspecies_at_locality'] = ", ".join(subspecies_list)
 
-    # Dictionary of categorical values for graphing options    
+    # Dictionary of categorical values for graphing options  
+    # Will likely choose to calculate and return this in later instance    
     cat_list = [{'label': 'Species', 'value': 'Species'},
                     {'label': 'Subspecies', 'value': 'Subspecies'},
                     {'label':'View', 'value': 'View'},

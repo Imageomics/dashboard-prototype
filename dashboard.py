@@ -1,147 +1,146 @@
 import pandas as pd
+import base64
+import io
+import json
 from dash import Dash, html, dcc, Input, Output, State
+from dash.exceptions import PreventUpdate
 from components.query import get_data, get_species_options, get_images
 from components.graphs import make_hist_plot, make_map, make_pie_plot
-from components.divs import get_hist_div, get_map_div
+from components.divs import get_main_div, get_hist_div, get_map_div
 
-# Fixed styles and sorting options
-H1_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue'}
-H4_STYLE = {'color': 'MidnightBlue', 'margin-bottom' : 10}
-HALF_DIV_STYLE = {'width': '48%', 'display': 'inline-block'}
-QUARTER_DIV_STYLE = {'width': '24%', 'display': 'inline-block'}
-SORT_LIST = [{'label': 'Alphabetical', 'value': 'alpha'},
-                {'label': 'Ascending', 'value': 'sum ascending'},
-                {'label': 'Descending', 'value': 'sum descending'}]
-
-# read in dataset, will be replaced by upload to feed into get_data below
-df = pd.read_csv("test_data/Hoyal_Cuthill_GoldStandard_metadata_cleaned.csv")
-
-# get dataset-determined static data:
-    # the dataframe and categorical features
-    # all possible species, subspecies
-    # distribution options (histogram and map options)
-df, cat_list = get_data(df)
-all_species = get_species_options(df)
-hist_div = get_hist_div(cat_list, SORT_LIST, H4_STYLE, HALF_DIV_STYLE)
-map_div = get_map_div(cat_list, H4_STYLE, HALF_DIV_STYLE)
+# Fixed style
+PRINT_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue', 'margin-bottom' : 10}
 
 # Initialize app/dashboard and set layout
-app = Dash(__name__)
+app = Dash(__name__, suppress_callback_exceptions=True)
 
 app.layout = html.Div([
-     html.H1("Cuthill Data Distribution Statistics", style = H1_STYLE),
-
-    # Distribution Options, default start on histogram
-    html.Div(hist_div,
-            id = 'dist-options',
-            style = HALF_DIV_STYLE
-    ),
-
-    # Pie chart options: 'Species', 'Subspecies', 'View', 'Sex', 'Hybrid Status'
-    html.Div([
-        html.H4("Show me the Percentage Breakdown of ...", style = H4_STYLE),
-        dcc.RadioItems(cat_list[:-2],
-                        'Species',
-                        id = 'prct-brkdwn'
-                        ),
-        html.Br(),
-    ], style = HALF_DIV_STYLE
-    ),
-
-    html.Br(),
-    html.Br(),
-       
-    # Graphs - Distribution (histogram or map), then pie chart
-    html.Div([
-        dcc.Graph(id = 'dist-plot')], style = HALF_DIV_STYLE),
-    html.Div([
-        dcc.Graph(id = 'pie-plot')], style = HALF_DIV_STYLE),
-
-    html.Hr(),
-
-    html.H1("Cuthill Data Sample Image Selection", style = H1_STYLE),
-
-    html.Hr(),
-
-    # Image Selector
-    html.Div([
-
-        html.H4("Show me sample images of ...", style = H4_STYLE),
-        #select Species/Subspecies to view (defaul to Any)
-        # Note: these should be the same type to interact properly, first must not be clearable
-        dcc.Dropdown(options = list(all_species.keys()),
-                        value = 'Any',
-                        id = 'species-show',
-                        clearable = False),
-        #html.Br(),
-        dcc.Dropdown(
-                        multi = True,
-                        id = 'subspecies-show',
-                        placeholder = 'Select Subspecies to View'),
-        # Further Refine by Features
-        html.H4("that are ...", style = H4_STYLE),
-        html.Div([
-            dcc.Checklist(df.Sex.unique(), 
-                            df.Sex.unique()[0:2],
-                            id = 'which-sex')],
-            style = QUARTER_DIV_STYLE
-            ),
-        html.Div([
-            dcc.Checklist(df.View.unique(), 
-                            df.View.unique()[0:2],
-                            id = 'which-view')],
-            style = QUARTER_DIV_STYLE
-            ),
-        html.Div([
-            dcc.Checklist(df.hybrid_stat.unique(), 
-                            df.hybrid_stat.unique()[0:2],
-                            id = 'hybrid?')],
-            style = QUARTER_DIV_STYLE
-            ),
-        html.Div([
-            html.H5("How many images?", style = H4_STYLE),
-            dcc.Input(type = 'number',
-                        min = 1,
-                        max = 100,
-                        step = 1,
-                        placeholder = '#',
-                        id = 'num-images')],
-            style = QUARTER_DIV_STYLE
-            )
-    ], id = 'dropdown-images'),
-
-    html.Hr(),
-
-    # Button to activate the callback
-    html.Button('Display Images',
-                id = 'display-img',
-                n_clicks = 0),
-
-    # Add some space after the button
-    html.Br(),
-    html.Br(),
-    html.Br(),
-
-    # Image Should appear
-    html.Div(id = 'image-1'),
-
-    # Add some space after the image to push up
-    html.Br(),
-    html.Br(),
-    html.Br(),
-    html.Br(),
-
+     dcc.Upload(html.Button('Upload Data',
+                            style = {'color': 'MidnightBlue', 
+                                    'background-color': 'BlanchedAlmond', 
+                                    'border-color': 'MidnightBlue',
+                                    'font-size': '16px'}),
+                            id = 'upload-data',
+                            multiple = False
+                            ),
+                dcc.Store(id = 'memory'),
+                html.Hr(),
+                # Set up memory store, will revert on page refresh
+                #dcc.Store(id = 'memory'),
+                #html.Button('Process Data', 
+                #            id = 'memory-btn'),
+                html.Div(children = [html.H3('Upload data (CSV or XLS) to see distribution statistics.', 
+                                              style = PRINT_STYLE)],
+                         id = 'output-data-upload')
 ])
+
+# Data read in and save to memory
+@app.callback(
+        Output('memory', 'data', allow_duplicate=True),
+        Input('upload-data', 'contents'),
+        State('upload-data', 'filename'),
+        prevent_initial_call = True
+)
+
+def parse_contents(contents, filename):
+    '''
+    Function to read uploaded data.
+    '''
+    if contents is None:
+        raise PreventUpdate
+    content_type, content_string = contents.split(',')
+    #content_string = contents
+
+    decoded = base64.b64decode(content_string)
+    try:
+        if 'csv' in filename:
+            df = pd.read_csv(io.StringIO(decoded.decode('utf-8')))
+        elif 'xls' in filename:
+            df = pd.read_excel(io.BytesIO(decoded))
+    except UnicodeDecodeError:
+        return html.Div([
+            html.H4("The source file is not a valid CSV format, see the documentation: https://github.com/Imageomics/prototype-dashboard#how-it-works.",
+                    style = PRINT_STYLE)
+        ])
+    except Exception as e:
+        print(e)
+        return html.Div([
+            html.H4("There was an error processing this file.",
+                    style = PRINT_STYLE)
+        ])
+    # Check for required columns
+    # If no lat/lon, disable Map View button
+    mapping = True
+    features = ['Image_filename', 'Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 'file_url']
+    for feature in features:
+        if feature not in list(df.columns):
+            if feature == 'lat' or feature == 'lon':
+                mapping = False
+            else:
+                return html.Div([
+                    html.H4("Source data does not have " + feature + " column. " +
+                                "See the documentation for list of required columns: https://github.com/Imageomics/prototype-dashboard#how-it-works.",
+                            style = PRINT_STYLE)
+                    ])
+    
+    # get dataset-determined static data:
+        # the dataframe and categorical features
+        # all possible species, subspecies
+        # will likely include categorical options in later instance (sooner)
+    processed_df, cat_list = get_data(df)
+    all_species = get_species_options(processed_df)
+    
+    # save data to dictionary to save as json 
+    data = {
+            'processed_df': processed_df.to_json(date_format = 'iso', orient = 'split'),
+            'all_species': all_species,
+            'mapping': mapping
+        }   
+    return json.dumps(data)
+
+# Callback to update processed data if new data uploaded
+@app.callback(
+        Output('memory', 'data'),
+        Input('upload-data', 'contents'),
+        State('upload-data', 'filename'),
+        prevent_initial_call = True
+)
+    
+def update_output(contents, filename):
+    if contents is not None:
+        return parse_contents(contents, filename)
+
+# Callback to get main div (histogram, pie chart, and image example options)
+@app.callback(
+        Output('output-data-upload', 'children'),
+        Input('memory', 'data'),
+        prevent_initial_call = True
+)
+
+def get_visuals(jsonified_data):
+    '''
+    Function that usese the processed and saved data to get the main div (histogram, pie chart, and image example options).
+    '''
+    # load saved data
+    data = json.loads(jsonified_data)
+    dff = pd.read_json(data['processed_df'], orient = 'split')
+
+    # get divs
+    hist_div = get_hist_div(data['mapping'])
+    children = get_main_div(dff, data['all_species'], hist_div)
+
+    return children
 
 # Distribution Section
 # Callback to update which options are visible (histogram vs map)
 @app.callback(
         Output('dist-options', 'children'),
         Input('dist-view-btn', 'n_clicks'),
-        Input('dist-view-btn', 'children')
+        Input('dist-view-btn', 'children'),
+        Input('memory', 'data')
 )
 
-def update_dist_view(n_clicks, children):
+def update_dist_view(n_clicks, children, jsonified_data):
     '''
     Function to update the upper left distribution options based on selected distribution chart (histogram or map).
     Activates on click to change, defaults to histogram view.
@@ -150,18 +149,20 @@ def update_dist_view(n_clicks, children):
     -----------
     n_clicks - Number of clicks. 
     children - Label on button, determins which distribution options to show.
+    jsonified_data - Saved dictionary of DataFrame, species options, and mapping (boolean on lat/lon availability).
 
     Returns:
     --------
     hist_div or map_div - The HTML Div corresponding to the selected distribution figure.
     '''
+    data = json.loads(jsonified_data)
     if n_clicks == 0:
-        return hist_div
+        return get_hist_div(data['mapping'])
     if n_clicks > 0:
         if children == "Show Histogram":
-            return hist_div
+            return get_hist_div(data['mapping'])
         else:
-            return map_div
+            return get_map_div()
 
 # Callback to update the distribution figure (histogram or map)
 @app.callback(
@@ -174,10 +175,12 @@ def update_dist_view(n_clicks, children):
     #input sort_by
     Input(component_id='sort-by', component_property='value'),
     #button information
-    Input(component_id='dist-view-btn', component_property='children')
+    Input(component_id='dist-view-btn', component_property='children'),
+    # Saved Data
+    Input('memory', 'data')
 )
 
-def update_dist_plot(x_var, color_by, sort_by, btn):
+def update_dist_plot(x_var, color_by, sort_by, btn, jsonified_data):
     '''
     Function to update distribution figure with either map or histogram based on selections.
     Selection is based on current label of the button ('Map View' or 'Show Histogram'), which updates prior to graph.
@@ -188,15 +191,21 @@ def update_dist_plot(x_var, color_by, sort_by, btn):
     color_by - User-selected property to color the plot by.
     sort_by - User-selected ordering of bar charts (Alphabetical, Ascending, or Descending).
     btn - Current label of the button ('Map View' or 'Show Histogram').
+    jsonified_data - Saved dictionary of DataFrame, species options, and mapping (boolean on lat/lon availability).
 
     Returns: 
     --------
     fig -  Figure returned from appropriate function call: histogram or map of the distribution of the requested variable.
     '''
+    # open dataframe from saved data
+    data = json.loads(jsonified_data)
+    dff = pd.read_json(data['processed_df'], orient = 'split')
+
+    # get distribution graph based on button value
     if btn == "Show Histogram":
-        return make_map(df, color_by)
+        return make_map(dff, color_by)
     else:
-        return make_hist_plot(df, x_var, color_by, sort_by)
+        return make_hist_plot(dff, x_var, color_by, sort_by)
 
 # Pie Section
 
@@ -204,33 +213,52 @@ def update_dist_plot(x_var, color_by, sort_by, btn):
     #pie output
     Output(component_id='pie-plot', component_property='figure'),
     #pie input (var)
-    Input(component_id='prct-brkdwn', component_property='value')
+    Input(component_id='prct-brkdwn', component_property='value'),
+    # Saved Data
+    Input('memory', 'data')
 )
 
-def update_pie_plot(var):
+def update_pie_plot(var, jsonified_data):
     '''
     Updates the pie chart of dataset specimens based on user selection of variable to color by.
 
     Parameters:
     -----------
     var - User-selected categorical variable by which to color.
+    jsonified_data - Saved dictionary of DataFrame, species options, and mapping (boolean on lat/lon availability).
 
     Returns: 
     --------
     fig - Pie chart figure returned from function call: percentage breakdown of `var` samples in the dataset.
     '''
-    return make_pie_plot(df, var)
+    # open dataframe from saved data
+    data = json.loads(jsonified_data)
+    dff = pd.read_json(data['processed_df'], orient = 'split')
+    return make_pie_plot(dff, var)
 
 # Image Section
 
 # Callback for Image Species Selection
 @app.callback(
     Output(component_id = 'subspecies-show', component_property= 'options'),
-    Input(component_id = 'species-show', component_property = 'value')
+    Input(component_id = 'species-show', component_property = 'value'),
+    Input('memory', 'data')
 )
 
-def set_subspecies_options(selected_species):
-    # Set subspecies options in dropdown based on user-selected species.
+def set_subspecies_options(selected_species, jsonified_data):
+    ''' 
+    Function to set subspecies options in dropdown based on user-selected species.
+
+    Parameters:
+    -----------
+    jsonified_data - Saved dictionary of DataFrame, species options, and mapping (boolean on lat/lon availability).
+
+    Returns: 
+    --------
+    list of subspecies options based on user-selected species. 
+    '''
+    data = json.loads(jsonified_data)
+    all_species = data['all_species']
     return [{'label': i, 'value': i} for i in all_species[selected_species]]
 
 # Callback for Image Subspecies Selection
@@ -247,7 +275,7 @@ def set_subspecies_value(available_options):
 @app.callback(
     Output('image-1', 'children'),
     Input('display-img', 'n_clicks'),
-    #State('species-show', 'value'),
+    Input('memory', 'data'),
     State('subspecies-show', 'value'),
     State('which-view', 'value'),
     State('which-sex', 'value'),
@@ -257,13 +285,14 @@ def set_subspecies_value(available_options):
 )
 
 # Retrieve selected number of images
-def update_display(n_clicks, subspecies, view, sex, hybrid, num_images):
+def update_display(n_clicks, jsonified_data, subspecies, view, sex, hybrid, num_images):
     '''
     Function to retrieve the user-selected number of images adhering to their chosen parameters when the 'Display Images' button is pressed.
     
     Parameters:
     -----------
     n_clicks - Number of times the 'Display Images' button has been pressed.
+    jsonified_data - Saved dictionary of DataFrame, species options, and mapping (boolean on lat/lon availability).
     subspecies - String. Subspecies of specimen selected by the user.
     view - String. View of specimen selected by the user.
     sex - String. Sex of specimen selected by the user.
@@ -277,7 +306,10 @@ def update_display(n_clicks, subspecies, view, sex, hybrid, num_images):
            Returns html header4 "Please make a selection." If number of images isn't specified.
     '''
     if n_clicks > 0 and (view != [] and sex != [] and hybrid != []):
-        return get_images(df, subspecies, view, sex, hybrid, num_images)
+        # Unpack json for saved dataframe
+        data = json.loads(jsonified_data)
+        dff = pd.read_json(data['processed_df'], orient = 'split')
+        return get_images(dff, subspecies, view, sex, hybrid, num_images)
     else:
         return html.H4("Please make a selection.", 
                     style = {'color': 'MidnightBlue'})
