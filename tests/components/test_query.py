@@ -51,11 +51,16 @@ class TestQuery(unittest.TestCase):
                             'subspecies synonym', 
                             'valid subspecies', 
                             'valid subspecies'],
-            'Image_filename': ['10428251_V_lowres.tif', 
-                               '10428328_V_lowres.tif', 
-                               '10428723_V_lowres.tif', 
-                               '10427968_D_lowres.tif', 
-                               '10428804_D_lowres.tif']
+            'Image_filename': ['10428251_V_lowres.png', 
+                               '10428328_V_lowres.png', 
+                               '10428723_V_lowres.png', 
+                               '10427968_D_lowres.png', 
+                               '10428804_D_lowres.png'],
+            'file_url': ['https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
+                        'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
+                        'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
+                        'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/',
+                        'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/']
         }
         df = pd.DataFrame(data = data)
         test_subspecies = ['Any', 
@@ -80,15 +85,28 @@ class TestQuery(unittest.TestCase):
                        ['valid subspecies', 'subspecies synonym']]
         test_nums = [1, 2, 1, None, 3]
         test_images = [0, 
-                       '10428251_V_lowres.tif', 
-                       '10428804_D_lowres.tif', 
-                       '10428723_V_lowres.tif', 
-                       ['10428251_V_lowres.tif', '10428328_V_lowres.tif', '10427968_D_lowres.tif']]
-        result = get_filenames(df, test_subspecies[0], test_view[0], test_sex[0], test_hybrid[0], test_nums[0])
+                       '10428251_V_lowres.png', 
+                       '10428804_D_lowres.png', 
+                       '10428723_V_lowres.png', 
+                       ['10428251_V_lowres.png', '10428328_V_lowres.png', '10427968_D_lowres.png']]
+        test_paths = [0,
+                      'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
+                      'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/',
+                      'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
+                      ['https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
+                      'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
+                      'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/',
+                      ]
+                      ]
+
+        result, paths = get_filenames(df, test_subspecies[0], test_view[0], test_sex[0], test_hybrid[0], test_nums[0])
         self.assertEqual(result, test_images[0])
+        self.assertEqual(paths, test_paths[0])
         for i in range(1,4):
-            result = get_filenames(df, test_subspecies[i], test_view[i], test_sex[i], test_hybrid[i], test_nums[i])
+            result, paths = get_filenames(df, test_subspecies[i], test_view[i], test_sex[i], test_hybrid[i], test_nums[i])
             self.assertEqual(result, [test_images[i]])
-        result = get_filenames(df, test_subspecies[4], test_view[4], test_sex[4], test_hybrid[4], test_nums[4])
+            self.assertEqual(paths, [test_paths[i]])
+        result, paths = get_filenames(df, test_subspecies[4], test_view[4], test_sex[4], test_hybrid[4], test_nums[4])
         #check lists have same elements
         self.assertCountEqual(result, test_images[4])
+        self.assertCountEqual(paths, test_paths[4])

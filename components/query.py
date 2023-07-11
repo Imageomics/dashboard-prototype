@@ -1,8 +1,5 @@
-import pandas as pd
 import numpy as np
 from dash import html
-
-IMAGES_BASE_URL = "https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/"
 
 # Helper functions for Dashboard
 
@@ -87,19 +84,20 @@ def get_images(df, subspecies, view, sex, hybrid, num_images):
     Imgs - List of html image elements with `src` element pointing to paths for the requested number of images matching given parameters.
            Returns html header4 "No Such Images. Please make another selection." if no images matching parameters exist.
     '''
-    filenames = get_filenames(df, subspecies, view, sex, hybrid, num_images)
+    filenames, filepaths = get_filenames(df, subspecies, view, sex, hybrid, num_images)
     if filenames == 0:
         #print("No Such Images. Please make another selection.")
         return html.H4("No Such Images. Please make another selection.", 
                     style = {"color":"MidnightBlue"})
     Imgs = []
-    for filename in filenames:
-        if 'D_lowres' in filename:    
-            image_directory = "dorsal_images/"
+    for i in range(len(filenames)):
+        if filenames[i] in filepaths[i]:
+            image_path = filepaths[i]
         else:
-            image_directory = "ventral_images/"
-        #remove 'tif' from filename and replace with 'png' in url
-        image_path = IMAGES_BASE_URL + image_directory + filename[:-3] + "png?raw=true"
+            if filepaths[i][-1] == '/':
+                image_path = filepaths[i] + filenames[i]
+            else:
+                image_path = filepaths[i] + '/' + filenames[i]
         Imgs.append(html.Img(src = image_path))
     return Imgs
 
@@ -119,7 +117,8 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     Returns:
     --------
     filenames or 0 - List of filenames meeting specified conditions (the lesser of the requested amount or number available). 
-                     Returns 0 if no matching values.
+    filepaths - List of filepaths (URLs) corresponding to the selected filenames. 
+    Returns 0, 0 if no matching values.
     '''
     if 'Any' in subspecies:
         if subspecies == 'Any':
@@ -131,15 +130,17 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
         df_sub = df.loc[df.Subspecies.isin(subspecies)].copy()
     df_sub = df_sub.loc[df_sub.View.isin(view)]
     df_sub = df_sub.loc[df_sub.Sex.isin(sex)]
-    df_filtered = df_sub.loc[df_sub.hybrid_stat.isin(hybrid)]
-    max_imgs = len(df_filtered)
+    df_sub = df_sub.loc[df_sub.hybrid_stat.isin(hybrid)]
+    max_imgs = len(df_sub)
     if max_imgs > 0:
         if num_images == None:
             num = 1
         else:
             num = min(num_images, max_imgs)
-        filenames = df_filtered.sample(num).Image_filename.astype('string').values
+        df_filtered = df_sub.sample(num)
+        filenames = df_filtered.Image_filename.astype('string').values
+        filepaths = df_filtered.file_url.astype('string').values
         #return list of filenames for min(user-selected, available) images randomly selected images from the filtered dataset
-        return list(filenames)
+        return list(filenames), list(filepaths)
     else:
-        return 0
+        return 0, 0
