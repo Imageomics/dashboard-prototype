@@ -13,8 +13,7 @@ cat_list = [{'label': 'Species', 'value': 'Species'},
                 {'label': 'Subspecies', 'value': 'Subspecies'},
                 {'label':'View', 'value': 'View'},
                 {'label': 'Sex', 'value': 'Sex'},
-                {'label': 'Hybrid Status', 'value':'hybrid_stat'},
-                {'label': 'Additional Taxa Information', 'value':'addit_taxa_info'}, 
+                {'label': 'Hybrid Status', 'value':'hybrid_stat'}, 
                 {'label': 'Locality', 'value': 'locality'}
                 ]
 

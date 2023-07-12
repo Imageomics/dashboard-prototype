@@ -3,7 +3,7 @@ from dash import html
 
 # Helper functions for Dashboard
 
-def get_data(df):
+def get_data(df, mapping):
     '''
     Function to read in DataFrame and perform required manipulations: 
         - add 'lat-lon', `Samples_at_locality`, 'Species_at_locality', and 'Subspecies_at_locality' columns.
@@ -12,6 +12,7 @@ def get_data(df):
     Parameters:
     -----------
     df - DataFrame of the data to visualize.
+    mapping - Boolean. True when lat/lon are given in dataset.
             
     Returns:
     --------
@@ -19,6 +20,20 @@ def get_data(df):
     cat_list - List of categorical variables for RadioItems (pie chart and map).
 
     '''
+     # Dictionary of categorical values for graphing options  
+    # Will likely choose to calculate and return this in later instance    
+    cat_list = [{'label': 'Species', 'value': 'Species'},
+                {'label': 'Subspecies', 'value': 'Subspecies'},
+                {'label':'View', 'value': 'View'},
+                {'label': 'Sex', 'value': 'Sex'},
+                {'label': 'Hybrid Status', 'value':'hybrid_stat'},
+                {'label': 'Locality', 'value': 'locality'}
+    ]
+    
+    if not mapping:
+        return df, cat_list
+    
+    # else lat and lon are in dataset, so process locality information
     df['lat-lon'] = df['lat'].astype(str) + '|' + df['lon'].astype(str)
     df["Samples_at_locality"] = df['lat-lon'].map(df['lat-lon'].value_counts()) # will duplicate if dorsal and ventral
 
@@ -26,18 +41,11 @@ def get_data(df):
     for lat_lon in df['lat-lon']:
         species_list = ['{}'.format(i) for i in df.loc[df['lat-lon'] == lat_lon]['Species'].unique()]
         subspecies_list = ['{}'.format(i) for i in df.loc[df['lat-lon'] == lat_lon]['Subspecies'].unique()]
-        df.loc[df['lat-lon'] == lat_lon, 'Species_at_locality'] = ", ".join(species_list)
-        df.loc[df['lat-lon'] == lat_lon, 'Subspecies_at_locality'] = ", ".join(subspecies_list)
+        df.loc[df['lat-lon'] == lat_lon, "Species_at_locality"] = ", ".join(species_list)
+        df.loc[df['lat-lon'] == lat_lon, "Subspecies_at_locality"] = ", ".join(subspecies_list)
 
-    # Dictionary of categorical values for graphing options  
-    # Will likely choose to calculate and return this in later instance    
-    cat_list = [{'label': 'Species', 'value': 'Species'},
-                    {'label': 'Subspecies', 'value': 'Subspecies'},
-                    {'label':'View', 'value': 'View'},
-                    {'label': 'Sex', 'value': 'Sex'},
-                    {'label': 'Hybrid Status', 'value':'hybrid_stat'},
-                    {'label': 'Additional Taxa Information', 'value':'addit_taxa_info'}, 
-                    {'label': 'Locality', 'value': 'locality'}]
+    if 'locality' not in df.columns:
+        df['locality'] = df['lat-lon']
 
     return df, cat_list
 
@@ -121,7 +129,7 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     filepaths - List of filepaths (URLs) corresponding to the selected filenames. 
     Returns 0, 0 if no matching values.
     '''
-    if 'Any' in subspecies:
+    if 'Any' in subspecies and type(subspecies) == str:
         if subspecies == 'Any':
             df_sub = df.copy()
         else:
