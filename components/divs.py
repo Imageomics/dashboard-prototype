@@ -5,6 +5,7 @@ H1_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue'}
 H4_STYLE = {'color': 'MidnightBlue', 'margin-bottom' : 10}
 HALF_DIV_STYLE = {'width': '48%', 'display': 'inline-block'}
 QUARTER_DIV_STYLE = {'width': '24%', 'display': 'inline-block'}
+ERROR_STYLE = {'textAlign': 'center', 'color': 'FireBrick', 'margin-bottom' : 10}
 SORT_LIST = [{'label': 'Alphabetical', 'value': 'alpha'},
                 {'label': 'Ascending', 'value': 'sum ascending'},
                 {'label': 'Descending', 'value': 'sum descending'}]
@@ -280,3 +281,44 @@ def get_main_div(df, all_species, hist_div):
 
     ])
     return main_div
+
+def get_error_div(error_dict):
+    '''
+    Function to return appropriate error message if there's a problem uploading the selected file.
+
+    Parameters:
+    -----------
+    error_dict - Dictionary containing information about the error. Potential keys are 'feature', 'type', 'unicode', and 'other'.
+
+    Returns:
+    --------
+    error_div - Div with the corresponding error message.
+
+    '''
+    if 'feature' in error_dict.keys():
+        feature = error_dict['feature']
+        error_div = html.Div([
+                            html.H4(children = ["Source data does not have '" + feature + "' column. ",
+                                        "See the documentation for list of required columns: ",
+                                        dcc.Link(href="https://github.com/Imageomics/dashboard-prototype#how-it-works", 
+                                                 style = ERROR_STYLE)],
+                                        style = ERROR_STYLE)
+                        ])
+    elif 'type' in error_dict.keys():
+        error_div = html.Div([
+                            html.H4(["The source file is not a valid CSV format, see the documentation: ",
+                                     dcc.Link(href="https://github.com/Imageomics/dashboard-prototype#how-it-works",
+                                              style = ERROR_STYLE)],
+                            style = ERROR_STYLE)
+        ])
+    elif 'unicode' in error_dict.keys():
+        error_div = html.Div([
+            html.H4("There was a UnicodeDecode error processing this file.",
+                    style = ERROR_STYLE)
+        ])
+    else:
+        error_div = html.Div([
+            html.H4("There was an error processing this file.",
+                    style = ERROR_STYLE)
+        ])
+    return error_div

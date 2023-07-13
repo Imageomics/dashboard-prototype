@@ -6,7 +6,7 @@ from dash import Dash, html, dcc, Input, Output, State
 from dash.exceptions import PreventUpdate
 from components.query import get_data, get_species_options, get_images
 from components.graphs import make_hist_plot, make_map, make_pie_plot
-from components.divs import get_main_div, get_hist_div, get_map_div
+from components.divs import get_main_div, get_error_div, get_hist_div, get_map_div
 
 # Fixed style
 PRINT_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue', 'margin-bottom' : 10}
@@ -57,17 +57,15 @@ def parse_contents(contents, filename):
             df = pd.read_csv(io.StringIO(decoded.decode('utf-8')))
         elif 'xls' in filename:
             df = pd.read_excel(io.BytesIO(decoded))
-    except UnicodeDecodeError:
-        return html.Div([
-            html.H4("The source file is not a valid CSV format, see the documentation: https://github.com/Imageomics/prototype-dashboard#how-it-works.",
-                    style = PRINT_STYLE)
-        ])
+        else:
+            return json.dumps({'error': {'type': 'wrong file type'}})
+    except UnicodeDecodeError as e:
+        print(e)
+        return json.dumps({'error': {'unicode': str(e)}})
+    
     except Exception as e:
         print(e)
-        return html.Div([
-            html.H4("There was an error processing this file.",
-                    style = PRINT_STYLE)
-        ])
+        return json.dumps({'error': {'other': str(e)}})
     # Check for required columns
     # If no lat/lon, disable Map View button
     mapping = True
@@ -77,11 +75,7 @@ def parse_contents(contents, filename):
             if feature == 'lat' or feature == 'lon':
                 mapping = False
             else:
-                return html.Div([
-                    html.H4("Source data does not have " + feature + " column. " +
-                                "See the documentation for list of required columns: https://github.com/Imageomics/prototype-dashboard#how-it-works.",
-                            style = PRINT_STYLE)
-                    ])
+                return json.dumps({'error': {'feature': feature}})
     
     # get dataset-determined static data:
         # the dataframe and categorical features - processed for map view if mapping is True
@@ -120,9 +114,12 @@ def update_output(contents, filename):
 def get_visuals(jsonified_data):
     '''
     Function that usese the processed and saved data to get the main div (histogram, pie chart, and image example options).
+    Returns error div if error occurs in upload or essential features are missing.
     '''
     # load saved data
     data = json.loads(jsonified_data)
+    if 'error' in data:
+        return get_error_div(data['error'])
     dff = pd.read_json(data['processed_df'], orient = 'split')
 
     # get divs
@@ -200,7 +197,6 @@ def update_dist_plot(x_var, color_by, sort_by, btn, jsonified_data):
     # open dataframe from saved data
     data = json.loads(jsonified_data)
     dff = pd.read_json(data['processed_df'], orient = 'split')
-
     # get distribution graph based on button value
     if btn == "Show Histogram":
         return make_map(dff, color_by)
