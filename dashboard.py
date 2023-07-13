@@ -90,7 +90,6 @@ def parse_contents(contents, filename):
         # will likely include categorical options in later instance (sooner)
     processed_df, cat_list = get_data(df, mapping)
     all_species = get_species_options(processed_df)
-    print(mapping)
     # save data to dictionary to save as json 
     data = {
             'processed_df': processed_df.to_json(date_format = 'iso', orient = 'split'),
