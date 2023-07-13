@@ -17,6 +17,7 @@ cat_list = [{'label': 'Species', 'value': 'Species'},
                 {'label': 'Hybrid Status', 'value':'hybrid_stat'}, 
                 {'label': 'Locality', 'value': 'locality'}
                 ]
+DOCS_URL = "https://github.com/Imageomics/dashboard-prototype#how-it-works"
 
 def get_hist_div(mapping):
     '''
@@ -32,82 +33,53 @@ def get_hist_div(mapping):
     hist_div - HTML Div containing all user options for histogram (variable for distribution, coloring, and order to sort x-axis), plus and 'Map View' button.
 
     '''
-    if mapping:
-        hist_div = [
-            html.Div([
-                html.H4("Show me the distribution of ...", style = H4_STYLE),
-                # Add dropdown options
-                # x-axis (feature) distribution options: 'Subspecies', 'Additional Taxa Information', 'Locality'
-                dcc.RadioItems(cat_list[:2] + cat_list[5:], 
-                            'Subspecies',
-                            id = 'x-variable')
-                ], style = HALF_DIV_STYLE
-                ),
-                
-            html.Div([
-                html.H4("Colored by ...", style = H4_STYLE),
-            #select color-by option: 'View', 'Sex', 'Hybrid Status'
-                dcc.RadioItems(cat_list[2:-2],
-                                'View',
-                                id = 'color-by')
-                ], style = HALF_DIV_STYLE
+    
+    hist_div = [
+        html.Div([
+            html.H4("Show me the distribution of ...", style = H4_STYLE),
+            # Add dropdown options
+            # x-axis (feature) distribution options: 'Subspecies', 'Locality'
+            dcc.RadioItems(cat_list[:2] + cat_list[5:], 
+                        'Subspecies',
+                        id = 'x-variable')
+            ], style = HALF_DIV_STYLE
             ),
             
-            html.Div([
-            html.H4("Sort distribution ", style = {'color': 'MidnightBlue', 'margin-top' : 10, 'margin-bottom' : 10}),
-            dcc.RadioItems(SORT_LIST,
-                            'alpha',
-                            id = 'sort-by',
-                            inline = True)
-                    ], style = HALF_DIV_STYLE
-            ),
-            html.Div([
+        html.Div([
+            html.H4("Colored by ...", style = H4_STYLE),
+        #select color-by option: 'View', 'Sex', 'Hybrid Status'
+            dcc.RadioItems(cat_list[2:-2],
+                            'View',
+                            id = 'color-by')
+            ], style = HALF_DIV_STYLE
+        ),
+        
+        html.Div([
+        html.H4("Sort distribution ", style = {'color': 'MidnightBlue', 'margin-top' : 10, 'margin-bottom' : 10}),
+        dcc.RadioItems(SORT_LIST,
+                        'alpha',
+                        id = 'sort-by',
+                        inline = True)
+                ], style = HALF_DIV_STYLE
+        )]
+    
+    if mapping:
+        button_div = html.Div([
             # Button to switch to Map View
             html.Button("Show Map View",
                         id = 'dist-view-btn',
                         n_clicks = 0)
-                    ], style = HALF_DIV_STYLE
+                 ], style = HALF_DIV_STYLE
             )
-            ]
-        
-    # No lat/lon in data so no Map View button
     else:
-        hist_div = [
-            html.Div([
-                html.H4("Show me the distribution of ...", style = H4_STYLE),
-                # Add dropdown options
-                # x-axis (feature) distribution options: 'Subspecies', 'Additional Taxa Information', 'Locality'
-                dcc.RadioItems(cat_list[:2] + cat_list[5:], 
-                            'Subspecies',
-                            id = 'x-variable')
-                ], style = HALF_DIV_STYLE
-                ),
-                
-            html.Div([
-                html.H4("Colored by ...", style = H4_STYLE),
-            #select color-by option: 'View', 'Sex', 'Hybrid Status'
-                dcc.RadioItems(cat_list[2:-2],
-                                'View',
-                                id = 'color-by')
-                ], style = HALF_DIV_STYLE
-            ),
-            
-            html.Div([
-            html.H4("Sort distribution ", style = {'color': 'MidnightBlue', 'margin-top' : 10, 'margin-bottom' : 10}),
-            dcc.RadioItems(SORT_LIST,
-                            'alpha',
-                            id = 'sort-by',
-                            inline = True)
-                    ], style = HALF_DIV_STYLE
-            ),   
-            # No mapping info, so no button   
-            html.Div([
-                    ], 
-                    id = 'dist-view-btn',
-                    style = HALF_DIV_STYLE
-            )
-        ]
-
+        # No mapping info, so no Map View button   
+        button_div = html.Div([
+                ], 
+                id = 'dist-view-btn',
+                style = HALF_DIV_STYLE
+        )
+    hist_div.append(button_div)
+       
     return hist_div
 
 def get_map_div():
@@ -134,7 +106,7 @@ def get_map_div():
             
         html.Div([
             html.H4("Colored by ...", style = H4_STYLE),
-            #select color-by option: 'Species', 'Subspecies', 'View', 'Sex', 'Hybrid Status', 'Additional Taxa Information', 'Locality'
+            #select color-by option: 'Species', 'Subspecies', 'View', 'Sex', 'Hybrid Status', 'Locality'
             dcc.RadioItems(cat_list,
                             'View',
                             id = 'color-by',
@@ -298,17 +270,24 @@ def get_error_div(error_dict):
     if 'feature' in error_dict.keys():
         feature = error_dict['feature']
         error_div = html.Div([
-                            html.H4(children = ["Source data does not have '" + feature + "' column. ",
-                                        "See the documentation for list of required columns: ",
-                                        dcc.Link(href="https://github.com/Imageomics/dashboard-prototype#how-it-works", 
-                                                 style = ERROR_STYLE)],
+                            html.H3("Source data does not have '" + feature + "' column. ",
+                                    style = ERROR_STYLE),
+                            html.H4(["Please see the ",
+                                        html.A("documentation",
+                                                href=DOCS_URL,
+                                                target='_blank',
+                                                style = ERROR_STYLE),
+                                        " for list of required columns."], 
                                         style = ERROR_STYLE)
                         ])
     elif 'type' in error_dict.keys():
         error_div = html.Div([
-                            html.H4(["The source file is not a valid CSV format, see the documentation: ",
-                                     dcc.Link(href="https://github.com/Imageomics/dashboard-prototype#how-it-works",
-                                              style = ERROR_STYLE)],
+                            html.H4(["The source file is not a valid CSV format, please see the ",
+                                     html.A("documentation", 
+                                            href=DOCS_URL,
+                                            target='_blank',
+                                            style = ERROR_STYLE),
+                                     "."],
                             style = ERROR_STYLE)
         ])
     elif 'unicode' in error_dict.keys():

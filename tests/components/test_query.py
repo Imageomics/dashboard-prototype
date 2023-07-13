@@ -51,6 +51,8 @@ class TestQuery(unittest.TestCase):
         self.assertEqual(result2_list, cat_list)
 
     def test_get_filenames(self):
+        BASE_URL_V = "https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/"
+        BASE_URL_D = "https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/"
         data = {
             'Species': ['melpomene', 'melpomene', 'erato', 'melpomene', 'erato'],
             'Subspecies': ['schunkei', 'nanna', 'erato', 'rosina_N', 'guarica'],
@@ -66,11 +68,11 @@ class TestQuery(unittest.TestCase):
                                '10428723_V_lowres.png', 
                                '10427968_D_lowres.png', 
                                '10428804_D_lowres.png'],
-            'file_url': ['https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
-                        'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
-                        'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
-                        'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/',
-                        'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/']
+            'file_url': [BASE_URL_V,
+                        BASE_URL_V,
+                        BASE_URL_V,
+                        BASE_URL_D,
+                        BASE_URL_D]
         }
         df = pd.DataFrame(data = data)
         test_subspecies = ['Any', 
@@ -100,12 +102,12 @@ class TestQuery(unittest.TestCase):
                        '10428723_V_lowres.png', 
                        ['10428251_V_lowres.png', '10428328_V_lowres.png', '10427968_D_lowres.png']]
         test_paths = [0,
-                      'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
-                      'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/',
-                      'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
-                      ['https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
-                      'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/',
-                      'https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/',
+                      BASE_URL_V,
+                      BASE_URL_D,
+                      BASE_URL_V,
+                      [BASE_URL_V,
+                      BASE_URL_V,
+                      BASE_URL_D,
                       ]
                       ]
 

@@ -30,6 +30,13 @@ app.layout = html.Div([
                 #html.Button('Process Data', 
                 #            id = 'memory-btn'),
                 html.Div(children = [html.H3('Upload data (CSV or XLS) to see distribution statistics.', 
+                                              style = PRINT_STYLE),
+                                    html.Br(),
+                                    html.P(["For further file requirements, please see the ",
+                                            html.A("documentation",
+                                                    href="https://github.com/Imageomics/dashboard-prototype#how-it-works",
+                                                    target='_blank'),
+                                                    "."],
                                               style = PRINT_STYLE)],
                          id = 'output-data-upload')
 ])
@@ -83,7 +90,7 @@ def parse_contents(contents, filename):
         # will likely include categorical options in later instance (sooner)
     processed_df, cat_list = get_data(df, mapping)
     all_species = get_species_options(processed_df)
-    
+    print(mapping)
     # save data to dictionary to save as json 
     data = {
             'processed_df': processed_df.to_json(date_format = 'iso', orient = 'split'),
@@ -153,7 +160,7 @@ def update_dist_view(n_clicks, children, jsonified_data):
     hist_div or map_div - The HTML Div corresponding to the selected distribution figure.
     '''
     data = json.loads(jsonified_data)
-    if n_clicks == 0:
+    if n_clicks == 0 or n_clicks == None:
         return get_hist_div(data['mapping'])
     if n_clicks > 0:
         if children == "Show Histogram":
