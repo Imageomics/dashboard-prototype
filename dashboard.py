@@ -15,20 +15,18 @@ PRINT_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue', 'margin-bottom' :
 app = Dash(__name__, suppress_callback_exceptions=True)
 
 app.layout = html.Div([
-     dcc.Upload(html.Button('Upload Data',
-                            style = {'color': 'MidnightBlue', 
-                                    'background-color': 'BlanchedAlmond', 
-                                    'border-color': 'MidnightBlue',
-                                    'font-size': '16px'}),
+                dcc.Upload(html.Button('Upload Data',
+                                    style = {'color': 'MidnightBlue', 
+                                            'background-color': 'BlanchedAlmond', 
+                                            'border-color': 'MidnightBlue',
+                                            'font-size': '16px'}),
                             id = 'upload-data',
                             multiple = False
                             ),
+                # Set up memory store, will revert on page refresh
                 dcc.Store(id = 'memory'),
                 html.Hr(),
-                # Set up memory store, will revert on page refresh
-                #dcc.Store(id = 'memory'),
-                #html.Button('Process Data', 
-                #            id = 'memory-btn'),
+                
                 html.Div(children = [html.H3('Upload data (CSV or XLS) to see distribution statistics.', 
                                               style = PRINT_STYLE),
                                     html.Br(),
@@ -56,7 +54,6 @@ def parse_contents(contents, filename):
     if contents is None:
         raise PreventUpdate
     content_type, content_string = contents.split(',')
-    #content_string = contents
 
     decoded = base64.b64decode(content_string)
     try:

@@ -95,7 +95,6 @@ def get_images(df, subspecies, view, sex, hybrid, num_images):
     '''
     filenames, filepaths = get_filenames(df, subspecies, view, sex, hybrid, num_images)
     if filenames == 0:
-        #print("No Such Images. Please make another selection.")
         return html.H4("No Such Images. Please make another selection.", 
                     style = {"color":"MidnightBlue"})
     Imgs = []
