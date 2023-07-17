@@ -15,7 +15,9 @@ For full dashboard functionality, upload a CSV or XLS file with the following co
 - `lon`: Longitude at which image was taken or specimen was collected.
 - `file_url`: URL to access file.
 
-**Note:** `lat` and `lon` columns are not required to utilize the dashboard, but there will be no map view if they are not included.
+**Note:** 
+- `lat` and `lon` columns are not required to utilize the dashboard, but there will be no map view if they are not included.
+- `file_urls` is not required, but there will be no sample images option if it is not included.
 
 ### Running Dashboard
 
