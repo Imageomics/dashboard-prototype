@@ -1,0 +1,25 @@
+name: run-tests
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: install requirements
+        run: pip install -r requirements.txt
+        shell: bash
+
+      - name: run test
+        run: python -m unittest
+        shell: bash
