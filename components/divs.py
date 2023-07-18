@@ -48,7 +48,7 @@ def get_hist_div(mapping):
         html.Div([
             html.H4("Colored by ...", style = H4_STYLE),
         #select color-by option: 'View', 'Sex', 'Hybrid Status'
-            dcc.RadioItems(cat_list[2:-2],
+            dcc.RadioItems(cat_list[2:-1],
                             'View',
                             id = 'color-by')
             ], style = HALF_DIV_STYLE
@@ -134,15 +134,102 @@ def get_map_div():
     
     return map_div
 
-def get_main_div(df, all_species, hist_div):
+def get_img_div(df, all_species, img_url):
     '''
-    Function to return main div based on upload of data.
+    Function to generate the Image Sampling options section of the dashboard, including button to display images. 
+    Provides empty list if no URLS are provided in the DataFrame for the entries.
 
     Parameters:
     -----------
     df - DataFrame with relevant data for display.
     all_species - All available species options for get_image dropdown.
+    img_url - Boolean. If False, does not render "Data Sample Image Selection" section of Dashboard. 
+
+    Returns:
+    --------
+    img_div - HTML Div containing all user options for sample image selection. Returns an empty list if no image urls available (img_url is False).
+
+    '''
+    if img_url:
+        img_div =[
+                    html.H1("Data Sample Image Selection", style = H1_STYLE),
+
+                    html.Hr(),
+
+                    # Image Selector
+                    html.Div([
+
+                        html.H4("Show me sample images of ...", style = H4_STYLE),
+                        #select Species/Subspecies to view (defaul to Any)
+                        # Note: these should be the same type to interact properly, first must not be clearable
+                        dcc.Dropdown(options = list(all_species.keys()),
+                                        value = 'Any',
+                                        id = 'species-show',
+                                        clearable = False),
+                        #html.Br(),
+                        dcc.Dropdown(
+                                        multi = True,
+                                        id = 'subspecies-show',
+                                        placeholder = 'Select Subspecies to View'),
+                        # Further Refine by Features
+                        html.H4("that are ...", style = H4_STYLE),
+                        html.Div([
+                            dcc.Checklist(df.Sex.unique(), 
+                                            df.Sex.unique()[0:2],
+                                            id = 'which-sex')],
+                            style = QUARTER_DIV_STYLE
+                            ),
+                        html.Div([
+                            dcc.Checklist(df.View.unique(), 
+                                            df.View.unique()[0:2],
+                                            id = 'which-view')],
+                            style = QUARTER_DIV_STYLE
+                            ),
+                        html.Div([
+                            dcc.Checklist(df.hybrid_stat.unique(), 
+                                            df.hybrid_stat.unique()[0:2],
+                                            id = 'hybrid?')],
+                            style = QUARTER_DIV_STYLE
+                            ),
+                        html.Div([
+                            html.H5("How many images?", style = H4_STYLE),
+                            dcc.Input(type = 'number',
+                                        min = 1,
+                                        max = 100,
+                                        step = 1,
+                                        placeholder = '#',
+                                        id = 'num-images')],
+                            style = QUARTER_DIV_STYLE
+                            )
+                    ], id = 'dropdown-images'),
+
+                    html.Hr(),
+
+                    # Button to activate the callback
+                    html.Button('Display Images',
+                                id = 'display-img',
+                                n_clicks = 0),
+
+                    # Add some space after the button
+                    html.Br(),
+                    html.Br(),
+                    html.Br(),
+
+                    # Image Should appear
+                    html.Div(id = 'image-1')
+        ]
+    else:
+        img_div = []
+    return img_div
+
+def get_main_div(hist_div, img_div):
+    '''
+    Function to return main div based on upload of data.
+
+    Parameters:
+    -----------
     hist_div - HTML Div for histogram view.
+    img_div - HTML Div for sample image selector.
 
     Returns:
     --------
@@ -178,72 +265,8 @@ def get_main_div(df, all_species, hist_div):
             dcc.Graph(id = 'pie-plot')], style = HALF_DIV_STYLE),
 
         html.Hr(),
-
-        html.H1("Data Sample Image Selection", style = H1_STYLE),
-
-        html.Hr(),
-
-        # Image Selector
-        html.Div([
-
-            html.H4("Show me sample images of ...", style = H4_STYLE),
-            #select Species/Subspecies to view (defaul to Any)
-            # Note: these should be the same type to interact properly, first must not be clearable
-            dcc.Dropdown(options = list(all_species.keys()),
-                            value = 'Any',
-                            id = 'species-show',
-                            clearable = False),
-            #html.Br(),
-            dcc.Dropdown(
-                            multi = True,
-                            id = 'subspecies-show',
-                            placeholder = 'Select Subspecies to View'),
-            # Further Refine by Features
-            html.H4("that are ...", style = H4_STYLE),
-            html.Div([
-                dcc.Checklist(df.Sex.unique(), 
-                                df.Sex.unique()[0:2],
-                                id = 'which-sex')],
-                style = QUARTER_DIV_STYLE
-                ),
-            html.Div([
-                dcc.Checklist(df.View.unique(), 
-                                df.View.unique()[0:2],
-                                id = 'which-view')],
-                style = QUARTER_DIV_STYLE
-                ),
-            html.Div([
-                dcc.Checklist(df.hybrid_stat.unique(), 
-                                df.hybrid_stat.unique()[0:2],
-                                id = 'hybrid?')],
-                style = QUARTER_DIV_STYLE
-                ),
-            html.Div([
-                html.H5("How many images?", style = H4_STYLE),
-                dcc.Input(type = 'number',
-                            min = 1,
-                            max = 100,
-                            step = 1,
-                            placeholder = '#',
-                            id = 'num-images')],
-                style = QUARTER_DIV_STYLE
-                )
-        ], id = 'dropdown-images'),
-
-        html.Hr(),
-
-        # Button to activate the callback
-        html.Button('Display Images',
-                    id = 'display-img',
-                    n_clicks = 0),
-
-        # Add some space after the button
-        html.Br(),
-        html.Br(),
-        html.Br(),
-
-        # Image Should appear
-        html.Div(id = 'image-1'),
+        
+        html.Div(img_div),
 
         # Add some space after the image to push up
         html.Br(),

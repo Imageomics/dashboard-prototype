@@ -6,7 +6,7 @@ from dash import Dash, html, dcc, Input, Output, State
 from dash.exceptions import PreventUpdate
 from components.query import get_data, get_species_options, get_images
 from components.graphs import make_hist_plot, make_map, make_pie_plot
-from components.divs import get_main_div, get_error_div, get_hist_div, get_map_div
+from components.divs import get_main_div, get_error_div, get_hist_div, get_map_div, get_img_div
 
 # Fixed style
 PRINT_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue', 'margin-bottom' : 10}
@@ -72,12 +72,16 @@ def parse_contents(contents, filename):
         return json.dumps({'error': {'other': str(e)}})
     # Check for required columns
     # If no lat/lon, disable Map View button
+    # If no image urls, disable sample image options
     mapping = True
+    img_urls = True
     features = ['Image_filename', 'Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 'file_url']
     for feature in features:
         if feature not in list(df.columns):
             if feature == 'lat' or feature == 'lon':
                 mapping = False
+            elif feature == 'file_url':
+                img_urls = False
             else:
                 return json.dumps({'error': {'feature': feature}})
     
@@ -91,7 +95,8 @@ def parse_contents(contents, filename):
     data = {
             'processed_df': processed_df.to_json(date_format = 'iso', orient = 'split'),
             'all_species': all_species,
-            'mapping': mapping
+            'mapping': mapping,
+            'images': img_urls
         }   
     return json.dumps(data)
 
@@ -127,7 +132,8 @@ def get_visuals(jsonified_data):
 
     # get divs
     hist_div = get_hist_div(data['mapping'])
-    children = get_main_div(dff, data['all_species'], hist_div)
+    img_div = get_img_div(dff, data['all_species'], data['images'])
+    children = get_main_div(hist_div, img_div)
 
     return children
 
