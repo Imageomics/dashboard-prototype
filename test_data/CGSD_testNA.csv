@@ -1,0 +1,11 @@
+NHM_Specimen,Image_filename,View,Species,Subspecies,Sex,addit_taxa_info,type_stat,hybrid_stat,in_reduced,locality,lat,lon,speciesdesig
+10428251,10428251_V_lowres.tif,ventral,melpomene,schunkei,male,ab._rubra,,subspecies synonym,1,Chaquimayo PER PU,-13.43333333,-70.38333333,m. schunkei
+10428328,10428328_V_lowres.tif,ventral,melpomene,,female,nanna,ST,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,,m. nanna
+10428723,10428723_V_lowres.tif,ventral,erato,erato,female,f._erato,,subspecies synonym,1,Saramacca River SUR BR,5.25,-55.25,e. erato
+10427968,10427968_D_lowres.tif,dorsal,melpomene,rosina_N,male,rosina_N,,valid subspecies,1,Juan Vinas CRI CA,9.9,-83.73333333,m. rosina
+10428804,10428804_D_lowres.tif,dorsal,erato,guarica,,guarica,,valid subspecies,1,Bogota - Pandi COL CN,4.339611111,-74.36422222,e. guarica
+10428000,10428000_V_lowres.tif,ventral,melpomene,rosina_S,female,rosina_S,,valid subspecies,1,Cebaco Isla PAN VE,,-81.15,m. rosina
+10428323,,dorsal,melpomene,nanna,male,nanna,,valid subspecies,1,San Jacinto Valley BRA ME,-17.85,-41.5,m. nanna
+10427989,10427989_D_lowres.tif,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,,8.483333333,-82.61666667,m. rosina
+10428944,10428944_V_lowres.tif,ventral,erato,,male,petiverana,,valid subspecies,1,Cordoba region MEX VC,18.88333333,-96.93333333,e. petiverana
+10428124,10428124_V_lowres.tif,ventral,melpomene,amaryllis,female,amaryllis,,valid subspecies,1,Tarapoto PER SM,-6.483333333,-76.36666667,m. amaryllis

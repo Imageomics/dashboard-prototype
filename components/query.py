@@ -3,9 +3,10 @@ from dash import html
 
 # Helper functions for Dashboard
 
-def get_data(df, mapping):
+def get_data(df, mapping, features):
     '''
     Function to read in DataFrame and perform required manipulations: 
+        - fill null values in required columns with 'unknown'
         - add 'lat-lon', `Samples_at_locality`, 'Species_at_locality', and 'Subspecies_at_locality' columns.
         - make list of categorical columns.
 
@@ -13,6 +14,8 @@ def get_data(df, mapping):
     -----------
     df - DataFrame of the data to visualize.
     mapping - Boolean. True when lat/lon are given in dataset.
+    features - List of features (columns) included in the DataFrame. This is a subset of the suggested columns: 
+                'Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 'file_url', 'Image_filename'
             
     Returns:
     --------
@@ -20,7 +23,7 @@ def get_data(df, mapping):
     cat_list - List of categorical variables for RadioItems (pie chart and map).
 
     '''
-     # Dictionary of categorical values for graphing options  
+    # Dictionary of categorical values for graphing options  
     # Will likely choose to calculate and return this in later instance    
     cat_list = [{'label': 'Species', 'value': 'Species'},
                 {'label': 'Subspecies', 'value': 'Subspecies'},
@@ -29,13 +32,20 @@ def get_data(df, mapping):
                 {'label': 'Hybrid Status', 'value':'hybrid_stat'},
                 {'label': 'Locality', 'value': 'locality'}
     ]
+
+    df = df.copy()
+    df = df.fillna('unknown')
+    features.append('locality')
     
+    # If we don't have lat/lon, just return DataFrame with otherwise required features.
     if not mapping:
-        return df, cat_list
+        if 'locality' not in df.columns:
+            df['locality'] = 'unknown'
+        return df[features], cat_list      
     
     # else lat and lon are in dataset, so process locality information
     df['lat-lon'] = df['lat'].astype(str) + '|' + df['lon'].astype(str)
-    df["Samples_at_locality"] = df['lat-lon'].map(df['lat-lon'].value_counts()) # will duplicate if dorsal and ventral
+    df["Samples_at_locality"] = df['lat-lon'].map(df['lat-lon'].value_counts()) # will duplicate if multiple views of same sample
 
     # Count and record number of species and subspecies at each lat-lon
     for lat_lon in df['lat-lon']:
@@ -45,9 +55,13 @@ def get_data(df, mapping):
         df.loc[df['lat-lon'] == lat_lon, "Subspecies_at_locality"] = ", ".join(subspecies_list)
 
     if 'locality' not in df.columns:
-        df['locality'] = df['lat-lon']
+        df['locality'] = df['lat-lon'] # contains "unknown" if lat or lon null
 
-    return df, cat_list
+    new_features = ['lat-lon', "Samples_at_locality", "Species_at_locality", "Subspecies_at_locality"]
+    for feature in new_features:
+        features.append(feature)
+
+    return df[features], cat_list
 
 def get_species_options(df):
     '''
