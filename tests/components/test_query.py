@@ -57,53 +57,69 @@ class TestQuery(unittest.TestCase):
         BASE_URL_V = "https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/"
         BASE_URL_D = "https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/"
         data = {
-            'Species': ['melpomene', 'melpomene', 'erato', 'melpomene', 'erato'],
-            'Subspecies': ['schunkei', 'nanna', 'erato', 'rosina_N', 'guarica'],
-            'View': ['ventral', 'ventral', 'ventral', 'dorsal', 'dorsal',],
-            'Sex': ['male', 'female', 'female', 'male', 'female'],
+            'Species': ['melpomene', 'melpomene', 'erato', 'melpomene', 'erato', 'species3', 'species3'],
+            'Subspecies': ['schunkei', 'nanna', 'erato', 'rosina_N', 'guarica', 'subspecies6', 'subspecies6'],
+            'View': ['ventral', 'ventral', 'ventral', 'dorsal', 'dorsal', 'ventral', 'ventral'],
+            'Sex': ['male', 'female', 'female', 'male', 'female', 'male', 'female'],
             'hybrid_stat': ['subspecies synonym', 
                             'valid subspecies', 
                             'subspecies synonym', 
                             'valid subspecies', 
-                            'valid subspecies'],
+                            'valid subspecies',
+                            'valid subspecies',
+                            'subspecies synonym'],
             'Image_filename': ['10428251_V_lowres.png', 
                                '10428328_V_lowres.png', 
                                '10428723_V_lowres.png', 
                                '10427968_D_lowres.png', 
-                               '10428804_D_lowres.png'],
+                               '10428804_D_lowres.png',
+                               'unknown',
+                               '10428723_V_lowres.png'],
             'file_url': [BASE_URL_V,
                         BASE_URL_V,
                         BASE_URL_V,
                         BASE_URL_D,
-                        BASE_URL_D]
+                        BASE_URL_D,
+                        BASE_URL_V,
+                        'unknown']
         }
         df = pd.DataFrame(data = data)
         test_subspecies = ['Any', 
                            'Any-Melpomene', 
                            ['guarica'], 
                            'Any-Erato', 
-                           ['schunkei', 'nanna', 'rosina_N']]
+                           ['schunkei', 'nanna', 'rosina_N'],
+                           'Any',
+                           ['subspecies6']]
         test_view = [['dorsal'], 
                      ['ventral'], 
                      ['dorsal', 'ventral'], 
                      ['dorsal', 'ventral'], 
+                     ['dorsal', 'ventral'],
+                     ['ventral'], 
                      ['dorsal', 'ventral']]
         test_sex = [['male'], 
                     ['male'], 
                     ['male', 'female'], 
                     ['male', 'female'], 
+                    ['male', 'female'],
+                    ['male'], 
                     ['male', 'female']]
         test_hybrid = [['unknown'], 
                        ['valid subspecies', 'subspecies synonym'], 
                        ['valid subspecies', 'subspecies synonym'], 
                        ['subspecies synonym'], 
+                       ['valid subspecies', 'subspecies synonym'],
+                       ['valid subspecies'], 
                        ['valid subspecies', 'subspecies synonym']]
-        test_nums = [1, 2, 1, None, 3]
-        test_images = [0, 
+        test_nums = [1, 2, 1, None, 3, 1, 2]
+        test_images = [[0], 
                        '10428251_V_lowres.png', 
                        '10428804_D_lowres.png', 
                        '10428723_V_lowres.png', 
-                       ['10428251_V_lowres.png', '10428328_V_lowres.png', '10427968_D_lowres.png']]
+                       ['10428251_V_lowres.png', '10428328_V_lowres.png', '10427968_D_lowres.png'],
+                       [0,1],
+                       [0,2]]
         test_paths = [0,
                       BASE_URL_V,
                       BASE_URL_D,
@@ -111,12 +127,15 @@ class TestQuery(unittest.TestCase):
                       [BASE_URL_V,
                       BASE_URL_V,
                       BASE_URL_D,
+                      ],
+                      0,
+                      0
                       ]
-                      ]
-
-        result, paths = get_filenames(df, test_subspecies[0], test_view[0], test_sex[0], test_hybrid[0], test_nums[0])
-        self.assertEqual(result, test_images[0])
-        self.assertEqual(paths, test_paths[0])
+        # Test no response (no such values and missing url or filename)
+        for i in [0,5,6]:
+            result, paths = get_filenames(df, test_subspecies[i], test_view[i], test_sex[i], test_hybrid[i], test_nums[i])
+            self.assertEqual(result, test_images[i])
+            self.assertEqual(paths, test_paths[i])
         for i in range(1,4):
             result, paths = get_filenames(df, test_subspecies[i], test_view[i], test_sex[i], test_hybrid[i], test_nums[i])
             self.assertEqual(result, [test_images[i]])
