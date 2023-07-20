@@ -110,17 +110,10 @@ def get_images(df, subspecies, view, sex, hybrid, num_images):
            Returns html header4 "No Such Images. Please make another selection." if no images matching parameters exist.
            Returns html header4 indicating number of matching entries without filename or filepath.
     '''
-    filenames, filepaths = get_filenames(df, subspecies, view, sex, hybrid, num_images)
-    # If there aren't any images to display, check if there are no such entries or just missing information.
-    if filenames[0] == 0:
-        if len(filenames) == 1:
-            return html.H4("No Such Images. Please make another selection.", 
-                    style = PRINT_STYLE)
-        elif filenames[1] == 1:
-            return html.H4("There is 1 such entry, but its filename or path is unknown. Please make another selection.", 
-                    style = PRINT_STYLE)
-        else:
-            return html.H4("There are ", filenames[1], " such entries, but their filenames or paths are unknown. Please make another selection.", 
+    try:
+        filenames, filepaths = get_filenames(df, subspecies, view, sex, hybrid, num_images)
+    except ValueError as e:
+        return html.H4(str(e) + " Please make another selection.", 
                     style = PRINT_STYLE)
     Imgs = []
     for i in range(len(filenames)):
@@ -137,6 +130,7 @@ def get_images(df, subspecies, view, sex, hybrid, num_images):
 def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     '''
     Funtion to randomly select the given number of filenames for images adhering to specified filters.
+    Raises ValueError indicating no such images if none match the user selections.
     
     Parameters:
     -----------
@@ -151,7 +145,7 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     --------
     filenames - List of filenames meeting specified conditions (the lesser of the requested amount or number available). 
     filepaths - List of filepaths (URLs) corresponding to the selected filenames. 
-    Returns [0], 0 if no matching values, or [0, num_misssing], 0 where num_missing is number of matching entries without filename or filepath.
+    
     '''
     if 'Any' in subspecies and type(subspecies) == str:
         if subspecies == 'Any':
@@ -181,7 +175,8 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
         filepaths = df_filtered.file_url.astype('string').values
         #return list of filenames for min(user-selected, available) images randomly selected images from the filtered dataset
         return list(filenames), list(filepaths)
-    elif missing_vals > 0:
-        return [0, missing_vals], 0
+    # If there aren't any images to display, check if there are no such entries or just missing information.
+    elif missing_vals == 0:
+        raise ValueError("No Such Images.")
     else:
-        return [0], 0
+        raise ValueError("No Such Images. Unknown filename(s) or path(s).")
