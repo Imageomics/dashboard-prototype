@@ -43,6 +43,9 @@ def make_map(df, color_by):
     --------
     fig - Map of their locations.
     '''
+    df = df.copy()
+    # only use entries that have valid lat & lon for mapping
+    df = df.loc[df['lat-lon'].str.contains('unknown') == False]
     fig = px.scatter_geo(df,
                         lat = df.lat,
                         lon = df.lon,

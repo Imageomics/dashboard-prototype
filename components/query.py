@@ -3,9 +3,12 @@ from dash import html
 
 # Helper functions for Dashboard
 
-def get_data(df, mapping):
+PRINT_STYLE = {"color": "MidnightBlue"}
+
+def get_data(df, mapping, features):
     '''
     Function to read in DataFrame and perform required manipulations: 
+        - fill null values in required columns with 'unknown'
         - add 'lat-lon', `Samples_at_locality`, 'Species_at_locality', and 'Subspecies_at_locality' columns.
         - make list of categorical columns.
 
@@ -13,6 +16,8 @@ def get_data(df, mapping):
     -----------
     df - DataFrame of the data to visualize.
     mapping - Boolean. True when lat/lon are given in dataset.
+    features - List of features (columns) included in the DataFrame. This is a subset of the suggested columns: 
+                'Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 'file_url', 'Image_filename'
             
     Returns:
     --------
@@ -20,7 +25,7 @@ def get_data(df, mapping):
     cat_list - List of categorical variables for RadioItems (pie chart and map).
 
     '''
-     # Dictionary of categorical values for graphing options  
+    # Dictionary of categorical values for graphing options  
     # Will likely choose to calculate and return this in later instance    
     cat_list = [{'label': 'Species', 'value': 'Species'},
                 {'label': 'Subspecies', 'value': 'Subspecies'},
@@ -29,13 +34,20 @@ def get_data(df, mapping):
                 {'label': 'Hybrid Status', 'value':'hybrid_stat'},
                 {'label': 'Locality', 'value': 'locality'}
     ]
+
+    df = df.copy()
+    df = df.fillna('unknown')
+    features.append('locality')
     
+    # If we don't have lat/lon, just return DataFrame with otherwise required features.
     if not mapping:
-        return df, cat_list
+        if 'locality' not in df.columns:
+            df['locality'] = 'unknown'
+        return df[features], cat_list      
     
     # else lat and lon are in dataset, so process locality information
     df['lat-lon'] = df['lat'].astype(str) + '|' + df['lon'].astype(str)
-    df["Samples_at_locality"] = df['lat-lon'].map(df['lat-lon'].value_counts()) # will duplicate if dorsal and ventral
+    df["Samples_at_locality"] = df['lat-lon'].map(df['lat-lon'].value_counts()) # will duplicate if multiple views of same sample
 
     # Count and record number of species and subspecies at each lat-lon
     for lat_lon in df['lat-lon']:
@@ -45,9 +57,13 @@ def get_data(df, mapping):
         df.loc[df['lat-lon'] == lat_lon, "Subspecies_at_locality"] = ", ".join(subspecies_list)
 
     if 'locality' not in df.columns:
-        df['locality'] = df['lat-lon']
+        df['locality'] = df['lat-lon'] # contains "unknown" if lat or lon null
 
-    return df, cat_list
+    new_features = ['lat-lon', "Samples_at_locality", "Species_at_locality", "Subspecies_at_locality"]
+    for feature in new_features:
+        features.append(feature)
+
+    return df[features], cat_list
 
 def get_species_options(df):
     '''
@@ -92,11 +108,13 @@ def get_images(df, subspecies, view, sex, hybrid, num_images):
     --------
     Imgs - List of html image elements with `src` element pointing to paths for the requested number of images matching given parameters.
            Returns html header4 "No Such Images. Please make another selection." if no images matching parameters exist.
+           Returns html header4 indicating number of matching entries without filename or filepath.
     '''
-    filenames, filepaths = get_filenames(df, subspecies, view, sex, hybrid, num_images)
-    if filenames == 0:
-        return html.H4("No Such Images. Please make another selection.", 
-                    style = {"color":"MidnightBlue"})
+    try:
+        filenames, filepaths = get_filenames(df, subspecies, view, sex, hybrid, num_images)
+    except ValueError as e:
+        return html.H4(str(e) + " Please make another selection.", 
+                    style = PRINT_STYLE)
     Imgs = []
     for i in range(len(filenames)):
         if filenames[i] in filepaths[i]:
@@ -112,6 +130,7 @@ def get_images(df, subspecies, view, sex, hybrid, num_images):
 def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     '''
     Funtion to randomly select the given number of filenames for images adhering to specified filters.
+    Raises ValueError indicating no such images if none match the user selections.
     
     Parameters:
     -----------
@@ -124,9 +143,9 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
 
     Returns:
     --------
-    filenames or 0 - List of filenames meeting specified conditions (the lesser of the requested amount or number available). 
+    filenames - List of filenames meeting specified conditions (the lesser of the requested amount or number available). 
     filepaths - List of filepaths (URLs) corresponding to the selected filenames. 
-    Returns 0, 0 if no matching values.
+    
     '''
     if 'Any' in subspecies and type(subspecies) == str:
         if subspecies == 'Any':
@@ -139,7 +158,13 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     df_sub = df_sub.loc[df_sub.View.isin(view)]
     df_sub = df_sub.loc[df_sub.Sex.isin(sex)]
     df_sub = df_sub.loc[df_sub.hybrid_stat.isin(hybrid)]
+
+    num_entries = len(df_sub)
+    # Filter out any entries that have missing filenames or URLs:
+    df_sub = df_sub.loc[df_sub.Image_filename != 'unknown']
+    df_sub = df_sub.loc[df_sub.file_url != 'unknown']
     max_imgs = len(df_sub)
+    missing_vals = num_entries - max_imgs
     if max_imgs > 0:
         if num_images == None:
             num = 1
@@ -150,5 +175,8 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
         filepaths = df_filtered.file_url.astype('string').values
         #return list of filenames for min(user-selected, available) images randomly selected images from the filtered dataset
         return list(filenames), list(filepaths)
+    # If there aren't any images to display, check if there are no such entries or just missing information.
+    elif missing_vals == 0:
+        raise ValueError("No Such Images.")
     else:
-        return 0, 0
+        raise ValueError("No Such Images. Unknown filename(s) or path(s).")

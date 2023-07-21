@@ -75,21 +75,28 @@ def parse_contents(contents, filename):
     # If no image urls, disable sample image options
     mapping = True
     img_urls = True
-    features = ['Image_filename', 'Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 'file_url']
+    features = ['Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 'file_url', 'Image_filename']
+    included_features = []
     for feature in features:
         if feature not in list(df.columns):
             if feature == 'lat' or feature == 'lon':
                 mapping = False
             elif feature == 'file_url':
                 img_urls = False
+            elif feature == 'Image_filename':
+                # If 'Image_filename' missing, return missing column if 'file_url' is included.
+                if img_urls:
+                    return json.dumps({'error': {'feature': feature}})
             else:
                 return json.dumps({'error': {'feature': feature}})
+        else:
+            included_features.append(feature)
     
     # get dataset-determined static data:
         # the dataframe and categorical features - processed for map view if mapping is True
         # all possible species, subspecies
         # will likely include categorical options in later instance (sooner)
-    processed_df, cat_list = get_data(df, mapping)
+    processed_df, cat_list = get_data(df, mapping, included_features)
     all_species = get_species_options(processed_df)
     # save data to dictionary to save as json 
     data = {
