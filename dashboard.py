@@ -1,9 +1,8 @@
 import pandas as pd
 import base64
 import io
-import json
-from dash import Dash, html, dcc, Input, Output, State
 from dash.exceptions import PreventUpdate
+from dash_extensions.enrich import DashProxy, Serverside, ServersideOutputTransform, html, dcc, Input, Output, State
 from components.query import get_data, get_species_options, get_images
 from components.graphs import make_hist_plot, make_map, make_pie_plot
 from components.divs import get_main_div, get_error_div, get_hist_div, get_map_div, get_img_div
@@ -12,7 +11,9 @@ from components.divs import get_main_div, get_error_div, get_hist_div, get_map_d
 PRINT_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue', 'margin-bottom' : 10}
 
 # Initialize app/dashboard and set layout
-app = Dash(__name__, suppress_callback_exceptions=True)
+app = DashProxy(__name__, 
+                suppress_callback_exceptions = True, 
+                transforms = [ServersideOutputTransform()])
 
 app.layout = html.Div([
                 dcc.Upload(html.Button('Upload Data',
@@ -39,7 +40,7 @@ app.layout = html.Div([
                          id = 'output-data-upload')
 ])
 
-# Data read in and save to memory
+# Data read in and saved to memory
 @app.callback(
         Output('memory', 'data', allow_duplicate=True),
         Input('upload-data', 'contents'),
@@ -49,7 +50,8 @@ app.layout = html.Div([
 
 def parse_contents(contents, filename):
     '''
-    Function to read uploaded data.
+    Function to read uploaded data. Saves processed data to server for faster callbacks.
+    Returns dictionary of processed data and divs or the appropriate error message.
     '''
     if contents is None:
         raise PreventUpdate
@@ -62,14 +64,14 @@ def parse_contents(contents, filename):
         elif 'xls' in filename:
             df = pd.read_excel(io.BytesIO(decoded))
         else:
-            return json.dumps({'error': {'type': 'wrong file type'}})
+            return {'error': {'type': 'wrong file type'}}
     except UnicodeDecodeError as e:
         print(e)
-        return json.dumps({'error': {'unicode': str(e)}})
+        return {'error': {'unicode': str(e)}}
     
     except Exception as e:
         print(e)
-        return json.dumps({'error': {'other': str(e)}})
+        return {'error': {'other': str(e)}}
     # Check for required columns
     # If no lat/lon, disable Map View button
     # If no image urls, disable sample image options
@@ -86,9 +88,9 @@ def parse_contents(contents, filename):
             elif feature == 'Image_filename':
                 # If 'Image_filename' missing, return missing column if 'file_url' is included.
                 if img_urls:
-                    return json.dumps({'error': {'feature': feature}})
+                    return {'error': {'feature': feature}}
             else:
-                return json.dumps({'error': {'feature': feature}})
+                return {'error': {'feature': feature}}
         else:
             included_features.append(feature)
     
@@ -98,14 +100,25 @@ def parse_contents(contents, filename):
         # will likely include categorical options in later instance (sooner)
     processed_df, cat_list = get_data(df, mapping, included_features)
     all_species = get_species_options(processed_df)
-    # save data to dictionary to save as json 
+
+    # Use the processed data to get the main div (components: histogram, pie chart, and image example options).
+    hist_div = get_hist_div(mapping)
+    img_div = get_img_div(processed_df, all_species, img_urls)
+    main_div = get_main_div(hist_div, img_div)
+    
+    # save data to dictionary to save on server
     data = {
-            'processed_df': processed_df.to_json(date_format = 'iso', orient = 'split'),
+            'processed_df': processed_df,
             'all_species': all_species,
-            'mapping': mapping,
-            'images': img_urls
+            # 'cats': cat_list
+            'hist': hist_div,
+            'main': main_div
         }   
-    return json.dumps(data)
+    
+    if mapping:
+        data['mapping'] = get_map_div()
+
+    return Serverside(data)
 
 # Callback to update processed data if new data uploaded
 @app.callback(
@@ -119,33 +132,25 @@ def update_output(contents, filename):
     if contents is not None:
         return parse_contents(contents, filename)
 
-# Callback to get main div (histogram, pie chart, and image example options)
+# Callback to display main div (histogram, pie chart, and image example options).
 @app.callback(
         Output('output-data-upload', 'children'),
         Input('memory', 'data'),
         prevent_initial_call = True
 )
 
-def get_visuals(jsonified_data):
+def get_visuals(data):
     '''
-    Function that usese the processed and saved data to get the main div (histogram, pie chart, and image example options).
+    Function that returns the main div (histogram, pie chart, and image example options).
     Returns error div if error occurs in upload or essential features are missing.
     '''
-    # load saved data
-    data = json.loads(jsonified_data)
     if 'error' in data:
         return get_error_div(data['error'])
-    dff = pd.read_json(data['processed_df'], orient = 'split')
-
-    # get divs
-    hist_div = get_hist_div(data['mapping'])
-    img_div = get_img_div(dff, data['all_species'], data['images'])
-    children = get_main_div(hist_div, img_div)
-
-    return children
+    
+    return data['main']
 
 # Distribution Section
-# Callback to update which options are visible (histogram vs map)
+# Callback to update which options are visible (histogram vs map).
 @app.callback(
         Output('dist-options', 'children'),
         Input('dist-view-btn', 'n_clicks'),
@@ -153,7 +158,7 @@ def get_visuals(jsonified_data):
         Input('memory', 'data')
 )
 
-def update_dist_view(n_clicks, children, jsonified_data):
+def update_dist_view(n_clicks, children, data):
     '''
     Function to update the upper left distribution options based on selected distribution chart (histogram or map).
     Activates on click to change, defaults to histogram view.
@@ -162,20 +167,19 @@ def update_dist_view(n_clicks, children, jsonified_data):
     -----------
     n_clicks - Number of clicks. 
     children - Label on button, determins which distribution options to show.
-    jsonified_data - Saved dictionary of DataFrame, species options, and mapping (boolean on lat/lon availability).
+    data - Saved dictionary of DataFrame, species options, and divs (hist and main).
 
     Returns:
     --------
-    hist_div or map_div - The HTML Div corresponding to the selected distribution figure.
+    data['hist'] or data['mapping'] - The HTML Div corresponding to the selected distribution figure (histogram or map, respectively).
     '''
-    data = json.loads(jsonified_data)
     if n_clicks == 0 or n_clicks == None:
-        return get_hist_div(data['mapping'])
+        return data['hist']
     if n_clicks > 0:
         if children == "Show Histogram":
-            return get_hist_div(data['mapping'])
+            return data['hist']
         else:
-            return get_map_div()
+            return data['mapping']
 
 # Callback to update the distribution figure (histogram or map)
 @app.callback(
@@ -193,7 +197,7 @@ def update_dist_view(n_clicks, children, jsonified_data):
     Input('memory', 'data')
 )
 
-def update_dist_plot(x_var, color_by, sort_by, btn, jsonified_data):
+def update_dist_plot(x_var, color_by, sort_by, btn, data):
     '''
     Function to update distribution figure with either map or histogram based on selections.
     Selection is based on current label of the button ('Map View' or 'Show Histogram'), which updates prior to graph.
@@ -204,20 +208,17 @@ def update_dist_plot(x_var, color_by, sort_by, btn, jsonified_data):
     color_by - User-selected property to color the plot by.
     sort_by - User-selected ordering of bar charts (Alphabetical, Ascending, or Descending).
     btn - Current label of the button ('Map View' or 'Show Histogram').
-    jsonified_data - Saved dictionary of DataFrame, species options, and mapping (boolean on lat/lon availability).
+    data - Saved dictionary of DataFrame, species options, and divs (hist and main).
 
     Returns: 
     --------
     fig -  Figure returned from appropriate function call: histogram or map of the distribution of the requested variable.
     '''
-    # open dataframe from saved data
-    data = json.loads(jsonified_data)
-    dff = pd.read_json(data['processed_df'], orient = 'split')
     # get distribution graph based on button value
     if btn == "Show Histogram":
-        return make_map(dff, color_by)
+        return make_map(data['processed_df'], color_by)
     else:
-        return make_hist_plot(dff, x_var, color_by, sort_by)
+        return make_hist_plot(data['processed_df'], x_var, color_by, sort_by)
 
 # Pie Section
 
@@ -230,23 +231,20 @@ def update_dist_plot(x_var, color_by, sort_by, btn, jsonified_data):
     Input('memory', 'data')
 )
 
-def update_pie_plot(var, jsonified_data):
+def update_pie_plot(var, data):
     '''
     Updates the pie chart of dataset specimens based on user selection of variable to color by.
 
     Parameters:
     -----------
     var - User-selected categorical variable by which to color.
-    jsonified_data - Saved dictionary of DataFrame, species options, and mapping (boolean on lat/lon availability).
+    data - Saved dictionary of DataFrame, species options, and divs (hist and main).
 
     Returns: 
     --------
     fig - Pie chart figure returned from function call: percentage breakdown of `var` samples in the dataset.
     '''
-    # open dataframe from saved data
-    data = json.loads(jsonified_data)
-    dff = pd.read_json(data['processed_df'], orient = 'split')
-    return make_pie_plot(dff, var)
+    return make_pie_plot(data['processed_df'], var)
 
 # Image Section
 
@@ -257,19 +255,18 @@ def update_pie_plot(var, jsonified_data):
     Input('memory', 'data')
 )
 
-def set_subspecies_options(selected_species, jsonified_data):
+def set_subspecies_options(selected_species, data):
     ''' 
     Function to set subspecies options in dropdown based on user-selected species.
 
     Parameters:
     -----------
-    jsonified_data - Saved dictionary of DataFrame, species options, and mapping (boolean on lat/lon availability).
+    data - Saved dictionary of DataFrame, species options, and divs (hist and main).
 
     Returns: 
     --------
     list of subspecies options based on user-selected species. 
     '''
-    data = json.loads(jsonified_data)
     all_species = data['all_species']
     return [{'label': i, 'value': i} for i in all_species[selected_species]]
 
@@ -297,14 +294,14 @@ def set_subspecies_value(available_options):
 )
 
 # Retrieve selected number of images
-def update_display(n_clicks, jsonified_data, subspecies, view, sex, hybrid, num_images):
+def update_display(n_clicks, data, subspecies, view, sex, hybrid, num_images):
     '''
     Function to retrieve the user-selected number of images adhering to their chosen parameters when the 'Display Images' button is pressed.
     
     Parameters:
     -----------
     n_clicks - Number of times the 'Display Images' button has been pressed.
-    jsonified_data - Saved dictionary of DataFrame, species options, and mapping (boolean on lat/lon availability).
+    data - Saved dictionary of DataFrame, species options, and divs (hist and main).
     subspecies - String. Subspecies of specimen selected by the user.
     view - String. View of specimen selected by the user.
     sex - String. Sex of specimen selected by the user.
@@ -318,10 +315,7 @@ def update_display(n_clicks, jsonified_data, subspecies, view, sex, hybrid, num_
            Returns html header4 "Please make a selection." If number of images isn't specified.
     '''
     if n_clicks > 0 and (view != [] and sex != [] and hybrid != []):
-        # Unpack json for saved dataframe
-        data = json.loads(jsonified_data)
-        dff = pd.read_json(data['processed_df'], orient = 'split')
-        return get_images(dff, subspecies, view, sex, hybrid, num_images)
+        return get_images(data['processed_df'], subspecies, view, sex, hybrid, num_images)
     else:
         return html.H4("Please make a selection.", 
                     style = {'color': 'MidnightBlue'})
