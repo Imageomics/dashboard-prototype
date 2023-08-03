@@ -2,10 +2,10 @@
 Prototype data dashboard using the [Cuthill Gold Standard Dataset](https://huggingface.co/datasets/imageomics/Curated_GoldStandard_Hoyal_Cuthill), which was processed from Cuthill, et. al. (original dataset available at [doi:10.5061/dryad.2hp1978](https://doi.org/10.5061/dryad.2hp1978)). Test datasets (the processed version of Cuthill's data with and without filepath URLs) are available in [test_data](./test_data).
 
 
-### How it works
+## How it works
 
 For full dashboard functionality, upload a CSV or XLS file with the following columns: 
-- `Image_filename`: Filename of each image, must be unique. **Note:** These should be `png` or `jpg`, `tif` may not show image.
+- `Image_filename`*: Filename of each image, must be unique. **Note:** These should be `png` or `jpg`, `tif` may not show image.
 - `Species`: Species of each sample.
 - `Subspecies`: Subspecies of each sample.
 - `View`: View of the sample (eg., 'ventral' or 'dorsal' for butterflies).
@@ -17,9 +17,9 @@ For full dashboard functionality, upload a CSV or XLS file with the following co
 
 ***Note:** 
 - `lat` and `lon` columns are not required to utilize the dashboard, but there will be no map view if they are not included.
-- `file_urls` is not required, but there will be no sample images option if it is not included.
+- `Image_filename` and `file_url` are not required, but there will be no sample images option if it they not both included.
 
-### Running Dashboard
+## Running Dashboard
 
 Create and activate a new (python) virtual environment. 
 Then install the required packages (if using `conda`, first run `conda install pip`):
@@ -37,16 +37,17 @@ python dashboard.py
 Then navigate to [http://127.0.0.1:8050/](http://127.0.0.1:8050/) in your browser to see the graphs.
 
 
-### Preview
+## Preview
 
-#### Histogram View
+### Histogram View
 ![image](dashboard_preview_hist.png)
 
-#### Map View
+
+### Map View
 ![image](dashboard_preview_map.png)
 
 
-### Running Tests
+## Running Tests
 
 Within your python environment run the following command to run the tests:
 ```
