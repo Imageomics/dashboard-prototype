@@ -5,6 +5,10 @@ H1_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue'}
 H4_STYLE = {'color': 'MidnightBlue', 'margin-bottom' : 10}
 HALF_DIV_STYLE = {'width': '48%', 'display': 'inline-block'}
 QUARTER_DIV_STYLE = {'width': '24%', 'display': 'inline-block'}
+BUTTON_STYLE = {'color': 'MidnightBlue', 
+                'background-color': 'BlanchedAlmond', 
+                'border-color': 'MidnightBlue',
+                'font-size': '15px'}
 ERROR_STYLE = {'textAlign': 'center', 'color': 'FireBrick', 'margin-bottom' : 10}
 SORT_LIST = [{'label': 'Alphabetical', 'value': 'alpha'},
                 {'label': 'Ascending', 'value': 'sum ascending'},
@@ -67,6 +71,7 @@ def get_hist_div(mapping):
         button_div = html.Div([
             # Button to switch to Map View
             html.Button("Show Map View",
+                        style = BUTTON_STYLE,
                         id = 'dist-view-btn',
                         n_clicks = 0)
                  ], style = HALF_DIV_STYLE
@@ -126,6 +131,7 @@ def get_map_div():
         html.Div([
         # Distribution View Type Button
         html.Button("Show Histogram",
+                    style = BUTTON_STYLE,
                     id = 'dist-view-btn',
                     n_clicks = 0)
                 ], style = HALF_DIV_STYLE
@@ -207,6 +213,7 @@ def get_img_div(df, all_species, img_url):
 
                     # Button to activate the callback
                     html.Button('Display Images',
+                                style = BUTTON_STYLE,
                                 id = 'display-img',
                                 n_clicks = 0),
 
