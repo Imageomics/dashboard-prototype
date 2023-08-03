@@ -17,7 +17,7 @@ For full dashboard functionality, upload a CSV or XLS file with the following co
 
 ***Note:** 
 - `lat` and `lon` columns are not required to utilize the dashboard, but there will be no map view if they are not included.
-- `Image_filename` and `file_url` are not required, but there will be no sample images option if it they not both included.
+- `Image_filename` and `file_url` are not required, but there will be no sample images option if either one is not included.
 
 ## Running Dashboard
 
