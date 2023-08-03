@@ -5,7 +5,7 @@ Prototype data dashboard using the [Cuthill Gold Standard Dataset](https://huggi
 ## How it works
 
 For full dashboard functionality, upload a CSV or XLS file with the following columns: 
-- `Image_filename`*: Filename of each image, must be unique. **Note:** These should be `png` or `jpg`, `tif` may not show image.
+- `Image_filename`*: Filename of each image, must be unique. **Note:** Images should be in PNG or JPEG format, TIFF may fail to render in the sample image display.
 - `Species`: Species of each sample.
 - `Subspecies`: Subspecies of each sample.
 - `View`: View of the sample (eg., 'ventral' or 'dorsal' for butterflies).
