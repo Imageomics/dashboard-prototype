@@ -2,6 +2,7 @@ import pandas as pd
 import base64
 import io
 import json
+import dash
 from dash import Dash, html, dcc, Input, Output, State
 from dash.exceptions import PreventUpdate
 from components.query import get_data, get_species_options, get_images
@@ -23,8 +24,11 @@ app.layout = html.Div([
                             id = 'upload-data',
                             multiple = False
                             ),
-                # Set up memory store, will revert on page refresh
-                dcc.Store(id = 'memory'),
+                # Set up memory store with loading indicator, will revert on page refresh
+                dcc.Loading(id = 'memory-loading',
+                            type = "circle",
+                            color = 'DarkMagenta',
+                            children = dcc.Store(id = 'memory')),
                 html.Hr(),
                 
                 html.Div(children = [html.H3('Upload data (CSV or XLS) to see distribution statistics.', 
@@ -322,6 +326,8 @@ def update_display(n_clicks, jsonified_data, subspecies, view, sex, hybrid, num_
         data = json.loads(jsonified_data)
         dff = pd.read_json(data['processed_df'], orient = 'split')
         return get_images(dff, subspecies, view, sex, hybrid, num_images)
+    elif n_clicks == 0:
+        return dash.no_update
     else:
         return html.H4("Please make a selection.", 
                     style = {'color': 'MidnightBlue'})
