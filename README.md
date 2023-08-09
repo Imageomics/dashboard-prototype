@@ -64,9 +64,21 @@ Then open the following URL <http://0.0.0.0:5000/>.
 ![image](dashboard_preview_map.png)
 
 
-## Running Tests
+## Testing
 
-Within your python environment run the following command to run the tests:
+### Test Requirements
+The testing suite requires [Dash Testing](https://dash.plotly.com/testing) and [pytest-mock](https://pypi.org/project/pytest-mock/), which can be installed in your python environment by running:
 ```
-python -m unittest
+python -m pip install dash\[testing]
+```
+then
+```
+pip install pytest-mock
+```
+
+### Running Tests
+
+Within your python environment run the following command to run all tests:
+```
+pytest
 ```
