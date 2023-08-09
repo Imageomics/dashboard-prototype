@@ -51,7 +51,7 @@ To deploy the dashboard with 6 workers run the following command:
 ```
 docker run --env BACKEND_WORKERS=6 -p 5000:5000 -it dashboard
 ```
-Then open the following URL [http://0.0.0.0:5000/](http://0.0.0.0:5000/).
+Then open the following URL <http://0.0.0.0:5000/>.
 
 
 ## Preview
