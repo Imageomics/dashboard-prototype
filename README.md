@@ -41,7 +41,7 @@ To run the dashboard in a more scalable manner a Dockerfile is provided.
 This container uses [gunicorn](https://gunicorn.org/) to support more users at the same time.
 Building and running the container requires that [docker](https://www.docker.com/) is installed.
 
-### Build the the container
+### Building the container
 ```
 docker build -t dashboard .
 ```
