@@ -36,6 +36,23 @@ python dashboard.py
 
 Then navigate to [http://127.0.0.1:8050/](http://127.0.0.1:8050/) in your browser to see the graphs.
 
+## Running with Docker
+To run the dashboard in a more scalable manner a Dockerfile is provided.
+This container uses [gunicorn](https://gunicorn.org/) to support more users at the same time.
+Building and running the container requires that [docker](https://www.docker.com/) is installed.
+
+### Building the container
+```
+docker build -t dashboard .
+```
+
+### Running the container
+To deploy the dashboard with 6 workers run the following command:
+```
+docker run --env BACKEND_WORKERS=6 -p 5000:5000 -it dashboard
+```
+Then open the following URL <http://0.0.0.0:5000/>.
+
 
 ## Preview
 
