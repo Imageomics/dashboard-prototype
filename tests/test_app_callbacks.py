@@ -30,17 +30,17 @@ def test_update_dist_view_call():
 def test_update_dist_plot_call():
     # Check for proper type of fig (Histplot output)
     output = update_dist_plot('Species', 'View', 'alpha', "Show Map View", jsonified_data)
-    assert str(type(output['data', 0])) == "<class 'plotly.graph_objs._histogram.Histogram'>"
+    assert output['data', 0].type == "histogram"
    
     # Map plot output
     output2 = update_dist_plot('Species', 'Subspecies', 'alpha', "Show Histogram", jsonified_data)
-    assert str(type(output2['data', 0])) == "<class 'plotly.graph_objs._scattergeo.Scattergeo'>"
+    assert output2['data', 0].type == "scattergeo"
 
 
 def test_update_pie_plot():
     output = update_pie_plot('Subspecies', jsonified_data)
     # Pie plot
-    assert str(type(output['data', 0])) == "<class 'plotly.graph_objs._pie.Pie'>"
+    assert output['data', 0].type == "pie"
 
 
 def test_subspecies_options():

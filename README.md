@@ -69,11 +69,7 @@ Then open the following URL <http://0.0.0.0:5000/>.
 ### Test Requirements
 The testing suite requires [Dash Testing](https://dash.plotly.com/testing) and [pytest-mock](https://pypi.org/project/pytest-mock/), which can be installed in your python environment by running:
 ```
-python -m pip install dash\[testing]
-```
-then
-```
-pip install pytest-mock
+pip install dash\[testing] pytest-mock
 ```
 
 ### Running Tests
