@@ -14,6 +14,7 @@ PRINT_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue', 'margin-bottom' :
 
 # Initialize app/dashboard and set layout
 app = Dash(__name__, suppress_callback_exceptions=True)
+server = app.server
 
 app.layout = html.Div([
                 dcc.Upload(html.Button('Upload Data',
