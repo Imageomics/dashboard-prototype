@@ -46,7 +46,7 @@ Building and running the container requires that [docker](https://www.docker.com
 docker build -t dashboard .
 ```
 
-### Run the the container
+### Running the container
 To deploy the dashboard with 6 workers run the following command:
 ```
 docker run --env BACKEND_WORKERS=6 -p 5000:5000 -it dashboard
