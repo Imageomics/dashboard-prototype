@@ -1,0 +1,11 @@
+NHM_Specimen,View,Species,Subspecies,Sex,addit_taxa_info,type_stat,hybrid_stat,in_reduced,locality,lon,speciesdesig
+10429021,,erato,notabilis,,f._notabilis,,subspecies synonym,1,,-77.75,e. notabilis
+10428972,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Songolica (= Zongolica) MEX VC,-96.98333333,e. petiverana
+10429172,ventral,,petiverana,male,petiverana,,valid subspecies,1,San Ramon NIC ZE,-84.68333333,e. petiverana
+10428595,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Resistencia ARG CH,-58.98333333,e. phyllis
+10428140,ventral,,plesseni,male,plesseni,,valid subspecies,1,Banos ECD TU,,m. plesseni
+10428250,ventral,melpomene,,male,ab._rubra,,subspecies synonym,1,Caradoc (Hda) PER CU,-70.95,m. schunkei
+10427979,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Turrialba CRI CA,-83.63333333,m. rosina
+10428803,dorsal,erato,guarica,female,guarica,,valid subspecies,1,Fusagasuga COL CN,-74.36666667,e. guarica
+10428169,ventral,melpomene,plesseni,male,f._pura,ST,subspecies synonym,1,Canelos ECD PA,,m. plesseni
+10428321,,melpomene,nanna,male,nanna,ST,valid subspecies,1,Espirito Santo BRA ES,-40.28333333,m. nanna

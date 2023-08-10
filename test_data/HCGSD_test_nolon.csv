@@ -1,0 +1,11 @@
+NHM_Specimen,Image_filename,View,Species,Subspecies,Sex,addit_taxa_info,type_stat,hybrid_stat,in_reduced,locality,lat,speciesdesig,file_url
+10429021,10429021_V_lowres.png,,erato,notabilis,,f._notabilis,,subspecies synonym,1,,-1.583333333,e. notabilis,https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/
+10428972,10428972_V_lowres.png,ventral,erato,petiverana,male,petiverana,,valid subspecies,1,Songolica (= Zongolica) MEX VC,18.66666667,e. petiverana,
+10429172,,ventral,,petiverana,male,petiverana,,valid subspecies,1,San Ramon NIC ZE,,e. petiverana,https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/
+10428595,10428595_D_lowres.png,dorsal,erato,phyllis,male,f._phyllis,,subspecies synonym,1,Resistencia ARG CH,-27.45,e. phyllis,https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/
+10428140,10428140_V_lowres.png,ventral,,plesseni,male,plesseni,,valid subspecies,1,Banos ECD TU,-1.4,m. plesseni,https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/
+10428250,10428250_V_lowres.png,ventral,melpomene,,male,ab._rubra,,subspecies synonym,1,Caradoc (Hda) PER CU,-13.36666667,m. schunkei,https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/
+10427979,,dorsal,melpomene,rosina_S,male,rosina_S,,valid subspecies,1,Turrialba CRI CA,9.883333333,m. rosina,https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/
+10428803,10428803_D_lowres.png,dorsal,erato,guarica,female,guarica,,valid subspecies,1,Fusagasuga COL CN,4.35,e. guarica,
+10428169,10428169_V_lowres.png,ventral,melpomene,plesseni,male,f._pura,ST,subspecies synonym,1,Canelos ECD PA,-1.583333333,m. plesseni,https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/
+10428321,10428321_D_lowres.png,,melpomene,nanna,male,nanna,ST,valid subspecies,1,Espirito Santo BRA ES,-20.33333333,m. nanna,https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/

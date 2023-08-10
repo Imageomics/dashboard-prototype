@@ -1,6 +1,7 @@
 import unittest
+from unittest.mock import patch
 import pandas as pd
-from components.query import get_species_options, get_data, get_filenames
+from components.query import get_species_options, get_data, get_filenames, get_images
 
 
 class TestQuery(unittest.TestCase):
@@ -132,3 +133,12 @@ class TestQuery(unittest.TestCase):
         #check lists have same elements
         self.assertCountEqual(result, test_images[4])
         self.assertCountEqual(paths, test_paths[4])
+
+    @patch('components.query.get_filenames')
+    def test_get_images(self, mock_filenames):
+        filenames = ['filename' + str(i) for i in range(5)]
+        filepaths = ['filepath' + str(i) for i in range(5)]
+        mock_filenames.return_value = filenames, filepaths
+        result = get_images(df = None, subspecies = None, view = None, sex = None, hybrid = None, num_images = 5)
+        self.assertEqual(len(result), 5)
+        self.assertEqual([result[i].src for i in range(5)], [filepaths[i] + '/' + filenames[i] for i in range(5)])
