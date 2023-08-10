@@ -334,4 +334,4 @@ def update_display(n_clicks, jsonified_data, subspecies, view, sex, hybrid, num_
                     style = {'color': 'MidnightBlue'})
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run()
