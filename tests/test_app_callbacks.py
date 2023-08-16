@@ -34,7 +34,7 @@ def test_update_dist_plot_call():
    
     # Map plot output
     output2 = update_dist_plot('Species', 'Subspecies', 'alpha', "Show Histogram", jsonified_data)
-    assert output2['data', 0].type == "scattergeo"
+    assert output2['data', 0].type == "scattermapbox"
 
 
 def test_update_pie_plot():

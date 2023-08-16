@@ -25,7 +25,7 @@ def test_make_map():
     # Map plot output
     output = make_map(processed_df, "Species")
     output_data = output['data', 0]
-    assert output_data.type == "scattergeo"
+    assert output_data.type == "scattermapbox"
     #test for uknowns in data and check it's proper type
     assert 'unknown' not in output_data['customdata']
 

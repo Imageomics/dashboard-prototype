@@ -3,7 +3,7 @@ from dash import html, dcc
 # Fixed styles and sorting options
 H1_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue'}
 H4_STYLE = {'color': 'MidnightBlue', 'margin-bottom' : 10}
-HALF_DIV_STYLE = {'width': '48%', 'display': 'inline-block'}
+HALF_DIV_STYLE = {'height': '48%', 'width': '48%', 'display': 'inline-block'}
 QUARTER_DIV_STYLE = {'width': '24%', 'display': 'inline-block'}
 BUTTON_STYLE = {'color': 'MidnightBlue', 
                 'background-color': 'BlanchedAlmond', 
@@ -267,7 +267,10 @@ def get_main_div(hist_div, img_div):
         
         # Graphs - Distribution (histogram or map), then pie chart
         html.Div([
-            dcc.Graph(id = 'dist-plot')], style = HALF_DIV_STYLE),
+            dcc.Loading(id = 'dist-plot-loading',
+                            type = "circle",
+                            color = 'DarkMagenta',
+                            children = dcc.Graph(id = 'dist-plot'))], style = HALF_DIV_STYLE),
         html.Div([
             dcc.Graph(id = 'pie-plot')], style = HALF_DIV_STYLE),
 
