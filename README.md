@@ -11,13 +11,14 @@ For full dashboard functionality, upload a CSV or XLS file with the following co
 - `View`: View of the sample (eg., 'ventral' or 'dorsal' for butterflies).
 - `Sex`: Sex of each sample.
 - `hybrid_stat`: Hybrid status of each sample (eg., 'valid_subspecies', 'subspecies_synonym', or 'unknown').
-- `lat`*: Latitude at which image was taken or specimen was collected.
-- `lon`*: Longitude at which image was taken or specimen was collected.
+- `lat`*: Latitude at which image was taken or specimen was collected: number in [-90,90].
+- `lon`*:  Longitude at which image was taken or specimen was collected: number in [-180,180].
 - `file_url`*: URL to access file.
 
 ***Note:** 
-- `lat` and `lon` columns are not required to utilize the dashboard, but there will be no map view if they are not included.
+- `lat` and `lon` columns are not required to utilize the dashboard, but there will be no map view if they are not included. Blank (or null) entries are recorded as `unknown`, and thus excluded from map view.
 - `Image_filename` and `file_url` are not required, but there will be no sample images option if either one is not included.
+- `locality` may be provided, otherwise it will take on the value `lat|lon` or `unknown` if these are not provided.
 
 ## Running Dashboard
 
