@@ -57,6 +57,15 @@ test_cases = [
             "expected_mapping": False,
             "expected_images": True
         },
+        {   # Check with full columns expected, but lat/lon out of bounds (1 lat and 2 lon)
+            "filepath": "test_data/HCGSD_test_latLonOOB.csv",
+            "filename": "HCGSD_test_latLonOOB.csv",
+            "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 
+                                    'file_url', 'Image_filename', 'locality', 'lat-lon', 
+                                    'Samples_at_locality', 'Species_at_locality', 'Subspecies_at_locality'],
+            "expected_mapping": True,
+            "expected_images": True
+        },
 ]
 
 def test_parse_contents():
@@ -70,3 +79,7 @@ def test_parse_contents():
         assert list(dff.columns) == case['expected_columns']
         assert output['mapping'] == case['expected_mapping']
         assert output['images'] == case['expected_images']
+
+        if case['filename'] == "HCGSD_test_latLonOOB.csv":
+            assert len(dff.loc[dff.lat == 'unknown']) == 1
+            assert len(dff.loc[dff.lon == 'unknown']) == 2
