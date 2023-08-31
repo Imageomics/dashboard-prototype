@@ -66,6 +66,15 @@ test_cases = [
             "expected_mapping": True,
             "expected_images": True
         },
+        {   # Check with full columns expected, but 'long' instead of 'lon'
+            "filepath": "test_data/HCGSD_test_latLong.csv",
+            "filename": "HCGSD_test_latLong.csv",
+            "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 
+                                    'file_url', 'Image_filename', 'locality', 'lat-lon', 
+                                    'Samples_at_locality', 'Species_at_locality', 'Subspecies_at_locality'],
+            "expected_mapping": True,
+            "expected_images": True
+        },
 ]
 
 def test_parse_contents():

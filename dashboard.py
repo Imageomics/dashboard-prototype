@@ -86,7 +86,14 @@ def parse_contents(contents, filename):
     for feature in features:
         if feature not in list(df.columns):
             if feature == 'lat' or feature == 'lon':
-                mapping = False
+                if feature == 'lon':
+                    if 'long' not in list(df.columns):
+                        mapping = False
+                    else:
+                        df = df.rename(columns = {"long": "lon"})
+                        included_features.append('lon')
+                else:
+                    mapping = False
             elif feature == 'file_url':
                 img_urls = False
             elif feature == 'Image_filename':
