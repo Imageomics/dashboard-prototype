@@ -48,7 +48,6 @@ class TestQuery(unittest.TestCase):
         # Test with mapping = False (no location data)
         df2 = pd.DataFrame(data = {key: data[key] for key in ['Species', 'Subspecies']})
         result_df2, result2_list = get_data(df2, False, features[:2])
-        #self.assertEqual('Locality' not in result_df2.columns, True)
         self.assertEqual(result_df2['Locality'].tolist(), ['unknown' for i in range(len(locality))])
         self.assertEqual(result_df2["Species"].tolist(), ['melpomene', 'melpomene', 'erato', 'melpomene', 'erato', 'species3'])
         self.assertEqual(result_df2["Subspecies"].tolist(), ['schunkei', 'nanna', 'erato', 'rosina_N', 'guarica', 'unknown'])
