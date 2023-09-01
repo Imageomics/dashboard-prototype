@@ -29,7 +29,7 @@ def test_get_img_div():
             'Subspecies': ['subspecies1', 'subspecies2', 'subspecies4'],
             'View': ['ventral', 'ventral', 'dorsal'],
             'Sex': ['male', 'female', 'female'],
-            'hybrid_stat': ['subspecies synonym', 'valid subspecies', 'subspecies synonym']
+            'Hybrid_stat': ['subspecies synonym', 'valid subspecies', 'subspecies synonym']
         }
     df = pd.DataFrame(data = data)
 
