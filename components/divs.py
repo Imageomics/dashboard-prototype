@@ -18,8 +18,8 @@ cat_list = [{'label': 'Species', 'value': 'Species'},
                 {'label': 'Subspecies', 'value': 'Subspecies'},
                 {'label':'View', 'value': 'View'},
                 {'label': 'Sex', 'value': 'Sex'},
-                {'label': 'Hybrid Status', 'value':'hybrid_stat'}, 
-                {'label': 'Locality', 'value': 'locality'}
+                {'label': 'Hybrid Status', 'value':'Hybrid_stat'}, 
+                {'label': 'Locality', 'value': 'Locality'}
                 ]
 DOCS_URL = "https://github.com/Imageomics/dashboard-prototype#how-it-works"
 DOCS_LINK = html.A("documentation",
@@ -196,8 +196,8 @@ def get_img_div(df, all_species, img_url):
                             style = QUARTER_DIV_STYLE
                             ),
                         html.Div([
-                            dcc.Checklist(df.hybrid_stat.unique(), 
-                                            df.hybrid_stat.unique()[0:2],
+                            dcc.Checklist(df.Hybrid_stat.unique(), 
+                                            df.Hybrid_stat.unique()[0:2],
                                             id = 'hybrid?')],
                             style = QUARTER_DIV_STYLE
                             ),

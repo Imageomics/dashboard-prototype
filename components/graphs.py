@@ -54,8 +54,8 @@ def make_map(df, color_by):
     # only use entries that have valid lat & lon for mapping
     df = df.loc[df['lat-lon'].str.contains('unknown') == False]
     fig = px.scatter_mapbox(df,
-                        lat = "lat",
-                        lon = "lon",
+                        lat = "Lat",
+                        lon = "Lon",
                         #projection = "natural earth",
                         custom_data = ["Samples_at_locality", "Species_at_locality", "Subspecies_at_locality"],
                         size = "Samples_at_locality",
@@ -64,8 +64,8 @@ def make_map(df, color_by):
                         title = "Distribution of Samples")
     
     fig.update_traces(hovertemplate = 
-                        "Latitude: %{lat}<br>"+
-                        "Longitude: %{lon}<br>" +
+                        "Latitude: %{Lat}<br>"+
+                        "Longitude: %{Lon}<br>" +
                         "Samples at lat/lon: %{customdata[0]}<br>" +
                         "Species at lat/lon: %{customdata[1]}<br>" +
                         "Subspecies at lat/lon: %{customdata[2]}<br>"
