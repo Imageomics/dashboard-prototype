@@ -64,8 +64,8 @@ def make_map(df, color_by):
                         title = "Distribution of Samples")
     
     fig.update_traces(hovertemplate = 
-                        "Latitude: %{Lat}<br>"+
-                        "Longitude: %{Lon}<br>" +
+                        "Latitude: %{lat}<br>"+
+                        "Longitude: %{lon}<br>" +
                         "Samples at lat/lon: %{customdata[0]}<br>" +
                         "Species at lat/lon: %{customdata[1]}<br>" +
                         "Subspecies at lat/lon: %{customdata[2]}<br>"
