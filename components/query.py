@@ -162,7 +162,7 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     num_entries = len(df_sub)
     # Filter out any entries that have missing filenames or URLs:
     df_sub = df_sub.loc[df_sub.Image_filename != 'unknown']
-    df_sub = df_sub.loc[df_sub.file_url != 'unknown']
+    df_sub = df_sub.loc[df_sub.File_url != 'unknown']
     max_imgs = len(df_sub)
     missing_vals = num_entries - max_imgs
     if max_imgs > 0:
@@ -172,7 +172,7 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
             num = min(num_images, max_imgs)
         df_filtered = df_sub.sample(num)
         filenames = df_filtered.Image_filename.astype('string').values
-        filepaths = df_filtered.file_url.astype('string').values
+        filepaths = df_filtered.File_url.astype('string').values
         #return list of filenames for min(user-selected, available) images randomly selected images from the filtered dataset
         return list(filenames), list(filepaths)
     # If there aren't any images to display, check if there are no such entries or just missing information.

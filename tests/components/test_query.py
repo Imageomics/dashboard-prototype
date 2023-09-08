@@ -75,7 +75,7 @@ class TestQuery(unittest.TestCase):
                                 '10428804_D_lowres.png',
                                 'unknown',
                                 '10428723_V_lowres.png'],
-            'file_url': [BASE_URL_V,
+            'File_url': [BASE_URL_V,
                         BASE_URL_V,
                         BASE_URL_V,
                         BASE_URL_D,
