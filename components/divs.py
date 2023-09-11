@@ -128,6 +128,12 @@ def get_map_div():
         ),
 
        html.Div([
+           html.H4('''
+                    Note: Manual zooming may be required to view all points; the map focuses on the centroid of the data.
+                    ''', 
+                    id = 'x-variable', #label to avoid nonexistent callback variable
+                    style = {'color': 'MidnightBlue', 'margin-left': 20, 'margin-right': 20}
+                )
                ], 
                id = 'sort-by', #label sort-by box to avoid non-existent label and generate box so button doesn't move between views
                style = HALF_DIV_STYLE

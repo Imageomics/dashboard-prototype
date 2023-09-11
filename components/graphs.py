@@ -61,7 +61,9 @@ def make_map(df, color_by):
                         size = "Samples_at_locality",
                         color = color_by,
                         color_discrete_sequence = px.colors.qualitative.Bold,
-                        title = "Distribution of Samples")
+                        title = "Distribution of Samples",
+                        zoom = 1,
+                        mapbox_style = "white-bg")
     
     fig.update_traces(hovertemplate = 
                         "Latitude: %{lat}<br>"+
@@ -79,7 +81,6 @@ def make_map(df, color_by):
             't': 35,
             'b': 20
         },
-        mapbox_style = "white-bg",
         mapbox_layers = [{
             "below": "traces",
             "sourcetype": "raster",
