@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import base64
 import io
 import json
@@ -80,13 +81,21 @@ def parse_contents(contents, filename):
     # If no image urls, disable sample image options
     mapping = True
     img_urls = True
-    features = ['Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 'file_url', 'Image_filename']
+    features = ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 'File_url', 'Image_filename']
     included_features = []
+    df.columns = df.columns.str.capitalize()
     for feature in features:
         if feature not in list(df.columns):
-            if feature == 'lat' or feature == 'lon':
-                mapping = False
-            elif feature == 'file_url':
+            if feature == 'Lat' or feature == 'Lon':
+                if feature == 'Lon':
+                    if 'Long' not in list(df.columns):
+                        mapping = False
+                    else:
+                        df = df.rename(columns = {"Long": "Lon"})
+                        included_features.append('Lon')
+                else:
+                    mapping = False
+            elif feature == 'File_url':
                 img_urls = False
             elif feature == 'Image_filename':
                 # If 'Image_filename' missing, return missing column if 'file_url' is included.
@@ -97,6 +106,18 @@ def parse_contents(contents, filename):
         else:
             included_features.append(feature)
     
+    # Check for lat/lon bounds & type if columns exist
+    if mapping:
+        try:
+            # Check lat and lon within appropriate ranges (lat: [-90, 90], lon: [-180, 180])
+            valid_lat = df['Lat'].astype(float).between(-90, 90)
+            df.loc[~valid_lat, 'Lat'] = 'unknown'
+            valid_lon = df['Lon'].astype(float).between(-180, 180)
+            df.loc[~valid_lon, 'Lon'] = 'unknown'
+        except ValueError as e:
+            print(e)
+            return json.dumps({'error': {'mapping': str(e)}})
+
     # get dataset-determined static data:
         # the dataframe and categorical features - processed for map view if mapping is True
         # all possible species, subspecies

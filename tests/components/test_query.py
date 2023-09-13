@@ -23,23 +23,23 @@ class TestQuery(unittest.TestCase):
         data = {
             'Species': ['melpomene', 'melpomene', 'erato', 'melpomene', 'erato', 'species3'],
             'Subspecies': ['schunkei', 'nanna', 'erato', 'rosina_N', 'guarica', None],
-            'lat': [-13.43, 5.25, 5.25, 9.9, 5.25, 9.9],
-            'lon': [-70.38,  -55.25, -55.25, -83.73, -55.25, -55.25]
+            'Lat': [-13.43, 5.25, 5.25, 9.9, 5.25, 9.9],
+            'Lon': [-70.38,  -55.25, -55.25, -83.73, -55.25, -55.25]
         }
         cat_list = [{'label': 'Species', 'value': 'Species'},
                     {'label': 'Subspecies', 'value': 'Subspecies'},
                     {'label':'View', 'value': 'View'},
                     {'label': 'Sex', 'value': 'Sex'},
-                    {'label': 'Hybrid Status', 'value':'hybrid_stat'},
-                    {'label': 'Locality', 'value': 'locality'}]
-        features = ['Species', 'Subspecies', 'lat', 'lon']
+                    {'label': 'Hybrid Status', 'value':'Hybrid_stat'},
+                    {'label': 'Locality', 'value': 'Locality'}]
+        features = ['Species', 'Subspecies', 'Lat', 'Lon']
         locality = ['-13.43|-70.38', '5.25|-55.25', '5.25|-55.25', '9.9|-83.73','5.25|-55.25', '9.9|-55.25']
 
         # Test with mapping = True (location data)
         df = pd.DataFrame(data = data)
         result_df, result_list = get_data(df, True, features)
         self.assertEqual(result_df['lat-lon'].tolist(), locality)
-        self.assertEqual(result_df['locality'].tolist(), locality)
+        self.assertEqual(result_df['Locality'].tolist(), locality)
         self.assertEqual(result_df["Samples_at_locality"].tolist(), [1,3,3,1,3,1])
         self.assertEqual(result_df["Species_at_locality"].tolist(), ['melpomene', 'melpomene, erato', 'melpomene, erato', 'melpomene', 'melpomene, erato', 'species3'])
         self.assertEqual(result_df["Subspecies_at_locality"].tolist(), ['schunkei', 'nanna, erato, guarica', 'nanna, erato, guarica', 'rosina_N', 'nanna, erato, guarica', 'unknown'])
@@ -48,8 +48,7 @@ class TestQuery(unittest.TestCase):
         # Test with mapping = False (no location data)
         df2 = pd.DataFrame(data = {key: data[key] for key in ['Species', 'Subspecies']})
         result_df2, result2_list = get_data(df2, False, features[:2])
-        #self.assertEqual('locality' not in result_df2.columns, True)
-        self.assertEqual(result_df2['locality'].tolist(), ['unknown' for i in range(len(locality))])
+        self.assertEqual(result_df2['Locality'].tolist(), ['unknown' for i in range(len(locality))])
         self.assertEqual(result_df2["Species"].tolist(), ['melpomene', 'melpomene', 'erato', 'melpomene', 'erato', 'species3'])
         self.assertEqual(result_df2["Subspecies"].tolist(), ['schunkei', 'nanna', 'erato', 'rosina_N', 'guarica', 'unknown'])
         self.assertEqual(result2_list, cat_list)
@@ -62,7 +61,7 @@ class TestQuery(unittest.TestCase):
             'Subspecies': ['schunkei', 'nanna', 'erato', 'rosina_N', 'guarica', 'subspecies6', 'subspecies6'],
             'View': ['ventral', 'ventral', 'ventral', 'dorsal', 'dorsal', 'ventral', 'dorsal'],
             'Sex': ['male', 'female', 'female', 'male', 'female', 'male', 'female'],
-            'hybrid_stat': ['subspecies synonym', 
+            'Hybrid_stat': ['subspecies synonym', 
                             'valid subspecies', 
                             'subspecies synonym', 
                             'valid subspecies', 
@@ -76,7 +75,7 @@ class TestQuery(unittest.TestCase):
                                 '10428804_D_lowres.png',
                                 'unknown',
                                 '10428723_V_lowres.png'],
-            'file_url': [BASE_URL_V,
+            'File_url': [BASE_URL_V,
                         BASE_URL_V,
                         BASE_URL_V,
                         BASE_URL_D,

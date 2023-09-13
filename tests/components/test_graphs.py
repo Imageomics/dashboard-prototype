@@ -4,7 +4,9 @@ from components.graphs import make_hist_plot, make_map, make_pie_plot
 
 # Define test data
 df = pd.read_csv("test_data/HCGSD_full_testNA.csv")
-included_features = ['Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 'file_url', 'Image_filename']
+# Update columns since not running through parse
+df.columns = df.columns.str.capitalize()
+included_features = ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 'File_url', 'Image_filename']
 processed_df, cat_list = get_data(df, True, included_features)
 
 def test_make_hist_plot():
@@ -25,7 +27,7 @@ def test_make_map():
     # Map plot output
     output = make_map(processed_df, "Species")
     output_data = output['data', 0]
-    assert output_data.type == "scattergeo"
+    assert output_data.type == "scattermapbox"
     #test for uknowns in data and check it's proper type
     assert 'unknown' not in output_data['customdata']
 

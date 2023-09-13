@@ -17,7 +17,7 @@ def get_data(df, mapping, features):
     df - DataFrame of the data to visualize.
     mapping - Boolean. True when lat/lon are given in dataset.
     features - List of features (columns) included in the DataFrame. This is a subset of the suggested columns: 
-                'Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 'file_url', 'Image_filename'
+                'Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 'File_url', 'Image_filename'
             
     Returns:
     --------
@@ -29,24 +29,24 @@ def get_data(df, mapping, features):
     # Will likely choose to calculate and return this in later instance    
     cat_list = [{'label': 'Species', 'value': 'Species'},
                 {'label': 'Subspecies', 'value': 'Subspecies'},
-                {'label':'View', 'value': 'View'},
+                {'label': 'View', 'value': 'View'},
                 {'label': 'Sex', 'value': 'Sex'},
-                {'label': 'Hybrid Status', 'value':'hybrid_stat'},
-                {'label': 'Locality', 'value': 'locality'}
+                {'label': 'Hybrid Status', 'value':'Hybrid_stat'},
+                {'label': 'Locality', 'value': 'Locality'}
     ]
 
     df = df.copy()
     df = df.fillna('unknown')
-    features.append('locality')
+    features.append('Locality')
     
     # If we don't have lat/lon, just return DataFrame with otherwise required features.
     if not mapping:
-        if 'locality' not in df.columns:
-            df['locality'] = 'unknown'
+        if 'Locality' not in df.columns:
+            df['Locality'] = 'unknown'
         return df[features], cat_list      
     
     # else lat and lon are in dataset, so process locality information
-    df['lat-lon'] = df['lat'].astype(str) + '|' + df['lon'].astype(str)
+    df['lat-lon'] = df['Lat'].astype(str) + '|' + df['Lon'].astype(str)
     df["Samples_at_locality"] = df['lat-lon'].map(df['lat-lon'].value_counts()) # will duplicate if multiple views of same sample
 
     # Count and record number of species and subspecies at each lat-lon
@@ -56,8 +56,8 @@ def get_data(df, mapping, features):
         df.loc[df['lat-lon'] == lat_lon, "Species_at_locality"] = ", ".join(species_list)
         df.loc[df['lat-lon'] == lat_lon, "Subspecies_at_locality"] = ", ".join(subspecies_list)
 
-    if 'locality' not in df.columns:
-        df['locality'] = df['lat-lon'] # contains "unknown" if lat or lon null
+    if 'Locality' not in df.columns:
+        df['Locality'] = df['lat-lon'] # contains "unknown" if lat or lon null
 
     new_features = ['lat-lon', "Samples_at_locality", "Species_at_locality", "Subspecies_at_locality"]
     for feature in new_features:
@@ -157,12 +157,12 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
         df_sub = df.loc[df.Subspecies.isin(subspecies)].copy()
     df_sub = df_sub.loc[df_sub.View.isin(view)]
     df_sub = df_sub.loc[df_sub.Sex.isin(sex)]
-    df_sub = df_sub.loc[df_sub.hybrid_stat.isin(hybrid)]
+    df_sub = df_sub.loc[df_sub.Hybrid_stat.isin(hybrid)]
 
     num_entries = len(df_sub)
     # Filter out any entries that have missing filenames or URLs:
     df_sub = df_sub.loc[df_sub.Image_filename != 'unknown']
-    df_sub = df_sub.loc[df_sub.file_url != 'unknown']
+    df_sub = df_sub.loc[df_sub.File_url != 'unknown']
     max_imgs = len(df_sub)
     missing_vals = num_entries - max_imgs
     if max_imgs > 0:
@@ -172,7 +172,7 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
             num = min(num_images, max_imgs)
         df_filtered = df_sub.sample(num)
         filenames = df_filtered.Image_filename.astype('string').values
-        filepaths = df_filtered.file_url.astype('string').values
+        filepaths = df_filtered.File_url.astype('string').values
         #return list of filenames for min(user-selected, available) images randomly selected images from the filtered dataset
         return list(filenames), list(filepaths)
     # If there aren't any images to display, check if there are no such entries or just missing information.

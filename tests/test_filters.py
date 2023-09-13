@@ -19,15 +19,16 @@ def generate_mock_upload(filepath):
     contents = "".join([content_type, ",", content_string])
     return contents
 
+ALL_COLUMNS = ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 
+                'File_url', 'Image_filename', 'Locality', 'lat-lon', 
+                'Samples_at_locality', 'Species_at_locality', 'Subspecies_at_locality']
 
 # Define Test Cases 
 test_cases = [
         {   # Check with full columns expected
             "filepath": "test_data/HCGSD_full_testNA.csv",
             "filename": "HCGSD_full_testNA.csv",
-            "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon', 
-                                    'file_url', 'Image_filename', 'locality', 'lat-lon', 
-                                    'Samples_at_locality', 'Species_at_locality', 'Subspecies_at_locality'],
+            "expected_columns": ALL_COLUMNS,
             "expected_mapping": True,
             "expected_images": True
         },
@@ -35,16 +36,16 @@ test_cases = [
             "filepath": "test_data/HCGSD_test_no_mapping.csv",
             "filename": "HCGSD_test_no_mapping.csv",
             # 'lon' in data, 'lat' not, 'lon' maintained   
-            "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lon',
-                                    'locality'],
+            "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lon',
+                                    'Locality'],
             "expected_mapping": False,
             "expected_images": False
         },
         {   # Check with missing image URL information
             "filepath": "test_data/HCGSD_testNA.csv",
             "filename": "HCGSD_testNA.csv",
-            "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 'lon',
-                                    'Image_filename', 'locality', 'lat-lon',
+            "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon',
+                                    'Image_filename', 'Locality', 'lat-lon',
                                     'Samples_at_locality', 'Species_at_locality', 'Subspecies_at_locality'],
             "expected_mapping": True,
             "expected_images": False
@@ -52,9 +53,23 @@ test_cases = [
         {   # Check with just missing mapping information
             "filepath": "test_data/HCGSD_test_nolon.csv",
             "filename": "HCGSD_test_nolon.csv",
-            "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'hybrid_stat', 'lat', 
-                                    'file_url', 'Image_filename', 'locality'],
+            "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 
+                                    'File_url', 'Image_filename', 'Locality'],
             "expected_mapping": False,
+            "expected_images": True
+        },
+        {   # Check with full columns expected, but lat/lon out of bounds (1 lat and 2 lon)
+            "filepath": "test_data/HCGSD_test_latLonOOB.csv",
+            "filename": "HCGSD_test_latLonOOB.csv",
+            "expected_columns": ALL_COLUMNS,
+            "expected_mapping": True,
+            "expected_images": True
+        },
+        {   # Check with full columns expected, but 'long' instead of 'lon'
+            "filepath": "test_data/HCGSD_test_latLong.csv",
+            "filename": "HCGSD_test_latLong.csv",
+            "expected_columns": ALL_COLUMNS,
+            "expected_mapping": True,
             "expected_images": True
         },
 ]
@@ -70,3 +85,7 @@ def test_parse_contents():
         assert list(dff.columns) == case['expected_columns']
         assert output['mapping'] == case['expected_mapping']
         assert output['images'] == case['expected_images']
+
+        if case['filename'] == "HCGSD_test_latLonOOB.csv":
+            assert len(dff.loc[dff.Lat == 'unknown']) == 1
+            assert len(dff.loc[dff.Lon == 'unknown']) == 2

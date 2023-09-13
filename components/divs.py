@@ -3,7 +3,7 @@ from dash import html, dcc
 # Fixed styles and sorting options
 H1_STYLE = {'textAlign': 'center', 'color': 'MidnightBlue'}
 H4_STYLE = {'color': 'MidnightBlue', 'margin-bottom' : 10}
-HALF_DIV_STYLE = {'width': '48%', 'display': 'inline-block'}
+HALF_DIV_STYLE = {'height': '48%', 'width': '48%', 'display': 'inline-block'}
 QUARTER_DIV_STYLE = {'width': '24%', 'display': 'inline-block'}
 BUTTON_STYLE = {'color': 'MidnightBlue', 
                 'background-color': 'BlanchedAlmond', 
@@ -18,10 +18,14 @@ cat_list = [{'label': 'Species', 'value': 'Species'},
                 {'label': 'Subspecies', 'value': 'Subspecies'},
                 {'label':'View', 'value': 'View'},
                 {'label': 'Sex', 'value': 'Sex'},
-                {'label': 'Hybrid Status', 'value':'hybrid_stat'}, 
-                {'label': 'Locality', 'value': 'locality'}
+                {'label': 'Hybrid Status', 'value':'Hybrid_stat'}, 
+                {'label': 'Locality', 'value': 'Locality'}
                 ]
 DOCS_URL = "https://github.com/Imageomics/dashboard-prototype#how-it-works"
+DOCS_LINK = html.A("documentation",
+                    href=DOCS_URL,
+                    target='_blank',
+                    style = ERROR_STYLE)
 
 def get_hist_div(mapping):
     '''
@@ -124,6 +128,12 @@ def get_map_div():
         ),
 
        html.Div([
+           html.H4('''
+                    Note: Manual zooming may be required to view all points; the map focuses on the centroid of the data.
+                    ''', 
+                    id = 'x-variable', #label to avoid nonexistent callback variable
+                    style = {'color': 'MidnightBlue', 'margin-left': 20, 'margin-right': 20}
+                )
                ], 
                id = 'sort-by', #label sort-by box to avoid non-existent label and generate box so button doesn't move between views
                style = HALF_DIV_STYLE
@@ -192,8 +202,8 @@ def get_img_div(df, all_species, img_url):
                             style = QUARTER_DIV_STYLE
                             ),
                         html.Div([
-                            dcc.Checklist(df.hybrid_stat.unique(), 
-                                            df.hybrid_stat.unique()[0:2],
+                            dcc.Checklist(df.Hybrid_stat.unique(), 
+                                            df.Hybrid_stat.unique()[0:2],
                                             id = 'hybrid?')],
                             style = QUARTER_DIV_STYLE
                             ),
@@ -267,7 +277,10 @@ def get_main_div(hist_div, img_div):
         
         # Graphs - Distribution (histogram or map), then pie chart
         html.Div([
-            dcc.Graph(id = 'dist-plot')], style = HALF_DIV_STYLE),
+            dcc.Loading(id = 'dist-plot-loading',
+                            type = "circle",
+                            color = 'DarkMagenta',
+                            children = dcc.Graph(id = 'dist-plot'))], style = HALF_DIV_STYLE),
         html.Div([
             dcc.Graph(id = 'pie-plot')], style = HALF_DIV_STYLE),
 
@@ -303,20 +316,24 @@ def get_error_div(error_dict):
                             html.H3("Source data does not have '" + feature + "' column. ",
                                     style = ERROR_STYLE),
                             html.H4(["Please see the ",
-                                        html.A("documentation",
-                                                href=DOCS_URL,
-                                                target='_blank',
-                                                style = ERROR_STYLE),
+                                        DOCS_LINK,
                                         " for list of required columns."], 
                                         style = ERROR_STYLE)
                         ])
+    elif 'mapping' in error_dict.keys():
+        error_msg = error_dict['mapping']
+        error_div = html.Div([
+                            html.H4("Latitude or longitude columns have non-numeric values: " + error_msg + ".",
+                                     style = ERROR_STYLE),
+                            html.H4(["Please see the ",
+                                     DOCS_LINK,
+                                     "."],
+                            style = ERROR_STYLE)
+        ])
     elif 'type' in error_dict.keys():
         error_div = html.Div([
                             html.H4(["The source file is not a valid CSV format, please see the ",
-                                     html.A("documentation", 
-                                            href=DOCS_URL,
-                                            target='_blank',
-                                            style = ERROR_STYLE),
+                                     DOCS_LINK,
                                      "."],
                             style = ERROR_STYLE)
         ])
