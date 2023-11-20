@@ -1,0 +1,39 @@
+# following https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md
+
+abstract: "To facilitate a more barrier-free fitness-for-use evaluation of new datasets, we developed a data dashboard that allows the user to visualize metadata distribution information and sample images efficiently and with no coding required. Our current version is focused on plant and animal images, though images aren’t required to gather metadata distribution statistics."
+authors:
+- family-names: "Campolongo"
+  given-names: "Elizabeth G."
+  orcid: "https://orcid.org/0000-0003-0846-2413"
+- family-names: "Bradley"
+  given-names: "John"
+  orcid: "https://orcid.org/0000-0003-3858-848X"
+- family-names: "Thompson"
+  given-names: "Matthew J."
+  orcid: "https://orcid.org/0000-0003-0583-8585"
+- family-names: "Jebbia"
+  given-names: "Dom"
+  orcid: "https://orcid.org/0000-0002-9587-8718"
+- family-names: "Lapp"
+  given-names: "Hilmar"
+  orcid: "https://orcid.org/0000-0001-9107-0714"
+cff-version: 1.2.0
+date-released: "2023-09-15"
+identifiers:
+  - description: "The GitHub release URL of tag 1.1.0."
+    type: url
+    value: "https://github.com/Imageomics/dashboard-prototype/releases/tag/v1.1.0"
+  - description: "The GitHub URL of the commit tagged with 1.1.0."
+    type: url
+    value: "https://github.com/Imageomics/dashboard-prototype/tree/d6850401d0020cf58d7e3ea8940d5c419e5e558b"
+keywords:
+  - "EDA"
+  - "data"
+  - "evaluation"
+  - "dashboard"
+  - "visualization"
+license: MIT
+message: "If you use this software, please cite it using these metadata."
+repository-code: "https://github.com/Imageomics/dashboard-prototype"
+title: "Dashboard Prototype"
+version: 1.1.0
