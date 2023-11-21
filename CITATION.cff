@@ -1,6 +1,6 @@
 # following https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md
 
-abstract: "To facilitate a more barrier-free fitness-for-use evaluation of new datasets, we developed a data dashboard that allows the user to visualize metadata distribution information and sample images efficiently and with no coding required. Our current version is focused on plant and animal images, though images aren’t required to gather metadata distribution statistics."
+abstract: "To facilitate a more low-barrier fitness-for-use evaluation of new datasets, we developed a data dashboard that allows the user to visualize metadata distribution information and sample images efficiently and with no coding required. Our current version is focused on plant and animal images, though for gathering metadata distribution statistics images are optional."
 authors:
 - family-names: "Campolongo"
   given-names: "Elizabeth G."
