@@ -4,6 +4,7 @@ from dash import html
 # Helper functions for Dashboard
 
 PRINT_STYLE = {"color": "MidnightBlue"}
+MAX_IMG_SIZE = "400px"
 
 def get_data(df, mapping, features):
     '''
@@ -124,7 +125,7 @@ def get_images(df, subspecies, view, sex, hybrid, num_images):
                 image_path = filepaths[i] + filenames[i]
             else:
                 image_path = filepaths[i] + '/' + filenames[i]
-        Imgs.append(html.Img(src = image_path))
+        Imgs.append(html.Img(src = image_path, style = {"max-width": MAX_IMG_SIZE}))
     return Imgs
 
 def get_filenames(df, subspecies, view, sex, hybrid, num_images):
