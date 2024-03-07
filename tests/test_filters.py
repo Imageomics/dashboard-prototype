@@ -1,6 +1,7 @@
 import base64
 import json
 import pandas as pd
+from io import StringIO
 from dashboard import parse_contents
 
 
@@ -80,7 +81,7 @@ def test_parse_contents():
         contents = generate_mock_upload(case['filepath'])
         output = parse_contents(contents, case['filename'])
         output = json.loads(output)
-        dff = pd.read_json(output['processed_df'], orient = 'split')
+        dff = pd.read_json(StringIO(output['processed_df']), orient = 'split')
 
         assert list(dff.columns) == case['expected_columns']
         assert output['mapping'] == case['expected_mapping']
