@@ -18,11 +18,11 @@ authors:
   given-names: "Hilmar"
   orcid: "https://orcid.org/0000-0001-9107-0714"
 cff-version: 1.2.0
-date-released: "2023-09-15"
+date-released: "2024-03-08"
 identifiers:
-  - description: "The GitHub release URL of tag 1.1.0."
+  - description: "The GitHub release URL of tag 1.2.0."
     type: url
-    value: "https://github.com/Imageomics/dashboard-prototype/releases/tag/v1.1.0"
+    value: "https://github.com/Imageomics/dashboard-prototype/releases/tag/v1.2.0"
   - description: "The GitHub URL of the commit tagged with 1.1.0."
     type: url
     value: "https://github.com/Imageomics/dashboard-prototype/tree/d6850401d0020cf58d7e3ea8940d5c419e5e558b"
@@ -36,4 +36,4 @@ license: MIT
 message: "If you use this software, please cite it using these metadata."
 repository-code: "https://github.com/Imageomics/dashboard-prototype"
 title: "Data Dashboard: Facilitating Data Exploration"
-version: 1.1.0
+version: 1.2.0
