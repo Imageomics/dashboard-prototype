@@ -23,9 +23,9 @@ identifiers:
   - description: "The GitHub release URL of tag 1.2.0."
     type: url
     value: "https://github.com/Imageomics/dashboard-prototype/releases/tag/v1.2.0"
-  - description: "The GitHub URL of the commit tagged with 1.1.0."
+  - description: "The GitHub URL of the commit tagged with 1.2.0."
     type: url
-    value: "https://github.com/Imageomics/dashboard-prototype/tree/d6850401d0020cf58d7e3ea8940d5c419e5e558b"
+    value: "https://github.com/Imageomics/dashboard-prototype/tree/d848922a28c37c03523413d5950823d13339aee1"
 keywords:
   - "EDA"
   - "data"
