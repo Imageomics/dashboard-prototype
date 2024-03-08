@@ -111,9 +111,9 @@ def parse_contents(contents, filename):
         try:
             # Check lat and lon within appropriate ranges (lat: [-90, 90], lon: [-180, 180])
             valid_lat = df['Lat'].astype(float).between(-90, 90)
-            df.loc[~valid_lat, 'Lat'] = 'unknown'
+            df.loc[~valid_lat, 'Lat'] = np.nan
             valid_lon = df['Lon'].astype(float).between(-180, 180)
-            df.loc[~valid_lon, 'Lon'] = 'unknown'
+            df.loc[~valid_lon, 'Lon'] = np.nan
         except ValueError as e:
             print(e)
             return json.dumps({'error': {'mapping': str(e)}})
@@ -161,7 +161,7 @@ def get_visuals(jsonified_data):
     data = json.loads(jsonified_data)
     if 'error' in data:
         return get_error_div(data['error'])
-    dff = pd.read_json(data['processed_df'], orient = 'split')
+    dff = pd.read_json(io.StringIO(data['processed_df']), orient = 'split')
 
     # get divs
     hist_div = get_hist_div(data['mapping'])
@@ -238,7 +238,7 @@ def update_dist_plot(x_var, color_by, sort_by, btn, jsonified_data):
     '''
     # open dataframe from saved data
     data = json.loads(jsonified_data)
-    dff = pd.read_json(data['processed_df'], orient = 'split')
+    dff = pd.read_json(io.StringIO(data['processed_df']), orient = 'split')
     # get distribution graph based on button value
     if btn == "Show Histogram":
         return make_map(dff, color_by)
@@ -271,7 +271,7 @@ def update_pie_plot(var, jsonified_data):
     '''
     # open dataframe from saved data
     data = json.loads(jsonified_data)
-    dff = pd.read_json(data['processed_df'], orient = 'split')
+    dff = pd.read_json(io.StringIO(data['processed_df']), orient = 'split')
     return make_pie_plot(dff, var)
 
 # Image Section
@@ -346,7 +346,7 @@ def update_display(n_clicks, jsonified_data, subspecies, view, sex, hybrid, num_
     if n_clicks > 0 and (view != [] and sex != [] and hybrid != []):
         # Unpack json for saved dataframe
         data = json.loads(jsonified_data)
-        dff = pd.read_json(data['processed_df'], orient = 'split')
+        dff = pd.read_json(io.StringIO(data['processed_df']), orient = 'split')
         return get_images(dff, subspecies, view, sex, hybrid, num_images)
     elif n_clicks == 0:
         return dash.no_update
