@@ -81,7 +81,7 @@ def parse_contents(contents, filename):
     # If no image urls, disable sample image options
     mapping = True
     img_urls = True
-    features = ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 'File_url', 'Image_filename']
+    features = ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 'File_url']
     included_features = []
     df.columns = df.columns.str.capitalize()
     for feature in features:
@@ -97,10 +97,6 @@ def parse_contents(contents, filename):
                     mapping = False
             elif feature == 'File_url':
                 img_urls = False
-            elif feature == 'Image_filename':
-                # If 'Image_filename' missing, return missing column if 'file_url' is included.
-                if img_urls:
-                    return json.dumps({'error': {'feature': feature}})
             else:
                 return json.dumps({'error': {'feature': feature}})
         else:
