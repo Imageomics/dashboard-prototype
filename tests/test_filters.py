@@ -21,7 +21,7 @@ def generate_mock_upload(filepath):
     return contents
 
 ALL_COLUMNS = ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 
-                'File_url', 'Image_filename', 'Locality', 'lat-lon', 
+                'File_url', 'Locality', 'lat-lon', 
                 'Samples_at_locality', 'Species_at_locality', 'Subspecies_at_locality']
 
 # Define Test Cases 
@@ -46,7 +46,7 @@ test_cases = [
             "filepath": "test_data/HCGSD_testNA.csv",
             "filename": "HCGSD_testNA.csv",
             "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon',
-                                    'Image_filename', 'Locality', 'lat-lon',
+                                    'Locality', 'lat-lon',
                                     'Samples_at_locality', 'Species_at_locality', 'Subspecies_at_locality'],
             "expected_mapping": True,
             "expected_images": False
@@ -55,7 +55,7 @@ test_cases = [
             "filepath": "test_data/HCGSD_test_nolon.csv",
             "filename": "HCGSD_test_nolon.csv",
             "expected_columns": ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 
-                                    'File_url', 'Image_filename', 'Locality'],
+                                    'File_url', 'Locality'],
             "expected_mapping": False,
             "expected_images": True
         },
