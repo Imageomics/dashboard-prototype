@@ -8,7 +8,7 @@ IMG_STYLE = {"max-width": "400px"}
 
 def get_data(df, mapping, features):
     '''
-    Function to read in DataFrame and perform required manipulations: 
+    Reads in DataFrame and performs required manipulations: 
         - fill null values in required columns with 'unknown'
         - add 'lat-lon', `Samples_at_locality`, 'Species_at_locality', and 'Subspecies_at_locality' columns.
         - make list of categorical columns.
@@ -68,7 +68,7 @@ def get_data(df, mapping, features):
 
 def get_species_options(df):
     '''
-    Function to pull in DataFrame and produce a dictionary of species options (Melpomene, Erato, and Any)
+    Pulls in DataFrame and produces a dictionary of species options (Melpomene, Erato, and Any)
 
     Parameters:
     -----------
@@ -94,7 +94,7 @@ def get_species_options(df):
 
 def get_images(df, subspecies, view, sex, hybrid, num_images):
     '''
-    Function to retrieve the user-selected number of images.
+    Retrieves the user-selected number of images.
 
     Parameters:
     -----------
