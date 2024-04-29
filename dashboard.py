@@ -55,7 +55,7 @@ app.layout = html.Div([
 
 def parse_contents(contents, filename):
     '''
-    Function to read uploaded data.
+    Reads uploaded data, checks that it meets requirements, and processes it. Returns processed data and available options in JSON.
     '''
     if contents is None:
         raise PreventUpdate
@@ -150,7 +150,7 @@ def update_output(contents, filename):
 
 def get_visuals(jsonified_data):
     '''
-    Function that usese the processed and saved data to get the main div (histogram, pie chart, and image example options).
+    Fetches the main div (histogram, pie chart, and image example options) based on the processed and saved data.
     Returns error div if error occurs in upload or essential features are missing.
     '''
     # load saved data
@@ -177,7 +177,7 @@ def get_visuals(jsonified_data):
 
 def update_dist_view(n_clicks, children, jsonified_data):
     '''
-    Function to update the upper left distribution options based on selected distribution chart (histogram or map).
+    Updates the upper left distribution options based on selected distribution chart (histogram or map).
     Activates on click to change, defaults to histogram view.
 
     Parameters:
@@ -217,7 +217,7 @@ def update_dist_view(n_clicks, children, jsonified_data):
 
 def update_dist_plot(x_var, color_by, sort_by, btn, jsonified_data):
     '''
-    Function to update distribution figure with either map or histogram based on selections.
+    Updates distribution figure with either map or histogram based on selections.
     Selection is based on current label of the button ('Map View' or 'Show Histogram'), which updates prior to graph.
 
     Parameters:
@@ -281,7 +281,7 @@ def update_pie_plot(var, jsonified_data):
 
 def set_subspecies_options(selected_species, jsonified_data):
     ''' 
-    Function to set subspecies options in dropdown based on user-selected species.
+    Sets subspecies options in dropdown based on user-selected species.
 
     Parameters:
     -----------
@@ -321,7 +321,7 @@ def set_subspecies_value(available_options):
 # Retrieve selected number of images
 def update_display(n_clicks, jsonified_data, subspecies, view, sex, hybrid, num_images):
     '''
-    Function to retrieve the user-selected number of images adhering to their chosen parameters when the 'Display Images' button is pressed.
+    Retrieves the user-selected number of images adhering to their chosen parameters when the 'Display Images' button is pressed.
     
     Parameters:
     -----------

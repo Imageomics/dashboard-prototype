@@ -29,7 +29,7 @@ DOCS_LINK = html.A("documentation",
 
 def get_hist_div(mapping):
     '''
-    Function to generate the histogram options section of the dashboard, including button to select 'Map View'. 
+    Generates the histogram options section of the dashboard, including button to select 'Map View'. 
     Provides choice of variables for distribution and to color by, with options for order to sort x-axis.
 
     Parameters:
@@ -93,7 +93,7 @@ def get_hist_div(mapping):
 
 def get_map_div():
     '''
-    Function to generate the mapping options section of the dashboard. 
+    Generates the mapping options section of the dashboard. 
     Provides choice of variables to color by and button to switch back to histogram ('Show Histogram').
 
     Returns:
@@ -152,8 +152,8 @@ def get_map_div():
 
 def get_img_div(df, all_species, img_url):
     '''
-    Function to generate the Image Sampling options section of the dashboard, including button to display images. 
-    Provides empty list if no URLS are provided in the DataFrame for the entries.
+    Generates the Image Sampling options section of the dashboard, including button to display images. 
+    Provides empty list if no URLs are provided in the DataFrame for the entries.
 
     Parameters:
     -----------
@@ -241,7 +241,7 @@ def get_img_div(df, all_species, img_url):
 
 def get_main_div(hist_div, img_div):
     '''
-    Function to return main div based on upload of data.
+    Returns main div based on upload of data.
 
     Parameters:
     -----------
@@ -299,7 +299,7 @@ def get_main_div(hist_div, img_div):
 
 def get_error_div(error_dict):
     '''
-    Function to return appropriate error message if there's a problem uploading the selected file.
+    Returns appropriate error message if there's a problem uploading the selected file.
 
     Parameters:
     -----------
