@@ -122,7 +122,7 @@ def get_images(df, subspecies, view, sex, hybrid, num_images):
 
 def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     '''
-    Funtion to randomly select the given number of filepaths (file urls) for images adhering to specified filters.
+    Function to randomly select the given number of filepaths (file urls) for images adhering to specified filters.
     Raises ValueError indicating no such images if none match the user selections.
     
     Parameters:
