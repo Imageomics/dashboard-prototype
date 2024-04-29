@@ -116,10 +116,10 @@ def parse_contents(contents, filename):
 
     # get dataset-determined static data:
         # the dataframe and categorical features - processed for map view if mapping is True
-        # all possible species, subspecies
+        # all possible species, subspecies -- must run first to avoid adding "unknown" to lists
         # will likely include categorical options in later instance (sooner)
+    all_species = get_species_options(df)
     processed_df, cat_list = get_data(df, mapping, included_features)
-    all_species = get_species_options(processed_df)
     # save data to dictionary to save as json 
     data = {
             'processed_df': processed_df.to_json(date_format = 'iso', orient = 'split'),

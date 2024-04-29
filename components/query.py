@@ -68,7 +68,7 @@ def get_data(df, mapping, features):
 
 def get_species_options(df):
     '''
-    Pulls in DataFrame and produces a dictionary of species options (Melpomene, Erato, and Any)
+    Pulls in DataFrame and produces a dictionary of species options (eg., melpomene, erato, and Any)
 
     Parameters:
     -----------
@@ -79,13 +79,13 @@ def get_species_options(df):
     all_species - Dictionary of all potential species options and their subspecies.
 
     '''
-    species_list = list(df.Species.unique())
+    species_list = list(df.Species.dropna().unique()) # drop nulls to avoid adding non-species (or subspecies below)
     all_species = {}
     for species in species_list:
-        subspecies_list = df.loc[df.Species == species, 'Subspecies'].unique()
-        subspecies_list = np.insert(subspecies_list, 0 , 'Any-' + species.capitalize())
-        all_species[species.capitalize()] = list(subspecies_list)
-    all_subspecies = np.insert(df.Subspecies.unique(), 0, 'Any')
+        subspecies_list = df.loc[df.Species == species, 'Subspecies'].dropna().unique()
+        subspecies_list = np.insert(subspecies_list, 0 , 'Any-' + species) # need this to match as filled for img selection
+        all_species[species] = list(subspecies_list)
+    all_subspecies = np.insert(df.Subspecies.dropna().unique(), 0, 'Any')
     all_species['Any'] = list(all_subspecies)
     
     return all_species
@@ -139,11 +139,13 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     filepaths - List of filepaths (URLs) corresponding to the selected filenames. 
     
     '''
-    if 'Any' in subspecies and type(subspecies) == str:
+    if ('Any' in subspecies and type(subspecies) == str) or ('Any' in subspecies[0] and len(subspecies) == 1):
+        if type(subspecies) == list:
+            subspecies = subspecies[0]
         if subspecies == 'Any':
             df_sub = df.copy()
         else:
-            species = subspecies.split('-')[1].lower()
+            species = subspecies.split('-')[1] # should match case as filled
             df_sub = df.loc[df.Species == species].copy()
     else:
         df_sub = df.loc[df.Subspecies.isin(subspecies)].copy()
