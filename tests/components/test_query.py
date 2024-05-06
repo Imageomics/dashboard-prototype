@@ -7,15 +7,15 @@ from components.query import get_species_options, get_data, get_filenames, get_i
 class TestQuery(unittest.TestCase):
     def test_get_species_options(self):
         data = {
-            'Species': ['melpomene', 'erato', 'metharme'],
+            'Species': ['Melpomene', 'erato', 'metharme'],
             'Subspecies': ['subspecies1', 'subspecies2', 'subspecies3']
         }
         df = pd.DataFrame(data=data)
         result = get_species_options(df)
-        self.assertEqual(result.keys(), set(["Melpomene", "Erato", "Metharme", "Any"]))
+        self.assertEqual(result.keys(), set(["Melpomene", "erato", "metharme", "Any"]))
         self.assertEqual(result["Melpomene"], ['Any-Melpomene', 'subspecies1'])
-        self.assertEqual(result["Erato"],['Any-Erato', 'subspecies2'])
-        self.assertEqual(result["Metharme"], ['Any-Metharme', 'subspecies3'])
+        self.assertEqual(result["erato"],['Any-erato', 'subspecies2'])
+        self.assertEqual(result["metharme"], ['Any-metharme', 'subspecies3'])
         self.assertEqual(result["Any"],
                          ['Any', 'subspecies1', 'subspecies2', 'subspecies3'])
     
@@ -75,9 +75,9 @@ class TestQuery(unittest.TestCase):
                         'unknown']
         }
         df = pd.DataFrame(data = data)
-        test_subspecies = ['Any-Melpomene', 
+        test_subspecies = ['Any-melpomene', 
                            ['guarica'], 
-                           'Any-Erato',
+                           'Any-erato',
                            'Any', 
                            ['schunkei', 'nanna', 'rosina_N']
                            ]
