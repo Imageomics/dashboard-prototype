@@ -8,7 +8,7 @@ IMG_STYLE = {"max-width": "400px"}
 
 def get_data(df, mapping, features):
     '''
-    Function to read in DataFrame and perform required manipulations: 
+    Reads in DataFrame and performs required manipulations: 
         - fill null values in required columns with 'unknown'
         - add 'lat-lon', `Samples_at_locality`, 'Species_at_locality', and 'Subspecies_at_locality' columns.
         - make list of categorical columns.
@@ -18,7 +18,7 @@ def get_data(df, mapping, features):
     df - DataFrame of the data to visualize.
     mapping - Boolean. True when lat/lon are given in dataset.
     features - List of features (columns) included in the DataFrame. This is a subset of the suggested columns: 
-                'Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 'File_url', 'Image_filename'
+                'Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 'File_url'
             
     Returns:
     --------
@@ -68,7 +68,7 @@ def get_data(df, mapping, features):
 
 def get_species_options(df):
     '''
-    Function to pull in DataFrame and produce a dictionary of species options (Melpomene, Erato, and Any)
+    Pulls in DataFrame and produces a dictionary of species options (eg., melpomene, erato, and Any)
 
     Parameters:
     -----------
@@ -79,13 +79,13 @@ def get_species_options(df):
     all_species - Dictionary of all potential species options and their subspecies.
 
     '''
-    species_list = list(df.Species.unique())
+    species_list = list(df.Species.dropna().unique()) # drop nulls to avoid adding non-species (or subspecies below)
     all_species = {}
     for species in species_list:
-        subspecies_list = df.loc[df.Species == species, 'Subspecies'].unique()
-        subspecies_list = np.insert(subspecies_list, 0 , 'Any-' + species.capitalize())
-        all_species[species.capitalize()] = list(subspecies_list)
-    all_subspecies = np.insert(df.Subspecies.unique(), 0, 'Any')
+        subspecies_list = df.loc[df.Species == species, 'Subspecies'].dropna().unique()
+        subspecies_list = np.insert(subspecies_list, 0 , 'Any-' + species) # need this to match as filled for img selection
+        all_species[species] = list(subspecies_list)
+    all_subspecies = np.insert(df.Subspecies.dropna().unique(), 0, 'Any')
     all_species['Any'] = list(all_subspecies)
     
     return all_species
@@ -94,7 +94,7 @@ def get_species_options(df):
 
 def get_images(df, subspecies, view, sex, hybrid, num_images):
     '''
-    Function to retrieve the user-selected number of images.
+    Retrieves the user-selected number of images.
 
     Parameters:
     -----------
@@ -109,28 +109,20 @@ def get_images(df, subspecies, view, sex, hybrid, num_images):
     --------
     Imgs - List of html image elements with `src` element pointing to paths for the requested number of images matching given parameters.
            Returns html header4 "No Such Images. Please make another selection." if no images matching parameters exist.
-           Returns html header4 indicating number of matching entries without filename or filepath.
+           Returns html header4 indicating number of matching entries without filepath(s).
     '''
     try:
-        filenames, filepaths = get_filenames(df, subspecies, view, sex, hybrid, num_images)
+        filepaths = get_filenames(df, subspecies, view, sex, hybrid, num_images)
     except ValueError as e:
         return html.H4(str(e) + " Please make another selection.", 
                     style = PRINT_STYLE)
-    Imgs = []
-    for i in range(len(filenames)):
-        if filenames[i] in filepaths[i]:
-            image_path = filepaths[i]
-        else:
-            if filepaths[i][-1] == '/':
-                image_path = filepaths[i] + filenames[i]
-            else:
-                image_path = filepaths[i] + '/' + filenames[i]
-        Imgs.append(html.Img(src = image_path, style = IMG_STYLE))
+    Imgs = [html.Img(src = filepaths[i], style = IMG_STYLE) for i in range(len(filepaths))]
+    
     return Imgs
 
 def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     '''
-    Funtion to randomly select the given number of filenames for images adhering to specified filters.
+    Randomly selects the given number of filepaths (file urls) for images adhering to specified filters.
     Raises ValueError indicating no such images if none match the user selections.
     
     Parameters:
@@ -144,15 +136,16 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
 
     Returns:
     --------
-    filenames - List of filenames meeting specified conditions (the lesser of the requested amount or number available). 
     filepaths - List of filepaths (URLs) corresponding to the selected filenames. 
     
     '''
-    if 'Any' in subspecies and type(subspecies) == str:
+    if ('Any' in subspecies and type(subspecies) == str) or ('Any' in subspecies[0] and len(subspecies) == 1):
+        if type(subspecies) == list:
+            subspecies = subspecies[0]
         if subspecies == 'Any':
             df_sub = df.copy()
         else:
-            species = subspecies.split('-')[1].lower()
+            species = subspecies.split('-')[1] # should match case as filled
             df_sub = df.loc[df.Species == species].copy()
     else:
         df_sub = df.loc[df.Subspecies.isin(subspecies)].copy()
@@ -161,8 +154,7 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
     df_sub = df_sub.loc[df_sub.Hybrid_stat.isin(hybrid)]
 
     num_entries = len(df_sub)
-    # Filter out any entries that have missing filenames or URLs:
-    df_sub = df_sub.loc[df_sub.Image_filename != 'unknown']
+    # Filter out any entries that have missing URLs:
     df_sub = df_sub.loc[df_sub.File_url != 'unknown']
     max_imgs = len(df_sub)
     missing_vals = num_entries - max_imgs
@@ -172,12 +164,13 @@ def get_filenames(df, subspecies, view, sex, hybrid, num_images):
         else:
             num = min(num_images, max_imgs)
         df_filtered = df_sub.sample(num)
-        filenames = df_filtered.Image_filename.astype('string').values
         filepaths = df_filtered.File_url.astype('string').values
-        #return list of filenames for min(user-selected, available) images randomly selected images from the filtered dataset
-        return list(filenames), list(filepaths)
+        #return list of filepaths for min(user-selected, available) images randomly selected images from the filtered dataset
+        return list(filepaths)
     # If there aren't any images to display, check if there are no such entries or just missing information.
     elif missing_vals == 0:
+        # No images & no matching records
         raise ValueError("No Such Images.")
     else:
-        raise ValueError("No Such Images. Unknown filename(s) or path(s).")
+        # There are records matching, but not able to display images for them
+        raise ValueError(f"No Such Images to display; {missing_vals} record(s) with unknown filepath(s) match this selection.")

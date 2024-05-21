@@ -55,7 +55,7 @@ app.layout = html.Div([
 
 def parse_contents(contents, filename):
     '''
-    Function to read uploaded data.
+    Reads uploaded data, checks that it meets requirements, and processes it. Returns processed data and available options in JSON.
     '''
     if contents is None:
         raise PreventUpdate
@@ -81,7 +81,7 @@ def parse_contents(contents, filename):
     # If no image urls, disable sample image options
     mapping = True
     img_urls = True
-    features = ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 'File_url', 'Image_filename']
+    features = ['Species', 'Subspecies', 'View', 'Sex', 'Hybrid_stat', 'Lat', 'Lon', 'File_url']
     included_features = []
     df.columns = df.columns.str.capitalize()
     for feature in features:
@@ -97,10 +97,6 @@ def parse_contents(contents, filename):
                     mapping = False
             elif feature == 'File_url':
                 img_urls = False
-            elif feature == 'Image_filename':
-                # If 'Image_filename' missing, return missing column if 'file_url' is included.
-                if img_urls:
-                    return json.dumps({'error': {'feature': feature}})
             else:
                 return json.dumps({'error': {'feature': feature}})
         else:
@@ -120,10 +116,10 @@ def parse_contents(contents, filename):
 
     # get dataset-determined static data:
         # the dataframe and categorical features - processed for map view if mapping is True
-        # all possible species, subspecies
+        # all possible species, subspecies -- must run first to avoid adding "unknown" to lists
         # will likely include categorical options in later instance (sooner)
+    all_species = get_species_options(df)
     processed_df, cat_list = get_data(df, mapping, included_features)
-    all_species = get_species_options(processed_df)
     # save data to dictionary to save as json 
     data = {
             'processed_df': processed_df.to_json(date_format = 'iso', orient = 'split'),
@@ -154,7 +150,7 @@ def update_output(contents, filename):
 
 def get_visuals(jsonified_data):
     '''
-    Function that usese the processed and saved data to get the main div (histogram, pie chart, and image example options).
+    Fetches the main div (histogram, pie chart, and image example options) based on the processed and saved data.
     Returns error div if error occurs in upload or essential features are missing.
     '''
     # load saved data
@@ -181,7 +177,7 @@ def get_visuals(jsonified_data):
 
 def update_dist_view(n_clicks, children, jsonified_data):
     '''
-    Function to update the upper left distribution options based on selected distribution chart (histogram or map).
+    Updates the upper left distribution options based on selected distribution chart (histogram or map).
     Activates on click to change, defaults to histogram view.
 
     Parameters:
@@ -221,7 +217,7 @@ def update_dist_view(n_clicks, children, jsonified_data):
 
 def update_dist_plot(x_var, color_by, sort_by, btn, jsonified_data):
     '''
-    Function to update distribution figure with either map or histogram based on selections.
+    Updates distribution figure with either map or histogram based on selections.
     Selection is based on current label of the button ('Map View' or 'Show Histogram'), which updates prior to graph.
 
     Parameters:
@@ -285,7 +281,7 @@ def update_pie_plot(var, jsonified_data):
 
 def set_subspecies_options(selected_species, jsonified_data):
     ''' 
-    Function to set subspecies options in dropdown based on user-selected species.
+    Sets subspecies options in dropdown based on user-selected species.
 
     Parameters:
     -----------
@@ -325,7 +321,7 @@ def set_subspecies_value(available_options):
 # Retrieve selected number of images
 def update_display(n_clicks, jsonified_data, subspecies, view, sex, hybrid, num_images):
     '''
-    Function to retrieve the user-selected number of images adhering to their chosen parameters when the 'Display Images' button is pressed.
+    Retrieves the user-selected number of images adhering to their chosen parameters when the 'Display Images' button is pressed.
     
     Parameters:
     -----------

@@ -7,15 +7,15 @@ from components.query import get_species_options, get_data, get_filenames, get_i
 class TestQuery(unittest.TestCase):
     def test_get_species_options(self):
         data = {
-            'Species': ['melpomene', 'erato', 'metharme'],
+            'Species': ['Melpomene', 'erato', 'metharme'],
             'Subspecies': ['subspecies1', 'subspecies2', 'subspecies3']
         }
         df = pd.DataFrame(data=data)
         result = get_species_options(df)
-        self.assertEqual(result.keys(), set(["Melpomene", "Erato", "Metharme", "Any"]))
+        self.assertEqual(result.keys(), set(["Melpomene", "erato", "metharme", "Any"]))
         self.assertEqual(result["Melpomene"], ['Any-Melpomene', 'subspecies1'])
-        self.assertEqual(result["Erato"],['Any-Erato', 'subspecies2'])
-        self.assertEqual(result["Metharme"], ['Any-Metharme', 'subspecies3'])
+        self.assertEqual(result["erato"],['Any-erato', 'subspecies2'])
+        self.assertEqual(result["metharme"], ['Any-metharme', 'subspecies3'])
         self.assertEqual(result["Any"],
                          ['Any', 'subspecies1', 'subspecies2', 'subspecies3'])
     
@@ -57,36 +57,27 @@ class TestQuery(unittest.TestCase):
         BASE_URL_V = "https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/ventral_images/"
         BASE_URL_D = "https://github.com/Imageomics/dashboard-prototype/raw/main/test_data/images/dorsal_images/"
         data = {
-            'Species': ['melpomene', 'melpomene', 'erato', 'melpomene', 'erato', 'species3', 'species3'],
-            'Subspecies': ['schunkei', 'nanna', 'erato', 'rosina_N', 'guarica', 'subspecies6', 'subspecies6'],
-            'View': ['ventral', 'ventral', 'ventral', 'dorsal', 'dorsal', 'ventral', 'dorsal'],
-            'Sex': ['male', 'female', 'female', 'male', 'female', 'male', 'female'],
+            'Species': ['melpomene', 'melpomene', 'erato', 'melpomene', 'erato', 'species3'],
+            'Subspecies': ['schunkei', 'nanna', 'erato', 'rosina_N', 'guarica', 'subspecies6'],
+            'View': ['ventral', 'ventral', 'ventral', 'dorsal', 'dorsal', 'ventral'],
+            'Sex': ['male', 'female', 'female', 'male', 'female', 'male'],
             'Hybrid_stat': ['subspecies synonym', 
                             'valid subspecies', 
                             'subspecies synonym', 
                             'valid subspecies', 
                             'valid subspecies',
-                            'valid subspecies',
                             'subspecies synonym'],
-            'Image_filename': ['10428251_V_lowres.png', 
-                                '10428328_V_lowres.png', 
-                                '10428723_V_lowres.png', 
-                                '10427968_D_lowres.png', 
-                                '10428804_D_lowres.png',
-                                'unknown',
-                                '10428723_V_lowres.png'],
-            'File_url': [BASE_URL_V,
-                        BASE_URL_V,
-                        BASE_URL_V,
-                        BASE_URL_D,
-                        BASE_URL_D,
-                        BASE_URL_V,
+            'File_url': [BASE_URL_V + '10428251_V_lowres.png',
+                        BASE_URL_V + '10428328_V_lowres.png',
+                        BASE_URL_V + '10428723_V_lowres.png',
+                        BASE_URL_D + '10427968_D_lowres.png',
+                        BASE_URL_D + '10428804_D_lowres.png',
                         'unknown']
         }
         df = pd.DataFrame(data = data)
-        test_subspecies = ['Any-Melpomene', 
+        test_subspecies = ['Any-melpomene', 
                            ['guarica'], 
-                           'Any-Erato',
+                           'Any-erato',
                            'Any', 
                            ['schunkei', 'nanna', 'rosina_N']
                            ]
@@ -109,35 +100,26 @@ class TestQuery(unittest.TestCase):
                        ['valid subspecies', 'subspecies synonym'] 
                        ]
         test_nums = [2, 1, None, 1, 3]
-        test_images = ['10428251_V_lowres.png', 
-                       '10428804_D_lowres.png', 
-                       '10428723_V_lowres.png',
-                       '10428804_D_lowres.png', 
-                       ['10428251_V_lowres.png', '10428328_V_lowres.png', '10427968_D_lowres.png']
-                       ]
-        test_paths = [BASE_URL_V,
-                      BASE_URL_D,
-                      BASE_URL_V,
-                      BASE_URL_D,
-                      [BASE_URL_V,
-                      BASE_URL_V,
-                      BASE_URL_D
+        test_paths = [BASE_URL_V + '10428251_V_lowres.png',
+                      BASE_URL_D + '10428804_D_lowres.png',
+                      BASE_URL_V + '10428723_V_lowres.png',
+                      BASE_URL_D + '10428804_D_lowres.png',
+                      [BASE_URL_V + '10428251_V_lowres.png',
+                      BASE_URL_V + '10428328_V_lowres.png',
+                      BASE_URL_D + '10427968_D_lowres.png'
                       ]]
         # Test for proper filenames and filepaths
         for i in range(0, 4):
-            result, paths = get_filenames(df, test_subspecies[i], test_view[i], test_sex[i], test_hybrid[i], test_nums[i])
-            self.assertEqual(result, [test_images[i]])
+            paths = get_filenames(df, test_subspecies[i], test_view[i], test_sex[i], test_hybrid[i], test_nums[i])
             self.assertEqual(paths, [test_paths[i]])
-        result, paths = get_filenames(df, test_subspecies[4], test_view[4], test_sex[4], test_hybrid[4], test_nums[4])
+        paths = get_filenames(df, test_subspecies[4], test_view[4], test_sex[4], test_hybrid[4], test_nums[4])
         #check lists have same elements
-        self.assertCountEqual(result, test_images[4])
         self.assertCountEqual(paths, test_paths[4])
 
     @patch('components.query.get_filenames')
     def test_get_images(self, mock_filenames):
-        filenames = ['filename' + str(i) for i in range(5)]
         filepaths = ['filepath' + str(i) for i in range(5)]
-        mock_filenames.return_value = filenames, filepaths
+        mock_filenames.return_value = filepaths
         result = get_images(df = None, subspecies = None, view = None, sex = None, hybrid = None, num_images = 5)
         self.assertEqual(len(result), 5)
-        self.assertEqual([result[i].src for i in range(5)], [filepaths[i] + '/' + filenames[i] for i in range(5)])
+        self.assertEqual([result[i].src for i in range(5)], [filepaths[i] for i in range(5)])

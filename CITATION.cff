@@ -18,14 +18,14 @@ authors:
   given-names: "Hilmar"
   orcid: "https://orcid.org/0000-0001-9107-0714"
 cff-version: 1.2.0
-date-released: "2024-03-08"
+date-released: "2024-05-21"
 identifiers:
-  - description: "The GitHub release URL of tag 1.2.0."
+  - description: "The GitHub release URL of tag 1.3.0."
     type: url
-    value: "https://github.com/Imageomics/dashboard-prototype/releases/tag/v1.2.0"
+    value: "https://github.com/Imageomics/dashboard-prototype/releases/tag/v1.3.0"
   - description: "The GitHub URL of the commit tagged with 1.2.0."
     type: url
-    value: "https://github.com/Imageomics/dashboard-prototype/tree/d848922a28c37c03523413d5950823d13339aee1"
+    value: "https://github.com/Imageomics/dashboard-prototype/tree/d848922a28c37c03523413d5950823d13339aee1" #update on release
 keywords:
   - "EDA"
   - "data"
